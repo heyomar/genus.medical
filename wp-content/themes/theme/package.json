@@ -1,0 +1,53 @@
+{
+  "name": "fooddialogues",
+  "version": "0.1.0",
+  "description": "FoodDialogues.com Website",
+  "main": "index.js",
+  "scripts": {
+    "build:dev": "run-s js:compile styles:compile",
+    "build:prod": "run-s js:min styles:compile styles:min",
+    "js:compile": "rollup -c",
+    "js:min": "NODE_ENV=production rollup -c",
+    "styles:compile": "postcss --config .postcss.js styles/entry.css",
+    "styles:min": "postcss --use cssnano --output assets/bundle.min.css assets/bundle.css",
+    "serve": "browser-sync start --proxy 'fooddialogues.dev:8888' --files '**/*.php' 'assets/bundle.css' 'assets/bundle.js'",
+    "watch": "parallelshell 'npm run watch:js' 'npm run watch:styles' 'npm run serve'",
+    "watch:js": "nodemon --watch scripts --ext js --exec 'npm run js:compile'",
+    "watch:styles": "nodemon --watch styles --ext css --exec 'npm run styles:compile'",
+    "start": "npm run watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@hlk.git.beanstalkapp.com:/hlk/usfra-food-dialogues.git"
+  },
+  "author": "Steven Brien <sbrien@hlkagency.com>",
+  "contributors": [
+    "Paul Graham <pgraham@hlkagency.com>"
+  ],
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "babel-preset-es2015-rollup": "^1.2.0",
+    "browser-sync": "^2.17.0",
+    "cssnano": "^3.7.6",
+    "eslint": "^3.7.1",
+    "eslint-config-standard": "^6.2.0",
+    "eslint-plugin-promise": "^2.0.1",
+    "eslint-plugin-standard": "^2.0.1",
+    "jquery": "^3.1.1",
+    "nodemon": "^1.10.2",
+    "normalize.css": "^5.0.0",
+    "npm-run-all": "^3.1.0",
+    "parallelshell": "^2.0.0",
+    "postcss-cli": "^2.6.0",
+    "postcss-cssnext": "^2.8.0",
+    "postcss-import": "^8.1.2",
+    "postcss-reporter": "^1.4.1",
+    "rollup": "^0.36.1",
+    "rollup-plugin-babel": "^2.6.1",
+    "rollup-plugin-commonjs": "^5.0.4",
+    "rollup-plugin-eslint": "^3.0.0",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-uglify": "^1.0.1",
+    "sanitize.css": "^4.1.0"
+  }
+}
