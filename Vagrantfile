@@ -3,12 +3,12 @@
 
 # configure me
 # likely that you'll need to change localip and site settings
-localip = "192.168.33.133"
+localip = "192.168.56.133"
 dbname = "scotchbox"
 dbpass = "root"
 dbuser = "root"
 dbhost = "localhost"
-siteurl = "wordpress.dev"
+siteurl = "gmt.dev"
 sitetitle = "WordPress Site"
 siteuser = "siteadmin"
 sitepass = "L9FAn49MO2CySrzN9Rkq"

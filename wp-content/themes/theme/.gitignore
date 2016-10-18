@@ -1,0 +1,3 @@
+# build and package stuff
+node_modules/
+*.map
