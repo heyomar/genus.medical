@@ -1,0 +1,29 @@
+nav {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+
+	& .nav__logo {
+		width: 150px;
+		height: auto;
+		display: inline-block;
+	}
+
+	& .menu {
+		display: inline-block;
+
+
+		& ul {
+
+			& li {
+				display: inline-block;
+				font-size: 14px;
+				padding: 0 10px;
+			}
+		}
+	}
+
+	& .btn {
+		font-size: ;
+	}
+}

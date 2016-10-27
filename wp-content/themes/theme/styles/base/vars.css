@@ -1,0 +1,63 @@
+:root{
+/*––––
+	Colors 
+	––––––––––––––––––––––––––––*/
+	--white: hsla(0, 0%, 100%, 1);
+	--green: hsla(116, 45%, 50%, 1);
+	--blue:hsla(208, 100%, 30%, 1);
+	--gray: hsla(0, 0%, 20%, 1);
+	--fadegray:hsla(0, 0%, 87%, 1);
+
+
+
+/*––––
+	Base Font Definitions
+	––––––––––––––––––––––––––––*/
+	--gotham: {
+		font-family: "Gotham SSm A", "Gotham SSm B", Gotham, sans-serif;
+	};
+
+
+
+/*––––
+	Type Element Mixins
+	––––––––––––––––––––––––––––*/
+	--h1: {
+		font-size: 72px;
+		line-height: 1.5;
+	};
+
+	--h2: {
+		font-size: 36px;
+		line-height: 1.2;
+	};
+
+	--h3: {
+		font-size: 24px;
+		line-height: 1;
+	};
+
+	--p: {
+		font-size: 16px;
+		line-height: 1.5;
+	};
+
+	--a: {
+		text-decoration: none;
+		color: inherit;
+	};
+
+
+
+/*––––
+	Component Mixins 
+	––––––––––––––––––––––––––––*/
+	--btn: {
+		font-size: 14px;
+		padding: 10px 20px;
+		text-decoration: none;
+	};
+
+}
+
+

@@ -1,0 +1,23 @@
+body {
+	@apply --gotham;
+}
+
+h1 {
+	@apply --h1;
+}
+
+h2 {
+	@apply --h2;
+}
+
+h3 {
+	@apply --h3;
+}
+
+p {
+	@apply --p;
+}
+
+a {
+	@apply --a;
+}

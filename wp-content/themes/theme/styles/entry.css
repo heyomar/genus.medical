@@ -1,2 +1,28 @@
-@import 'normalize.css';
-@import 'sanitize.css';
+/*––––
+	Resets and Grid
+	––––––––––––––––––––––––––––*/
+	@import 'normalize.css';
+	@import 'sanitize.css';
+	@import 'flexboxgrid';
+
+
+/*––––
+	Base Pieces
+	––––––––––––––––––––––––––––*/
+	@import 'base/vars.css';
+	@import 'base/components.css';
+	@import 'base/global.css';
+	@import 'base/helpers.css';
+
+
+/*––––
+	Page Modules
+	––––––––––––––––––––––––––––*/
+	@import 'modules/navigation.css';
+	@import 'modules/footer.css';
+
+
+/*––––
+	Page Styles
+	––––––––––––––––––––––––––––*/
+	@import 'pages/home.css';

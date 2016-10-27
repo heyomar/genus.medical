@@ -1,0 +1,80 @@
+/*––––
+	UI Components
+	––––––––––––––––––––––––––––*/
+	.btn{
+		@apply --btn;
+
+		&.white {
+			border: 2px solid var(--white);
+			color: var(--white);
+		}
+
+		&.green {
+			border: 2px solid var(--green);
+			color: var(--green);
+	}
+}
+
+.cta__ctn {
+	min-height: 260px;
+	text-align: center;
+	position: relative;
+
+	&.cta-green {
+		background-color: var(--green);
+	}
+
+	&.cta-blue {
+		background-color: var(--blue);
+	}
+
+	& .cta__inner {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		width: 100%;
+	}
+
+	& h2 {
+			color: var(--white);
+			margin-top: 0;
+			font-weight: normal;
+	}
+}
+
+.med {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 80px 20px;
+	background-color: var(--white);
+
+	& .box {
+		margin: 10px;
+		height: 300px;
+		background-image: url(http://placehold.it/300x500);
+		background-position: center;
+		background-size: cover;
+		position: relative;
+
+		& .med__label {
+			border-bottom: 3px solid var(--green);
+			position: absolute;
+			bottom: 0;
+			height: 50px;
+			width: 100%;
+			display: block;
+			background-color: color(var(--gray) alpha(-18%));
+			color: var(--white);
+			text-transform: uppercase;
+			padding: 14px;
+			@apply --p;
+
+			&:after {
+				content: url('../assets/images/arrow__down.png');
+				position: absolute;
+				right: 10px;
+			}
+		}
+	}
+}

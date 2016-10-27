@@ -1,2 +1,1 @@
-<?php
-// Bro, it food dialogues
+<?php echo 'jdjfshljkdhf' ?>
