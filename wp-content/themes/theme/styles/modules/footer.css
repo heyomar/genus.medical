@@ -1,4 +1,43 @@
 footer {
 	background-color: var(--gray);
 	min-height: 260px;
+	padding: 80px 20px;
+}
+
+.footer-logo {
+	padding-bottom: 20px;
+	& img {
+			height: 50px;
+			width: auto;
+	}
+}
+
+.legal {
+	color: var(--white);
+	font-size: 14px;
+
+	& .legal__copy {}
+
+	& .legal__links {
+			& a {
+				color: var(--green);
+		}
+	}
+}
+
+.social {
+	color: var(--white);
+	font-size: 14px;
+	text-align: right;
+	& .linkedin {
+		height: 20px;
+		width: auto;
+		color: #fff;
+	}
+}
+
+@media (--tablet) {
+	.social {
+		border: 1px solid red;
+	}
 }
