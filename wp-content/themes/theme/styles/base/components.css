@@ -7,11 +7,11 @@
 		padding: 80px 20px;
 		@apply background-standard;
 
-		& h1 {
+		& .title {
 			margin: 0 0 20px 0;
 		}
 
-		& p {
+		& .copy {
 			@apply --mxw-900-center;
 		}
 	}

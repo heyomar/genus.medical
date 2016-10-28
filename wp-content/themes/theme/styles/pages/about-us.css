@@ -1,4 +1,39 @@
-.about__hero {
-	background: linear-gradient(hsla(208, 100%, 30%, .89), hsla(208, 100%, 30%, .89)), url('../assets/images/aboutus__hero-bg.jpg');
+.about-us {
+	& .hero {
+		background: linear-gradient(hsla(208, 100%, 30%, .89), hsla(208, 100%, 30%, .89)), url('../assets/images/aboutus__hero-bg.jpg');
+	}
+}
 
+.ourmission {
+	text-align: center;
+	@apply --padding-standard;
+}
+
+.mangement {
+	text-align: center;
+	background-color: var(--offwhite);
+	padding:50px 20px 70px 20px;
+
+	& .inner {
+		text-align: left;
+
+		& .name {
+			padding-top: 5px;
+			color: var(--green);
+			margin-bottom: 0;
+			letter-spacing: 0;
+		}
+
+		& .img {
+			@apply --background-standard;
+			height: 250px;
+			width: auto;
+			box-shadow: 0px 3px 10px -2px rgba(0,0,0,0.41);
+			border-bottom: 2px solid var(--green);
+		}
+
+		& .bio {
+			color: var(--gray);
+		}
+	}
 }
