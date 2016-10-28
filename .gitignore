@@ -11,6 +11,7 @@
 wp-content/themes/twenty*
 wp-content/plugins/hello.php
 !Vagrantfile
+.vagrant
 !.htaccess
 !db_backup.sh
 !README.md
