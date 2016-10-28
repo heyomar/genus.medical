@@ -1,4 +1,4 @@
-.hero__ctn {
+.home__hero__ctn {
 	min-height: 800px;
 	background: linear-gradient(hsla(208, 100%, 30%, .85), hsla(208, 100%, 30%, .85)), url('../assets/images/home__hero.jpg');
 	background-size: cover;
@@ -8,12 +8,8 @@
 	position: relative;
 	background-color: #333;
 
-	& .hero__inner {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%,-50%);
-		width: 100%;
+	& .home__hero__inner {
+		@apply --absolute-center;
 	}
 
 	& h1 {
@@ -43,4 +39,12 @@
 		width: 25px;
 		transform: rotate(90deg);
 	}
+}
+
+.callout-oralcontrast{
+	background-image: url('../assets/images/home__callout-oralcontrast.jpg');
+}
+
+.callout-powerinjector{
+	background-image: url('../assets/images/home__callout-powerinjector.jpg');
 }

@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-	<div class="hero__ctn">
-		<div class="hero__inner">
+	<div class="home__hero__ctn">
+		<div class="home__hero__inner">
 				<h1>Choice matters.</h1>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -22,12 +22,12 @@
 	<div class="med">
 		<div class="row med__inner">
 			<div class="col-xs-12 col-sm-6">
-					<div class="box">
+					<div class="box callout-oralcontrast">
 						<a href="#"><span class="med__label">View Product</span></a>
 					</div>
 			</div>
 			<div class="col-xs-12 col-sm-6">
-					<div class="box">
+					<div class="box callout-powerinjector">
 						<a href="#"><span class="med__label">View Product</span></a>
 					</div>
 			</div>
