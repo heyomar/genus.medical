@@ -1,0 +1,65 @@
+# ignore everything by default except wp-content
+/*
+
+# except .gitignore and selected dirs
+!.gitignore
+!.gitkeep
+!wp-content
+!wp-content/plugins/*
+!wp-content/themes/*
+!wp-content/mu-plugins/*
+wp-content/themes/twenty*
+wp-content/plugins/hello.php
+!Vagrantfile
+!.htaccess
+!db_backup.sh
+!README.md
+!wp-cli.phar
+
+# dev plugins
+wp-content/plugins/query-monitor/*
+wp-content/plugins/debug-objects/*
+wp-content/plugins/log-deprecated-notices/*
+wp-content/plugins/theme-check/*
+
+# bad directories for version control
+wp-content/uploads/*
+wp-content/upgrade/*
+wp-content/db.php
+
+# build and package stuff
+node_modules/
+*.map
+wp-content/themes/**/bundle.css
+wp-content/themes/**/bundle.js
+
+# tmpcrap
+~*
+*.log
+*.tmp
+ehthumbs.db
+Thumbs.db
+.DS_Store
+
+# editor files
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+
+# large, undesirable filetypes to ignore
+*.sql
+*.sqlite
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
