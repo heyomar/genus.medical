@@ -7,7 +7,7 @@
 
 
 /*––––
-	Base Pieces
+	Base Site Pieces
 	––––––––––––––––––––––––––––*/
 	@import 'base/vars.css';
 	@import 'base/components.css';
@@ -26,3 +26,4 @@
 	Page Styles
 	––––––––––––––––––––––––––––*/
 	@import 'pages/home.css';
+	@import 'pages/about-us.css';

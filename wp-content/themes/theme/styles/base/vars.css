@@ -10,6 +10,13 @@
 
 
 
+	/*––––
+	Media Queries
+	––––––––––––––––––––––––––––*/
+	@custom-media --tablet screen and (min-width: 768px);
+
+
+
 /*––––
 	Base Font Definitions
 	––––––––––––––––––––––––––––*/
@@ -25,6 +32,7 @@
 	--h1: {
 		font-size: 72px;
 		line-height: 1.5;
+		font-weight: 500;
 	};
 
 	--h2: {
@@ -56,6 +64,29 @@
 		font-size: 14px;
 		padding: 10px 20px;
 		text-decoration: none;
+	};
+
+
+/*––––
+	Helpers
+	––––––––––––––––––––––––––––*/
+	--background-standard: {
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	};
+
+	--mxw-900-center: {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+	--absolute-center: {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		width: 100%;
 	};
 
 }

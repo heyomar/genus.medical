@@ -12,9 +12,13 @@
 
 	<body <?php body_class(); ?>>
 		<nav role="navigation">
-			<div class="nav__logo"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/nav__logo.svg"></div>
+			<div class="nav__logo">
+				<a href="/">
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/site__logo-green.svg">
+				</a>
+			</div>
 			<?php wp_nav_menu( array( 'theme_location' => 'main-navigation' ) ); ?>
-			<a href="#" class="btn green">Email Sign Up</a>
-			<a href="#" class="btn green">Request Product Information</a>
+			<a href="#" class="btn green">Email&nbsp;Sign&nbsp;Up</a>
+			<a href="#" class="btn green">Request&nbsp;Product&nbsp;Information</a>
 		</nav>
 	<main>
