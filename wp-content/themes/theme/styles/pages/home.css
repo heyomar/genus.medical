@@ -1,4 +1,4 @@
-.home__hero__ctn {
+.home-hero {
 	min-height: 800px;
 	background: linear-gradient(hsla(208, 100%, 30%, .85), hsla(208, 100%, 30%, .85)), url('../assets/images/home__hero.jpg');
 	background-size: cover;
@@ -8,8 +8,9 @@
 	position: relative;
 	background-color: #333;
 
-	& .home__hero__inner {
+	& .inner {
 		@apply --absolute-center;
+		padding: 0 30px;
 	}
 
 	& h1 {

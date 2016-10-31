@@ -46,7 +46,6 @@
 		<div class="col-xs-12 col-sm-4">
 			<div class="box">
 				<div class="inner">
-
 					<div style="background-image: url('http://placehold.it/300x250')" class="img"></div>
 					<h4 class="name">Name Here</h4>
 					<p class="bio">
@@ -80,10 +79,15 @@
 	</div>
 </div>
 
+<div class="cta cta-green">
+		<div class="inner">
+			<h2>Make the most of your oral contrast budget.</h2>
+			<p>Learn more about how you can save money while offering patients more choices.</p>
+			<a href="/" class="btn white">Request Product Information</a>
+		</div>
+</div>
 
 
-
-	<?php get_template_part('modules/cta-green');?>
 	<?php endwhile; ?>
 	<?php endif ?>
 <?php get_footer(); ?>
