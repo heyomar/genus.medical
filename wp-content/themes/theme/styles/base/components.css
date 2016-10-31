@@ -7,11 +7,11 @@
 		padding: 80px 20px;
 		@apply background-standard;
 
-		& h1 {
+		& .title {
 			margin: 0 0 20px 0;
 		}
 
-		& p {
+		& .copy {
 			@apply --mxw-900-center;
 		}
 	}
@@ -46,7 +46,7 @@
 
 
 
-.cta__ctn {
+.cta {
 	min-height: 260px;
 	text-align: center;
 	position: relative;
@@ -60,7 +60,7 @@
 		background:linear-gradient(hsla(116, 45%, 50%, .90), hsla(116, 45%, 50%, .90)), url('../assets/images/cta__module__blue-bg.jpg');
 	}
 
-	& .cta__inner {
+	& .inner {
 		position: absolute;
 		top: 50%;
 		left: 50%;
@@ -70,8 +70,14 @@
 
 	& h2 {
 			color: var(--white);
-			margin-top: 0;
-			font-weight: normal;
+			margin: 0;
+			padding-bottom: 25px;
+	}
+
+	& p {
+		color: var(--white);
+		margin:0;
+		padding-bottom: 30px;
 	}
 }
 
@@ -83,7 +89,7 @@
 	padding: 80px 20px;
 	background-color: var(--white);
 
-	& .box {
+	& .inner {
 		margin: 10px;
 		height: 300px;
 		background-position: center;
@@ -91,7 +97,7 @@
 		position: relative;
 		box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
-		& .med__label {
+		& .label {
 			border-bottom: 3px solid var(--green);
 			position: absolute;
 			bottom: 0;

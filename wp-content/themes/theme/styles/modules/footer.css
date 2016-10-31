@@ -2,10 +2,11 @@ footer {
 	background-color: var(--gray);
 	min-height: 260px;
 	padding: 80px 20px;
+	text-align: center;
 }
 
-.footer-logo {
-	padding-bottom: 20px;
+.logo {
+	padding-bottom: 30px;
 	& img {
 			height: 50px;
 			width: auto;
@@ -15,12 +16,12 @@ footer {
 .legal {
 	color: var(--white);
 	font-size: 14px;
+	padding-bottom: 30px;
 
-	& .legal__copy {}
-
-	& .legal__links {
+	& .links {
 			& a {
 				color: var(--green);
+				text-decoration: underline;
 		}
 	}
 }
@@ -28,7 +29,8 @@ footer {
 .social {
 	color: var(--white);
 	font-size: 14px;
-	text-align: right;
+	text-align: center;
+
 	& .linkedin {
 		height: 20px;
 		width: auto;
@@ -37,7 +39,10 @@ footer {
 }
 
 @media (--tablet) {
+	footer {
+		text-align: left;
+	}
 	.social {
-		border: 1px solid red;
+		text-align: right;
 	}
 }

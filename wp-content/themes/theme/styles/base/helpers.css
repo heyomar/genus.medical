@@ -1,5 +1,17 @@
-.spacer {
-	max-width: 20px;
-	display: block;
-	height: 100%;
+/*––––
+	Helper Classes
+	––––––––––––––––––––––––––––*/
+.mxw-1100-center {
+	@apply --mxw-1100-center;
+}
+
+.mxw-900-center {
+	@apply --mxw-900-center;
+}
+
+.title{
+	&.small{
+		text-transform: uppercase;
+		padding-bottom:25px;
+	}
 }
