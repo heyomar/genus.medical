@@ -3,14 +3,9 @@
 
 	<div class="home-hero">
 		<div class="inner mxw-900-center">
-				<h1>Choice matters.</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				<h3>Finally, you have a choice in medical suppliers</h3>
+				<h1><?php the_field('hero_title'); ?></h1>
+				<?php the_field('hero_copy'); ?>
+				<h3><?php the_field('hero_subline'); ?></h3>
 		</div>
 		<a href="#">
 			<span class="arrowbox">
@@ -38,7 +33,12 @@
 		</div>
 	</div>
 
-	<?php get_template_part('modules/cta-green');?>
+	<div class="cta cta-green">
+		<div class="inner">
+			<h2><?php the_field('cta_title'); ?></h2>
+			<a href="/" class="btn white"><?php the_field('cta_button') ?></a>
+		</div>
+</div>
 	<?php endwhile; ?>
 	<?php endif ?>
 <?php get_footer(); ?>
