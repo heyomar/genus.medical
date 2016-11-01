@@ -1,0 +1,40 @@
+.request-product-information {
+	& .bluehero {
+		background:linear-gradient(hsla(208, 100%, 30%, .95), hsla(208, 100%, 30%, .95)), url('../assets/images/component__bluehero-bg.jpg');
+			
+	}
+
+	& .title {
+		color: var(--blue);
+	}
+
+	& .inner {
+		padding: 50px 20px;
+	}
+}
+
+/*––––
+	Modifies RPI Ninja Form
+	––––––––––––––––––––––––––––*/
+	.nf-form-fields-required {
+		display: none;
+	}
+
+	.nf-error-msg {
+		font-size: 12px;
+	}
+
+	.nf-field-description {
+		padding-left: 15px;
+		display: inline-block;
+		max-width: 95%;
+	}
+
+	#nf-field-11-wrap .nf-field-element { 
+		width: none;
+		display: inline-block;
+	}
+
+	.label-hidden .nf-field-element {
+		width: auto !important;
+	}

@@ -1,0 +1,42 @@
+input {
+	border: 1px solid var(--green);
+	appearance:none;
+	padding: 8px 20px;
+	outline: none;
+
+	&:focus {
+		border: 1px solid var(--gray);
+	}
+
+	&[type=checkbox] {
+			padding: 5px;
+			border: 1px solid var(--green);
+	}
+
+	&[type=checkbox] {
+		padding: 5px;
+		border: 1px solid var(--green);
+
+	&:checked {
+		background-color: var(--green);
+		}
+	}
+
+	&[type=button] {
+			cursor: pointer;
+			padding: 10px 50px;
+			border: 1px solid var(--blue);
+			background-color: var(--blue);
+			color: var(--white);
+	}
+}
+
+textarea {
+	padding: 8px 20px;
+	border: 1px solid var(--green);
+	outline: none;
+
+	&:focus {
+		border: 1px solid var(--gray);
+	}
+}

@@ -1919,11 +1919,52 @@ textarea,
 	max-width: 900px;
 	margin: 0 auto;
 }
-	.title{
+	.title {
 }
 	.title.small {
   text-transform: uppercase;
   padding-bottom: 25px;
+}
+	.bluehero {
+	min-height: 170px;
+	background-blend-mode: multiply;
+}
+	input {
+	border: 1px solid hsla(116, 45%, 50%, 1);
+	-webkit-appearance:none;
+	   -moz-appearance:none;
+	        appearance:none;
+	padding: 8px 20px;
+	outline: none
+}
+	input:focus {
+  border: 1px solid hsla(0, 0%, 20%, 1);
+}
+	input[type=checkbox] {
+  padding: 5px;
+  border: 1px solid hsla(116, 45%, 50%, 1);
+}
+	input[type=checkbox] {
+  padding: 5px;
+  border: 1px solid hsla(116, 45%, 50%, 1);
+}
+	input[type=checkbox]:checked {
+  background-color: hsla(116, 45%, 50%, 1);
+}
+	input[type=button] {
+  cursor: pointer;
+  padding: 10px 50px;
+  border: 1px solid hsla(208, 100%, 30%, 1);
+  background-color: hsla(208, 100%, 30%, 1);
+  color: hsla(0, 0%, 100%, 1);
+}
+	textarea {
+	padding: 8px 20px;
+	border: 1px solid hsla(116, 45%, 50%, 1);
+	outline: none
+}
+	textarea:focus {
+  border: 1px solid hsla(0, 0%, 20%, 1);
 }
 	/*––––
 	Page Modules
@@ -2081,4 +2122,37 @@ textarea,
 	.mangement .inner .bio {
   color: hsla(0, 0%, 20%, 1);
 }
+	.request-product-information {
+}
+	.request-product-information .bluehero {
+  background: -webkit-linear-gradient(hsla(208, 100%, 30%, .95), hsla(208, 100%, 30%, .95)), url('../assets/images/component__bluehero-bg.jpg');
+  background: linear-gradient(hsla(208, 100%, 30%, .95), hsla(208, 100%, 30%, .95)), url('../assets/images/component__bluehero-bg.jpg');
+}
+	.request-product-information .title {
+  color: hsla(208, 100%, 30%, 1);
+}
+	.request-product-information .inner {
+  padding: 50px 20px;
+}
+	/*––––
+	Modifies RPI Ninja Form
+	––––––––––––––––––––––––––––*/
+	.nf-form-fields-required {
+		display: none;
+	}
+	.nf-error-msg {
+		font-size: 12px;
+	}
+	.nf-field-description {
+		padding-left: 15px;
+		display: inline-block;
+		max-width: 95%;
+	}
+	#nf-field-11-wrap .nf-field-element { 
+		width: none;
+		display: inline-block;
+	}
+	.label-hidden .nf-field-element {
+		width: auto !important;
+	}
 /*# sourceMappingURL=bundle.css.map */

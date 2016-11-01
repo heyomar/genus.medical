@@ -9,9 +9,14 @@
 	@apply --mxw-900-center;
 }
 
-.title{
-	&.small{
+.title {
+	&.small {
 		text-transform: uppercase;
 		padding-bottom:25px;
 	}
+}
+
+.bluehero {
+	min-height: 170px;
+	background-blend-mode: multiply;
 }
