@@ -19,6 +19,6 @@
 			</div>
 			<?php wp_nav_menu( array( 'theme_location' => 'main-navigation' ) ); ?>
 			<a href="#" class="btn green">Email&nbsp;Sign&nbsp;Up</a>
-			<a href="#" class="btn green">Request&nbsp;Product&nbsp;Information</a>
+			<a href="/request-product-information" class="btn green">Request&nbsp;Product&nbsp;Information</a>
 		</nav>
 	<main>
