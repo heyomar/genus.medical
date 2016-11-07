@@ -9,6 +9,20 @@
 	@apply --mxw-900-center;
 }
 
+.text-right {
+	text-align: right;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+
+
 .title {
 	&.small {
 		text-transform: uppercase;
@@ -19,4 +33,8 @@
 .bluehero {
 	min-height: 170px;
 	background-blend-mode: multiply;
+}
+
+.nopad {
+	padding: 0;
 }
