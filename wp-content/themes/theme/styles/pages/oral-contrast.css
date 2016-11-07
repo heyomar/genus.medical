@@ -1,0 +1,47 @@
+.clearhero {
+	min-height: 400px;
+	width: 100%;
+	@apply --background-standard;
+	background-image: url('../assets/images/oralcontrast__hero-grid.png');
+	z-index: 1;
+	padding:0 20px;
+	color: var(--white);
+
+	& .title {
+		margin-bottom: 0;
+	}
+
+	& .image {
+		text-align: center;
+
+		& img {
+			max-width: 100%;
+			height: 400px;
+		}
+	}
+}
+
+
+
+.computed-tomography {
+	padding: 30px 20px;
+}
+
+.x-ray-and-fluoroscopy {
+	background-color: var(--fadegray);
+	padding: 30px 20px;
+}
+
+.related-products {
+	padding: 30px 20px;
+}
+
+
+
+@media (--tablet) {
+	.clearhero {
+			& .image {
+				text-align: right;
+		}
+	}
+}
