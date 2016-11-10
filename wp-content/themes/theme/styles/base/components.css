@@ -42,6 +42,19 @@
 				background-color: var(--green);
 			}
 	}
+
+	&.blue {
+		background-color: var(--blue);
+		color: var(--white);
+		display: inline-block;
+		margin: 20px 0;
+	}
+
+	&.green-link {
+		color: var(--green);
+		padding: 0;
+		display: block;
+	}
 }
 
 

@@ -2,7 +2,7 @@
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 
-<div style="background-image: url('http://placehold.it/1600x369');" class="product-hero">
+<div style="background-image: url('<?php the_field('hero_image') ?>');" class="product-hero">
 	<div class="inner mxw-1100-center">
 		<span class="category">Oral Contrast</span>
 		<div class="name"><?php echo 'This is the name' ?></div>
@@ -19,12 +19,21 @@
 										<div class="col-xs-12 col-sm-6 col-md-6 nopad">
 											<div class="box">
 												<div class="gallery">
-													<?php
-												$number = 1;
-												if( have_rows('product_images') ): ?>
-													<?php while ( have_rows('product_images') ) : the_row(); ?>
-															<div class="image-<?php echo $number ++ ?>" style="background-image: url('<?php the_sub_field('image'); ?>');"></div>
-												<?php endwhile; endif; ?>
+														<div class="inner">
+															<div class="images">
+																	<div class="view">
+																		<div style="background-image: url('<?php the_field('product_image_2') ?>');" class="image"></div>
+																	</div>
+																	<div class="thumbs">
+																		<div style="background-image: url('<?php the_field('product_image_2') ?>');" class="thumb">
+																			
+																		</div>
+																		<div style="background-image: url('<?php the_field('product_image_3') ?>');" class="thumb">
+																			
+																		</div>
+																	</div>
+															</div>
+														</div>
 												</div>
 											</div>
 										</div>
@@ -33,14 +42,11 @@
 												<div class="content">
 													<h3 class="heading"><?php the_field('heading') ?></h3>
 													<?php the_field('description') ?>
-													Cross reference: <?php if( have_rows('cross_refrence') ):
-																	while ( have_rows('cross_refrence') ) : the_row();
-																				the_sub_field('reference_code');
-																	endwhile; endif; ?>
-														<br><br>
 														Product Code: <?php the_field('product_code') ?>
 														<br>
 														Product description: <?php the_field('product_description') ?>
+														<a class="btn blue" href="#">Find A Distributor</a>
+														<a class="btn green-link" href="<?php the_field('pdf'); ?>">Download a package insert</a>
 												</div>
 											</div>
 										</div>

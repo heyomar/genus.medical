@@ -1,6 +1,6 @@
 .product-hero {
 	min-height: 275px;
-	border-bottom: 1px solid var(--green);
+	border-bottom: 2px solid var(--green);
 	background: #eee;
 	position: relative;
 	@apply --background-standard;
@@ -25,7 +25,7 @@
 
 .product {
 	& .content {
-		padding: 50px ;
+		padding: 50px 50px 120px 50px;
 	}
 }
 
@@ -37,32 +37,42 @@
 }
 
 .gallery {
-	border: 1px solid red;
-	padding: 75px 0;
+	padding: 75px 0 0 0;
 	position: relative;
+	min-height: 350px;
 
-	& .image-1 {
+	& .inner {
+		position: relative;
+		right: 0;
+	}
+	
+	& .view {
 		height: 300px;
 		max-width: 250px;
 		margin: 0 auto;
+		display: block;
+		@apply --background-standard;
+		overflow: hidden;
+		cursor: pointer;
+		transition: all 0.3s;
+
+		& .image {
+			@apply --background-standard;
+			height: 100%;
+		}
 	}
 
-	& .image-2 {
-		height: 100px;
-		width: 100px;
-		display: inline-block;
-		position: absolute;
-		left: 117px;
-		top: 340px;
-	}
+	& .thumbs {
+		text-align: center;
+		cursor: pointer;
 
-	& .image-3 {
-		display: inline-block;
-		position: absolute;
-		right: 117px;
-		top: 340px;
-		height: 100px;
-		width: 100px;
+		& .thumb {
+			display: inline-block;
+			height: 85px;
+			width: 117px;
+			margin: 15px 5px;
+			@apply --background-standard;
+		}
 	}
 }
 
@@ -81,5 +91,24 @@
 				display: block;
 				border-bottom: 2px solid var(--green);
 			}
+	}
+}
+
+
+.zoomIn {
+	transform: scale(1.8);
+}
+
+.zoomNormal {
+	transform: scale(1.0);
+}
+
+@media (--tablet) {
+	.gallery {
+		padding: 75px 0;
+		min-height:500px;
+		& .inner {
+			position: absolute;
+		}
 	}
 }

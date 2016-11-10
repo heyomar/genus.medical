@@ -1,29 +1,97 @@
+ul {
+	padding: 0;
+}
+
+
 nav {
-	max-width: 1200px;
+	max-width: 1300px;
 	margin: 0 auto;
 	padding: 20px;
+	position: relative;
 
-	& .nav__logo {
-		width: 150px;
-		height: auto;
+
+	& .logo {
+		max-width: 185px;
+		height: 55px;
 		display: inline-block;
-	}
-
-	& .menu {
-		display: inline-block;
-
-
-		& ul {
-
-			& li {
-				display: inline-block;
-				font-size: 14px;
-				padding: 0 10px;
-			}
+		& img {
+			width: 150px;
 		}
 	}
+}
 
-	& .btn {
+.menu-header-navigation-container {
+	display: inline-block;
+	text-align: center;
+	display: none;
 
+	& ul {
+		margin:0;
+		text-align: center;
+		background-color: #fefefe;
+
+
+		& li {
+			width: auto;
+			padding: 20px 10px;
+
+
+		}
 	}
+}
+
+
+.handle {
+	display: inline;
+	color: var(--green);
+	cursor: pointer;
+
+	& .label {
+		text-align: right;
+		position: relative;
+		font-size: 12px;
+		position: absolute;
+		right: 60px;
+		padding: 9px 0;
+	}
+
+	& .arrow {
+		border: 1px solid var(--green);
+		padding: 5px 13px;
+		font-size: 16px;
+		position: absolute;
+		right: 10px;
+	}
+}
+
+
+.head-cta {
+	display: inline-block;
+	position: absolute;
+	right: 20px;
+	top: 48%;
+  transform: translateY(-50%);
+  display: none;
+}
+
+
+
+@media (--tablet) {
+	.handle {
+		display: none;
+	}
+
+	.head-cta {
+		display: inline-block;
+	}
+}
+
+@media screen and(max-width: 1084px) {
+/*	.head-cta {
+		margin: 15px 0 10px 0;
+		width: 100%;
+		text-align: center;
+		display: block;
+		position: relative;
+	}*/
 }

@@ -23,4 +23,5 @@
 	</footer>
 	</body>
 	<?php wp_footer(); ?>
+	<script defer src="<?php echo get_stylesheet_directory_uri(); ?>/assets/bundle.js" type="text/javascript"></script>
 </html>

@@ -1807,6 +1807,17 @@ textarea,
   color: hsla(0, 0%, 100%, 1);
   background-color: hsla(116, 45%, 50%, 1);
 }
+	.btn.blue {
+  background-color: hsla(208, 100%, 30%, 1);
+  color: hsla(0, 0%, 100%, 1);
+  display: inline-block;
+  margin: 20px 0;
+}
+	.btn.green-link {
+  color: hsla(116, 45%, 50%, 1);
+  padding: 0;
+  display: block;
+}
 	.cta {
 	min-height: 260px;
 	text-align: center;
@@ -2012,27 +2023,83 @@ textarea,
 	/*––––
 	Page Modules
 	––––––––––––––––––––––––––––*/
+	ul {
+	padding: 0;
+}
 	nav {
-	max-width: 1200px;
+	max-width: 1300px;
 	margin: 0 auto;
-	padding: 20px
+	padding: 20px;
+	position: relative
 }
-	nav .nav__logo {
+	nav .logo {
+  max-width: 185px;
+  height: 55px;
+  display: inline-block;
+}
+	nav .logo img {
   width: 150px;
-  height: auto;
-  display: inline-block;
 }
-	nav .menu {
-  display: inline-block;
+	.menu-header-navigation-container {
+	display: inline-block;
+	text-align: center;
+	display: none
 }
-	nav .menu ul {
+	.menu-header-navigation-container ul {
+  margin: 0;
+  text-align: center;
+  background-color: #fefefe;
 }
-	nav .menu ul li {
-  display: inline-block;
-  font-size: 14px;
-  padding: 0 10px;
+	.menu-header-navigation-container ul li {
+  width: auto;
+  padding: 20px 10px;
 }
-	nav .btn {
+	.handle {
+	display: inline;
+	color: hsla(116, 45%, 50%, 1);
+	cursor: pointer
+}
+	.handle .label {
+  text-align: right;
+  position: relative;
+  font-size: 12px;
+  position: absolute;
+  right: 60px;
+  padding: 9px 0;
+}
+	.handle .arrow {
+  border: 1px solid hsla(116, 45%, 50%, 1);
+  padding: 5px 13px;
+  font-size: 16px;
+  position: absolute;
+  right: 10px;
+}
+	.head-cta {
+	display: inline-block;
+	position: absolute;
+	right: 20px;
+	top: 48%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: none;
+}
+	@media screen and (min-width: 768px) {
+	.handle {
+		display: none;
+	}
+
+	.head-cta {
+		display: inline-block;
+	}
+}
+	@media screen and(max-width: 1084px) {
+/*	.head-cta {
+		margin: 15px 0 10px 0;
+		width: 100%;
+		text-align: center;
+		display: block;
+		position: relative;
+	}*/
 }
 	footer {
 	background-color: hsla(0, 0%, 20%, 1);
@@ -2241,7 +2308,7 @@ textarea,
 	}
 	.product-hero {
 	min-height: 275px;
-	border-bottom: 1px solid hsla(116, 45%, 50%, 1);
+	border-bottom: 2px solid hsla(116, 45%, 50%, 1);
 	background: #eee;
 	position: relative;
 	background-position: center;
@@ -2268,7 +2335,7 @@ textarea,
 	.product {
 }
 	.product .content {
-  padding: 50px ;
+  padding: 50px 50px 120px 50px;
 }
 	.info {
 }
@@ -2277,30 +2344,45 @@ textarea,
   font-weight: 400;
 }
 	.gallery {
-	border: 1px solid red;
-	padding: 75px 0;
-	position: relative
+	padding: 75px 0 0 0;
+	position: relative;
+	min-height: 350px
 }
-	.gallery .image-1 {
+	.gallery .inner {
+  position: relative;
+  right: 0;
+}
+	.gallery .view {
   height: 300px;
   max-width: 250px;
   margin: 0 auto;
+  display: block;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
-	.gallery .image-2 {
-  height: 100px;
-  width: 100px;
-  display: inline-block;
-  position: absolute;
-  left: 117px;
-  top: 340px;
+	.gallery .view .image {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
 }
-	.gallery .image-3 {
+	.gallery .thumbs {
+  text-align: center;
+  cursor: pointer;
+}
+	.gallery .thumbs .thumb {
   display: inline-block;
-  position: absolute;
-  right: 117px;
-  top: 340px;
-  height: 100px;
-  width: 100px;
+  height: 85px;
+  width: 117px;
+  margin: 15px 5px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 	.sidebar {
 	min-height: 100%;
@@ -2315,5 +2397,22 @@ textarea,
   content: "";
   display: block;
   border-bottom: 2px solid hsla(116, 45%, 50%, 1);
+}
+	.zoomIn {
+	-webkit-transform: scale(1.8);
+	        transform: scale(1.8);
+}
+	.zoomNormal {
+	-webkit-transform: scale(1.0);
+	        transform: scale(1.0);
+}
+	@media screen and (min-width: 768px) {
+	.gallery {
+		padding: 75px 0;
+		min-height:500px
+	}
+	.gallery .inner {
+    position: absolute;
+  }
 }
 /*# sourceMappingURL=bundle.css.map */
