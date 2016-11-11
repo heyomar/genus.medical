@@ -2045,7 +2045,7 @@ textarea,
 	.strip .logo {
   padding: 0;
   display: inline-block;
-  width: 25%;
+  padding-right: 50px;
 }
 	.strip .menu-header-navigation-container {
   display: none;
@@ -2076,7 +2076,8 @@ textarea,
 	––––––––––––––––––––––––––––*/
 	.dropdown {
 	height: 100vh;
-	padding-bottom: 30px
+	padding-bottom: 30px;
+	display: none
 }
 	.dropdown ul {
   padding: 0;
@@ -2123,7 +2124,7 @@ textarea,
 	/*––––
 	media queries
 	––––––––––––––––––––––––––––*/
-	@media screen and (min-width: 1220px) {
+	@media screen and (min-width: 1150px) {
 	.desktop-cta {
 		display: inline-block;
 		position: absolute;
@@ -2162,6 +2163,7 @@ textarea,
 	min-height: 260px;
 	padding: 80px 20px;
 	text-align: center;
+	border-bottom: 2px solid hsla(116, 45%, 50%, 1);
 }
 	.logo {
 	padding-bottom: 30px
@@ -2196,7 +2198,12 @@ textarea,
 		text-align: left;
 	}
 	.social {
+		display: inline-block;
 		text-align: right;
+		float: right;
+	}
+	.legal {
+		display: inline-block;
 	}
 }
 	/*––––
@@ -2338,7 +2345,7 @@ textarea,
 	.request-product-information .title {
   color: hsla(208, 100%, 30%, 1);
 }
-	.request-product-information .inner {
+	.request-product-information .content {
   padding: 50px 20px;
 }
 	/*––––
@@ -2470,5 +2477,12 @@ textarea,
 	.gallery .inner {
     position: absolute;
   }
+}
+	.how-to-buy {
+}
+	.how-to-buy .hero {
+  background: -webkit-linear-gradient(hsla(208, 100%, 30%, .89), hsla(208, 100%, 30%, .89)), url('../assets/images/howtobuy__hero-bg.jpg');
+  background: linear-gradient(hsla(208, 100%, 30%, .89), hsla(208, 100%, 30%, .89)), url('../assets/images/howtobuy__hero-bg.jpg');
+  background-position: center center;
 }
 /*# sourceMappingURL=bundle.css.map */

@@ -10236,13 +10236,6 @@ return jQuery;
 
 function navigation() {
 
-	// hide the mobile nav if they resize window
-	jquery(window).resize(function () {
-		if (window.innerWidth >= 768) {
-			jquery('.dropdown').hide();
-		}
-	});
-
 	// add carets to mobile nav items on hover
 	jquery('.dropdown li').hover(function () {
 		jquery(this).toggleClass('caret');
@@ -10258,6 +10251,14 @@ function navigation() {
 			jquery('.dropdown').slideDown().show();
 			jquery('.dropdown').addClass('open');
 			jquery('body').css('overflow', 'hidden');
+		}
+	});
+
+	// hide the mobile nav if they resize window
+	jquery(window).resize(function () {
+		if (window.innerWidth >= 1220) {
+			jquery('.dropdown').hide();
+			jquery('body').css('overflow', 'scroll');
 		}
 	});
 }
@@ -10294,21 +10295,21 @@ function gallery() {
 		}
 	});
 
-	jquery.ajax({
-		url: 'http://gmt.dev/wp-json/wp/v2/product?filter[category]=oral-contrast',
-		success: function (data) {
-			console.log(data);
-			jquery.each(data, function (i, val) {
-				console.log(val['title']['rendered']);
-			});
-		},
-		error: function () {
-			console.log('error');
-		}
-	});
+	// $.ajax({
+	// 			url:'http://gmt.dev/wp-json/wp/v2/product?filter[category]=oral-contrast', 
+	//      success: function(data) {
+	//      	console.log(data)
+	//      	$.each(data, function (i, val) {
+	//      		console.log(val['title']['rendered'])
+	//      	})
+	//      },
+	//      error: function() {
+	// 				console.log('error')
+	//      }
+	//   });
 
 	jquery.ajax({
-		url: 'http://gmt.dev/wp-json/wp/v2/product?filter[category_name]=syringe',
+		url: 'http://gmt.dev/wp-json/wp/v2/product?filter[category]=syringes',
 		success: function (data2) {
 			console.log(data2);
 			jquery.each(data2, function (i, val) {
