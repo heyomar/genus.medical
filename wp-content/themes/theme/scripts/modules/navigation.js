@@ -3,14 +3,6 @@ import $ from 'jquery'
 
 function navigation () {
 
-	// hide the mobile nav if they resize window
-	$( window ).resize(function() {
-		if (window.innerWidth >= 768) {
-			$('.dropdown').hide()
-		}
-	});
-
-
 	// add carets to mobile nav items on hover
 	$('.dropdown li').hover(function(){
 		$(this).toggleClass('caret')
@@ -29,6 +21,15 @@ function navigation () {
 				$('body').css('overflow','hidden')
 		}
 	})
+
+
+		// hide the mobile nav if they resize window
+	$( window ).resize(function() {
+		if (window.innerWidth >= 1220) {
+			$('.dropdown').hide()
+			$('body').css('overflow','scroll')
+		} 
+	});
 }
 
 export default navigation

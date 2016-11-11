@@ -18,7 +18,7 @@ nav {
 	& .logo {
 		padding: 0;
 		display: inline-block;
-		width: 25%;
+		padding-right: 50px;
 	}
 
 	& .menu-header-navigation-container {
@@ -58,6 +58,7 @@ nav {
 .dropdown {
 	height: 100vh;
 	padding-bottom: 30px;
+	display: none;
 
 	& ul {
 		padding: 0;
@@ -118,7 +119,7 @@ nav {
 /*––––
 	media queries
 	––––––––––––––––––––––––––––*/
-@media screen and (min-width: 1220px) {
+@media screen and (min-width: 1150px) {
 	.desktop-cta {
 		display: inline-block;
 		position: absolute;
