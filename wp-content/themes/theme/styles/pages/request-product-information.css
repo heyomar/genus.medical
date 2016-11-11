@@ -8,7 +8,7 @@
 		color: var(--blue);
 	}
 
-	& .inner {
+	& .content {
 		padding: 50px 20px;
 	}
 }
