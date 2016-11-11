@@ -1953,6 +1953,10 @@ textarea,
 	/*––––
 	Helper Classes
 	––––––––––––––––––––––––––––*/
+	.mxw-1500-center {
+	max-width: 1500px;
+	margin: 0 auto;
+}
 	.mxw-1100-center {
 	max-width: 1100px;
 	margin: 0 auto;
@@ -2023,83 +2027,135 @@ textarea,
 	/*––––
 	Page Modules
 	––––––––––––––––––––––––––––*/
-	ul {
-	padding: 0;
-}
+	/*––––
+	 style main navigation strip items
+	 and some general styles
+	––––––––––––––––––––––––––––*/
 	nav {
-	max-width: 1300px;
-	margin: 0 auto;
-	padding: 20px;
-	position: relative
+	border-top: 2px solid hsla(116, 45%, 50%, 1)
 }
-	nav .logo {
-  max-width: 185px;
-  height: 55px;
+	nav .inner {
+  background-color: #f8f8f8;
+}
+	.strip {
+	position: relative;
+	padding: 25px;
+	background-color: hsla(0, 0%, 100%, 1)
+}
+	.strip .logo {
+  padding: 0;
   display: inline-block;
+  width: 25%;
 }
-	nav .logo img {
-  width: 150px;
-}
-	.menu-header-navigation-container {
-	display: inline-block;
-	text-align: center;
-	display: none
-}
-	.menu-header-navigation-container ul {
-  margin: 0;
-  text-align: center;
-  background-color: #fefefe;
-}
-	.menu-header-navigation-container ul li {
-  width: auto;
-  padding: 20px 10px;
+	.strip .menu-header-navigation-container {
+  display: none;
 }
 	.handle {
-	display: inline;
 	color: hsla(116, 45%, 50%, 1);
-	cursor: pointer
+	cursor: pointer;
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	        transform: translateY(-50%)
 }
 	.handle .label {
-  text-align: right;
-  position: relative;
   font-size: 12px;
-  position: absolute;
-  right: 60px;
-  padding: 9px 0;
+  padding-right: 8px;
 }
 	.handle .arrow {
   border: 1px solid hsla(116, 45%, 50%, 1);
-  padding: 5px 13px;
+  padding: 8px 13px;
   font-size: 16px;
+}
+	.desktop-cta {
+	display: none;
+}
+	/*––––
+	style the menu items from wp
+	––––––––––––––––––––––––––––*/
+	.dropdown {
+	height: 100vh;
+	padding-bottom: 30px
+}
+	.dropdown ul {
+  padding: 0;
+  margin-bottom: 0;
+}
+	.dropdown ul li {
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+  position: relative;
+}
+	.dropdown ul li:hover {
+  color: hsla(116, 45%, 50%, 1);
+}
+	.dropdown ul a {
+  display: block;
+}
+	/*––––
+	styles the cta's for mobile
+	––––––––––––––––––––––––––––*/
+	.mobile-cta {
+	padding-top: 25px;
+	margin: 0 15px
+}
+	.mobile-cta a {
+  text-align: center;
+  display: block;
+  margin-bottom: 20px;
+}
+	/*––––
+	some helper classes for the
+	mobile menu
+	––––––––––––––––––––––––––––*/
+	.caret {
+}
+	.caret:after {
+  content: '\0025BE';
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
   position: absolute;
-  right: 10px;
+  height: 10px;
+  line-height: 25px;
 }
-	.head-cta {
-	display: inline-block;
-	position: absolute;
-	right: 20px;
-	top: 48%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  display: none;
-}
-	@media screen and (min-width: 768px) {
+	/*––––
+	media queries
+	––––––––––––––––––––––––––––*/
+	@media screen and (min-width: 1220px) {
+	.desktop-cta {
+		display: inline-block;
+		position: absolute;
+		right: 20px;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		        transform: translateY(-50%);
+	}
+
 	.handle {
 		display: none;
 	}
 
-	.head-cta {
-		display: inline-block;
+	.strip {
 	}
-}
-	@media screen and(max-width: 1084px) {
-/*	.head-cta {
-		margin: 15px 0 10px 0;
-		width: 100%;
-		text-align: center;
-		display: block;
-		position: relative;
-	}*/
+
+	.strip .menu-header-navigation-container {
+    display: inline-block;
+  }
+
+	.strip ul {
+    padding: 0;
+  }
+
+	.strip ul li {
+    display: inline-block;
+    padding: 0 10px;
+  }
+
+	.strip ul li:hover {
+    color: hsla(116, 45%, 50%, 1);
+  }
 }
 	footer {
 	background-color: hsla(0, 0%, 20%, 1);

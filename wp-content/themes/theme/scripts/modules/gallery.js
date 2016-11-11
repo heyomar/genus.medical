@@ -32,6 +32,33 @@ function gallery () {
 				$('.image').addClass('zoomIn')
 		}
 	})
+
+ $.ajax({
+ 			url:'http://gmt.dev/wp-json/wp/v2/product?filter[category]=oral-contrast', 
+      success: function(data) {
+      	console.log(data)
+      	$.each(data, function (i, val) {
+      		console.log(val['title']['rendered'])
+      	})
+      },
+      error: function() {
+					console.log('error')
+      }
+   });
+	
+	 $.ajax({
+ 			url:'http://gmt.dev/wp-json/wp/v2/product?filter[category_name]=syringe', 
+      success: function(data2) {
+      	console.log(data2)
+      	$.each(data2, function (i, val) {
+      		console.log(val['title']['rendered'])
+      	})
+      },
+      error: function() {
+					console.log('error')
+      }
+   });
+
 }
 
 export default gallery

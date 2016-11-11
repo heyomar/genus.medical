@@ -1,97 +1,152 @@
-ul {
-	padding: 0;
+/*––––
+	 style main navigation strip items
+	 and some general styles
+	––––––––––––––––––––––––––––*/
+nav {
+	border-top: 2px solid var(--green);
+	& .inner {
+			background-color: #f8f8f8;
+	}
 }
 
-
-nav {
-	max-width: 1300px;
-	margin: 0 auto;
-	padding: 20px;
+.strip {
 	position: relative;
+	padding: 25px;
+	background-color: var(--white);
 
 
 	& .logo {
-		max-width: 185px;
-		height: 55px;
+		padding: 0;
 		display: inline-block;
-		& img {
-			width: 150px;
-		}
+		width: 25%;
+	}
+
+	& .menu-header-navigation-container {
+		display: none;
 	}
 }
-
-.menu-header-navigation-container {
-	display: inline-block;
-	text-align: center;
-	display: none;
-
-	& ul {
-		margin:0;
-		text-align: center;
-		background-color: #fefefe;
-
-
-		& li {
-			width: auto;
-			padding: 20px 10px;
-
-
-		}
-	}
-}
-
 
 .handle {
-	display: inline;
 	color: var(--green);
 	cursor: pointer;
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	transform: translateY(-50%);
 
 	& .label {
-		text-align: right;
-		position: relative;
 		font-size: 12px;
-		position: absolute;
-		right: 60px;
-		padding: 9px 0;
+		padding-right: 8px;
 	}
 
 	& .arrow {
 		border: 1px solid var(--green);
-		padding: 5px 13px;
+		padding: 8px 13px;
 		font-size: 16px;
-		position: absolute;
-		right: 10px;
+	}
+}
+
+.desktop-cta {
+	display: none;
+}
+
+
+
+/*––––
+	style the menu items from wp
+	––––––––––––––––––––––––––––*/
+.dropdown {
+	height: 100vh;
+	padding-bottom: 30px;
+
+	& ul {
+		padding: 0;
+		margin-bottom: 0;
+
+		& li {
+			text-align: center;
+			height: 60px;
+			line-height: 60px;
+			position: relative;
+
+			&:hover {
+				color: var(--green);
+			}
+		}
+
+		& a {
+			display: block;
+		}
 	}
 }
 
 
-.head-cta {
-	display: inline-block;
-	position: absolute;
-	right: 20px;
-	top: 48%;
-  transform: translateY(-50%);
-  display: none;
+
+/*––––
+	styles the cta's for mobile
+	––––––––––––––––––––––––––––*/
+.mobile-cta {
+	padding-top: 25px;
+	margin: 0 15px;
+
+	& a {
+		text-align: center;
+		display: block;
+		margin-bottom: 20px;
+	}
 }
 
 
 
-@media (--tablet) {
+/*––––
+	some helper classes for the
+	mobile menu
+	––––––––––––––––––––––––––––*/
+.caret {
+	&:after {
+		content: '\0025BE';
+		transform: rotate(180deg);
+		position: absolute;
+		height: 10px;
+		line-height: 25px;
+
+	}
+}
+
+
+
+/*––––
+	media queries
+	––––––––––––––––––––––––––––*/
+@media screen and (min-width: 1220px) {
+	.desktop-cta {
+		display: inline-block;
+		position: absolute;
+		right: 20px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
 	.handle {
 		display: none;
 	}
 
-	.head-cta {
-		display: inline-block;
-	}
-}
+	.strip {
+		& .menu-header-navigation-container {
+			display: inline-block;
+		}
 
-@media screen and(max-width: 1084px) {
-/*	.head-cta {
-		margin: 15px 0 10px 0;
-		width: 100%;
-		text-align: center;
-		display: block;
-		position: relative;
-	}*/
+		& ul {
+			padding: 0;
+
+			& li {
+				display: inline-block;
+				padding: 0 10px;
+
+				&:hover {
+					color: var(--green);
+				}
+			}
+		}
+	}
 }

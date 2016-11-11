@@ -10235,49 +10235,90 @@ return jQuery;
 });
 
 function navigation() {
-	jquery('.handle').on('click', function () {
 
+	// hide the mobile nav if they resize window
+	jquery(window).resize(function () {
+		if (window.innerWidth >= 768) {
+			jquery('.dropdown').hide();
+		}
+	});
+
+	// add carets to mobile nav items on hover
+	jquery('.dropdown li').hover(function () {
+		jquery(this).toggleClass('caret');
+	});
+
+	// mobile nav activation and fullscreen lock
+	jquery('.handle').on('click touchend', function () {
 		if (jquery('.open')[0]) {
-			jquery('.menu-header-navigation-container ').removeClass('open');
-			jquery('.menu-header-navigation-container ').slideUp();
+			jquery('.dropdown').removeClass('open');
+			jquery('.dropdown').slideUp();
+			jquery('body').css('overflow', 'scroll');
 		} else {
-			jquery('.menu-header-navigation-container ').slideDown().show();
-			jquery('.menu-header-navigation-container ').addClass('open');
+			jquery('.dropdown').slideDown().show();
+			jquery('.dropdown').addClass('open');
+			jquery('body').css('overflow', 'hidden');
 		}
 	});
 }
 
 function gallery() {
 
-		// initialize var
-		var isClicked = false;
+	// initialize var
+	var isClicked = false;
 
-		//event listener on thumbnail images
-		jquery('.thumb').click(function (e) {
-				// se
-				isClicked = true;
+	//event listener on thumbnail images
+	jquery('.thumb').click(function (e) {
+		// se
+		isClicked = true;
 
-				// get the background image url
-				const bgImage = jquery(this).css("background-image");
-				const viewImage = jquery('.image').css('background-image');
+		// get the background image url
+		const bgImage = jquery(this).css("background-image");
+		const viewImage = jquery('.image').css('background-image');
 
-				// swap the images
-				if (isClicked = true) {
-						jquery(".image").css('background-image', bgImage);
-						jquery(this).css('background-image', viewImage);
-				}
-		});
+		// swap the images
+		if (isClicked = true) {
+			jquery(".image").css('background-image', bgImage);
+			jquery(this).css('background-image', viewImage);
+		}
+	});
 
-		// Zoom feature
-		jquery('.view').on('click', function () {
-				if (jquery('.zoomIn')[0]) {
-						jquery('.image').removeClass('zoomIn');
-						jquery('.image').addClass('zoomNormal');
-				} else {
-						jquery('.image').removeClass('zoomNormal');
-						jquery('.image').addClass('zoomIn');
-				}
-		});
+	// Zoom feature
+	jquery('.view').on('click', function () {
+		if (jquery('.zoomIn')[0]) {
+			jquery('.image').removeClass('zoomIn');
+			jquery('.image').addClass('zoomNormal');
+		} else {
+			jquery('.image').removeClass('zoomNormal');
+			jquery('.image').addClass('zoomIn');
+		}
+	});
+
+	jquery.ajax({
+		url: 'http://gmt.dev/wp-json/wp/v2/product?filter[category]=oral-contrast',
+		success: function (data) {
+			console.log(data);
+			jquery.each(data, function (i, val) {
+				console.log(val['title']['rendered']);
+			});
+		},
+		error: function () {
+			console.log('error');
+		}
+	});
+
+	jquery.ajax({
+		url: 'http://gmt.dev/wp-json/wp/v2/product?filter[category_name]=syringe',
+		success: function (data2) {
+			console.log(data2);
+			jquery.each(data2, function (i, val) {
+				console.log(val['title']['rendered']);
+			});
+		},
+		error: function () {
+			console.log('error');
+		}
+	});
 }
 
 navigation();

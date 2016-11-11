@@ -87,6 +87,11 @@
 		background-repeat: no-repeat;
 	};
 
+	--mxw-1500-center: {
+		max-width: 1500px;
+		margin: 0 auto;
+	};
+
 	--mxw-1100-center: {
 		max-width: 1100px;
 		margin: 0 auto;

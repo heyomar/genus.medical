@@ -1,6 +1,10 @@
 /*––––
 	Helper Classes
 	––––––––––––––––––––––––––––*/
+.mxw-1500-center {
+	@apply --mxw-1500-center;
+}
+
 .mxw-1100-center {
 	@apply --mxw-1100-center;
 }
