@@ -73,7 +73,10 @@
 													<div class="box">
 														<div class="med-sm">
 															<div style="background-image: url('<?php the_field('product_image'); ?>');" class="image">
-																<span class="label">VIEW PRODUCT</span>
+																<a href="/products/<?php 
+																$title = strtolower(get_the_title());
+																echo $string = str_replace(' ', '-', $title ); ?>">
+																	<span class="label">VIEW PRODUCT</span></a>
 															</div>
 															<div class="description">
 																<h4 class="name"><?php the_title(); ?></h4>
