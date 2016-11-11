@@ -3,6 +3,7 @@ footer {
 	min-height: 260px;
 	padding: 80px 20px;
 	text-align: center;
+	border-bottom: 2px solid var(--green);
 }
 
 .logo {
@@ -43,6 +44,11 @@ footer {
 		text-align: left;
 	}
 	.social {
+		display: inline-block;
 		text-align: right;
+		float: right;
+	}
+	.legal {
+		display: inline-block;
 	}
 }
