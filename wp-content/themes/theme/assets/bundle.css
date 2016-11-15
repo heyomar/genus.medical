@@ -2024,6 +2024,16 @@ textarea,
 	textarea:focus {
   border: 1px solid hsla(0, 0%, 20%, 1);
 }
+	select {
+	border: 1px solid hsla(116, 45%, 50%, 1);
+	-webkit-appearance:none;
+	   -moz-appearance:none;
+	        appearance:none;
+	--webkit-appearance:none;
+	padding: 8px 20px;
+	outline: none;
+	border-radius: 0;
+}
 	/*––––
 	Page Modules
 	––––––––––––––––––––––––––––*/
@@ -2238,6 +2248,16 @@ textarea,
 	padding: 30px 20px;
 }
 	.related-products {
+	padding: 30px 20px;
+}
+	.angio-and-cath-lab-syringes {
+	padding: 30px 20px;
+}
+	.ct-syringes {
+	background-color: hsla(0, 0%, 87%, 1);
+	padding: 30px 20px;
+}
+	.mr-syringes {
 	padding: 30px 20px;
 }
 	@media screen and (min-width: 768px) {

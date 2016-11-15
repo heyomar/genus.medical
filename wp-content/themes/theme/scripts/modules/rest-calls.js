@@ -2,8 +2,7 @@ import $ from 'jquery'
 
 function rest() {
 
-
- if($('body').hasClass('single-product')) {
+ if($('body').hasClass('single-product') || $('body').hasClass('how-to-buy')) {
  		// Populate sidebar list of products
 		$.ajax({
 				url:'http://gmt.dev/wp-json/wp/v2/categories?filter[cat]=3', 

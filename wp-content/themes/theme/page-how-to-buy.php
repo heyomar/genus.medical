@@ -18,7 +18,29 @@
 <div class="row">
 	<div class="col-xs-12 col-sm-12 col-md-8">
 		<div class="box">
-			
+			<h3>Distributors</h3>
+			<p>Enter your zip code to find a list of local distributors.</p>
+			<div class="zip-code">
+				<label for="zip-code">Zip Code</label>
+				<input type="number" name="zip-code">
+				<a class="btn blue" onclick="findDistributors()" href="">Find Distributors</a>
+
+				<h3>Nearby Distributors</h3>
+				<div class="sort-by-distributors">
+					<label for="sort-by-distributors">Sort By Distributors</label>
+					<select name="sort-by-distributors">
+						<option>option</option>
+						<option>option</option>
+						<option>option</option>
+						<option>option</option>
+					</select>
+				</div>
+
+				<div class="legend">
+						<span class="oral-contrast-product">Distributes GMT Oral Contrast Products</span>
+						<span class="syringe-products">Distributes GMT Syringes</span>
+				</div>
+			</div>
 		</div>
 	</div>
 

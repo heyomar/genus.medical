@@ -17,7 +17,7 @@
 				<div class="box">
 					<div class="content">
 						<h1 class="title"><?php the_title(); ?></h1>
-						<p class="copy">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore ducimus non voluptate, esse distinctio architecto facilis officia?</p>
+						<p class="copy"><?php the_field('hero_copy') ?></p>
 					</div>
 				</div>
 			</div>

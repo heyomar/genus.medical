@@ -37,6 +37,20 @@
 }
 
 
+.angio-and-cath-lab-syringes {
+	padding: 30px 20px;
+}
+
+.ct-syringes {
+	background-color: var(--fadegray);
+	padding: 30px 20px;
+}
+
+.mr-syringes {
+	padding: 30px 20px;
+}
+
+
 
 @media (--tablet) {
 	.clearhero {

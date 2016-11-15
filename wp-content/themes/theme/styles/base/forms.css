@@ -40,3 +40,12 @@ textarea {
 		border: 1px solid var(--gray);
 	}
 }
+
+select {
+	border: 1px solid var(--green);
+	appearance:none;
+	--webkit-appearance:none;
+	padding: 8px 20px;
+	outline: none;
+	border-radius: 0;
+}

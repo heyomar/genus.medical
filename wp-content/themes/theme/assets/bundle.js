@@ -10236,7 +10236,7 @@ return jQuery;
 
 function rest() {
 
-	if (jquery('body').hasClass('single-product')) {
+	if (jquery('body').hasClass('single-product') || jquery('body').hasClass('how-to-buy')) {
 		// Populate sidebar list of products
 		jquery.ajax({
 			url: 'http://gmt.dev/wp-json/wp/v2/categories?filter[cat]=3',
