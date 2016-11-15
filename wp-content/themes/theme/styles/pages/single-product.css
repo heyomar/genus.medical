@@ -93,6 +93,19 @@
 	}
 }
 
+.list {
+	& ul {
+		padding: 0 0 10px 0;
+		list-style: none;
+		color: var(--green);
+		margin-top: 5px;
+
+		& li {
+			padding: 2px 0;
+		}
+	}
+}
+
 
 .zoomIn {
 	transform: scale(1.8);

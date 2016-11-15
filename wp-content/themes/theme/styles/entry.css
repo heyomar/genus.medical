@@ -24,11 +24,17 @@
 
 
 /*––––
+	Templates
+	––––––––––––––––––––––––––––*/
+		@import 'templates/product-landing.css';
+
+
+
+/*––––
 	Page Styles
 	––––––––––––––––––––––––––––*/
 	@import 'pages/home.css';
 	@import 'pages/about-us.css';
-	@import 'pages/oral-contrast.css';
 	@import 'pages/request-product-information.css';
 	@import 'pages/single-product.css';
 	@import 'pages/how-to-buy.css';

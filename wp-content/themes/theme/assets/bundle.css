@@ -2207,6 +2207,47 @@ textarea,
 	}
 }
 	/*––––
+	Templates
+	––––––––––––––––––––––––––––*/
+	.clearhero {
+	min-height: 400px;
+	width: 100%;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url('../assets/images/oralcontrast__hero-grid.png');
+	z-index: 1;
+	padding:0 20px;
+	color: hsla(0, 0%, 100%, 1)
+}
+	.clearhero .title {
+  margin-bottom: 0;
+}
+	.clearhero .image {
+  text-align: center;
+}
+	.clearhero .image img {
+  max-width: 100%;
+  height: 400px;
+}
+	.computed-tomography {
+	padding: 30px 20px;
+}
+	.x-ray-and-fluoroscopy {
+	background-color: hsla(0, 0%, 87%, 1);
+	padding: 30px 20px;
+}
+	.related-products {
+	padding: 30px 20px;
+}
+	@media screen and (min-width: 768px) {
+	.clearhero {
+	}
+	.clearhero .image {
+    text-align: right;
+  }
+}
+	/*––––
 	Page Styles
 	––––––––––––––––––––––––––––*/
 	.home-hero {
@@ -2294,44 +2335,6 @@ textarea,
 }
 	.mangement .inner .bio {
   color: hsla(0, 0%, 20%, 1);
-}
-	.clearhero {
-	min-height: 400px;
-	width: 100%;
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-image: url('../assets/images/oralcontrast__hero-grid.png');
-	z-index: 1;
-	padding:0 20px;
-	color: hsla(0, 0%, 100%, 1)
-}
-	.clearhero .title {
-  margin-bottom: 0;
-}
-	.clearhero .image {
-  text-align: center;
-}
-	.clearhero .image img {
-  max-width: 100%;
-  height: 400px;
-}
-	.computed-tomography {
-	padding: 30px 20px;
-}
-	.x-ray-and-fluoroscopy {
-	background-color: hsla(0, 0%, 87%, 1);
-	padding: 30px 20px;
-}
-	.related-products {
-	padding: 30px 20px;
-}
-	@media screen and (min-width: 768px) {
-	.clearhero {
-	}
-	.clearhero .image {
-    text-align: right;
-  }
 }
 	.request-product-information {
 }
@@ -2460,6 +2463,17 @@ textarea,
   content: "";
   display: block;
   border-bottom: 2px solid hsla(116, 45%, 50%, 1);
+}
+	.list {
+}
+	.list ul {
+  padding: 0 0 10px 0;
+  list-style: none;
+  color: hsla(116, 45%, 50%, 1);
+  margin-top: 5px;
+}
+	.list ul li {
+  padding: 2px 0;
 }
 	.zoomIn {
 	-webkit-transform: scale(1.8);
