@@ -1,6 +1,6 @@
 import $ from 'jquery'
 
-function gallery () {
+function gallery() {
 
 	// initialize var
 	var isClicked = false;
@@ -32,33 +32,6 @@ function gallery () {
 				$('.image').addClass('zoomIn')
 		}
 	})
-
- // $.ajax({
- // 			url:'http://gmt.dev/wp-json/wp/v2/product?filter[category]=oral-contrast', 
- //      success: function(data) {
- //      	console.log(data)
- //      	$.each(data, function (i, val) {
- //      		console.log(val['title']['rendered'])
- //      	})
- //      },
- //      error: function() {
-	// 				console.log('error')
- //      }
- //   });
-	
-	 $.ajax({
- 			url:'http://gmt.dev/wp-json/wp/v2/product?filter[category]=syringes', 
-      success: function(data2) {
-      	console.log(data2)
-      	$.each(data2, function (i, val) {
-      		console.log(val['title']['rendered'])
-      	})
-      },
-      error: function() {
-					console.log('error')
-      }
-   });
-
 }
 
 export default gallery
