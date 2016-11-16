@@ -4,3 +4,36 @@
 		background-position: center center;
 	}
 }
+
+.legend {
+	& .icon {
+		position: relative;
+
+		&::before {
+			content:url('../assets/images/legend__syringe.svg');
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			margin-right: 10px;
+		}
+	}
+}
+
+
+.select-arrow {
+	position: relative;
+	display: inline-block;
+
+		&::after {
+		content: '\0025BE';
+		position: absolute;
+		line-height: 25px;
+		color: green;
+		line-height: 14px;
+		border: 1px solid var(--green);
+		border-left: none;
+		padding: 10px;
+		right: 0;
+		z-index: -1;
+	}
+}

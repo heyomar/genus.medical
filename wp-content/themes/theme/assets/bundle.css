@@ -2025,6 +2025,7 @@ textarea,
   border: 1px solid hsla(0, 0%, 20%, 1);
 }
 	select {
+	width: 250px;
 	border: 1px solid hsla(116, 45%, 50%, 1);
 	-webkit-appearance:none;
 	   -moz-appearance:none;
@@ -2033,6 +2034,7 @@ textarea,
 	padding: 8px 20px;
 	outline: none;
 	border-radius: 0;
+	border-right: 0;
 }
 	/*––––
 	Page Modules
@@ -2518,5 +2520,33 @@ textarea,
   background: -webkit-linear-gradient(hsla(208, 100%, 30%, .89), hsla(208, 100%, 30%, .89)), url('../assets/images/howtobuy__hero-bg.jpg');
   background: linear-gradient(hsla(208, 100%, 30%, .89), hsla(208, 100%, 30%, .89)), url('../assets/images/howtobuy__hero-bg.jpg');
   background-position: center center;
+}
+	.legend {
+}
+	.legend .icon {
+  position: relative;
+}
+	.legend .icon::before {
+  content: url('../assets/images/legend__syringe.svg');
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+	.select-arrow {
+	position: relative;
+	display: inline-block
+}
+	.select-arrow::after {
+  content: '\0025BE';
+  position: absolute;
+  line-height: 25px;
+  color: green;
+  line-height: 14px;
+  border: 1px solid hsla(116, 45%, 50%, 1);
+  border-left: none;
+  padding: 10px;
+  right: 0;
+  z-index: -1;
 }
 /*# sourceMappingURL=bundle.css.map */

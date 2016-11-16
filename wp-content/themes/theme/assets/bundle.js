@@ -10255,6 +10255,18 @@ function rest() {
 			}
 		});
 	} else {}
+
+	var locations;
+	jquery.ajax({
+		url: 'http://gmt.dev/wp-json/wp/v2/location?per_page=100',
+		success: function (data) {
+			console.log(data);
+			locations = data;
+		},
+		error: function () {
+			console.log('There is an error with the rest function');
+		}
+	});
 }
 
 function navigation() {

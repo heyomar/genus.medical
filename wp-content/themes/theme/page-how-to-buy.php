@@ -24,24 +24,23 @@
 				<label for="zip-code">Zip Code</label>
 				<input type="number" name="zip-code">
 				<a class="btn blue" onclick="findDistributors()" href="">Find Distributors</a>
+			</div>
 
 				<h3>Nearby Distributors</h3>
 				<div class="sort-by-distributors">
 					<label for="sort-by-distributors">Sort By Distributors</label>
-					<select name="sort-by-distributors">
-						<option>option</option>
-						<option>option</option>
-						<option>option</option>
-						<option>option</option>
-					</select>
+					<div class="select-arrow"><select name="sort-by-distributors">
+											<option>option</option>
+
+										</select></div>
 				</div>
 
 				<div class="legend">
-						<span class="oral-contrast-product">Distributes GMT Oral Contrast Products</span>
-						<span class="syringe-products">Distributes GMT Syringes</span>
+						<div class="oral-contrast-products icon">Distributes GMT Oral Contrast Products</div>
+						<div class="syringe-products icon">Distributes GMT Syringes</div>
 				</div>
 			</div>
-		</div>
+		
 	</div>
 
 

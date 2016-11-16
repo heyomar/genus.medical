@@ -42,10 +42,12 @@ textarea {
 }
 
 select {
+	width: 250px;
 	border: 1px solid var(--green);
 	appearance:none;
 	--webkit-appearance:none;
 	padding: 8px 20px;
 	outline: none;
 	border-radius: 0;
+	border-right: 0;
 }
