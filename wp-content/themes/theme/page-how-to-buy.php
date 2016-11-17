@@ -35,8 +35,17 @@
 					<div class="sort-by-distributors">
 						<label for="sort-by-distributors">Sort By Distributors</label>
 						<div class="select-arrow">
-							<select name="sort-by-distributors">
-									<option>option</option>
+							<select id="select-distributor" name="sort-by-distributors">
+								<option value="null">Select</option>
+									<?php 
+										$terms = get_terms( 'distributor', array(
+												'hide_empty' => false,
+										) );
+
+										foreach ($terms as $term) {
+											echo "<option value='" . $term->term_id . "'>" . $term->name . "</option>"; 
+										}
+									?>
 							</select>
 						</div>
 					</div>
@@ -53,9 +62,9 @@
 
 				<script id='demo' type='x-tmpl-mustache'>
 					{{#locations}}
-						<div class="col-xs-6 col-sm-4 col-md-4">
+						<div data-distid="{{distributor.term_id}}" class="location col-xs-6 col-sm-4 col-md-4">
 							<div class="inner">
-								<div class="logo" style="background-image:url('{{logo_url}}');"></div>
+								<div class="logo" style="background-image:url('{{distributor.logo}}');"></div>
 								<strong>{{title.rendered}}</strong>
 								<span class="city-state">{{city}}, {{state}}</span>
 								<span class="zip-code">{{zip_code}}</span>
