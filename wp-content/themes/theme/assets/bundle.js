@@ -10919,6 +10919,7 @@ var mustache = createCommonjsModule(function (module, exports) {
 }));
 });
 
+// init var
 var dataSet;
 
 function locations() {
@@ -10926,24 +10927,58 @@ function locations() {
 				url: 'http://gmt.dev/wp-json/wp/v2/location?per_page=100&callback=?',
 				success: function (data) {
 
-						dataSet = { locations: data };
+						if (jquery('body').hasClass('how-to-buy')) {
+								dataSet = { locations: data };
 
-						// get the template
-						var template = jquery('#demo').html();
+								// get the template
+								var template = jquery('#demo').html();
 
-						// parse the template
-						mustache.parse(template);
+								// parse the template
+								mustache.parse(template);
 
-						// inject the data into the parsed template
-						var rendered = mustache.render(template, dataSet);
+								// inject the data into the parsed template
+								var rendered = mustache.render(template, dataSet);
 
-						// inject the rendered template into the dom
-						jquery('#location').html(rendered);
+								// inject the rendered template into the dom
+								jquery('#location').html(rendered);
+						}
 				},
 				error: function () {
 						console.log('There is an error with the locations function');
 				}
 		});
+
+		// watch distributor dropdown for change then run filter
+		jquery('#select-distributor').change(function () {
+				filterLocations();
+		});
+
+		// filter locations
+		function filterLocations() {
+
+				// get the value of the selected option
+				var selected = jquery("#select-distributor option:selected").val();
+
+				// for each item with a class of location get the data attribute
+				jquery('.location').each(function () {
+						var id = jquery(this).data('distid');
+
+						// show everything on null or defualt selection
+						if (selected == 'null') {
+								jquery('.location').show();
+						}
+
+						// check selected value against the id of the locations 
+						else if (selected == id) {
+										jquery(this).fadeIn();
+								}
+
+								// if the selected doesnt match the id of the location, hide that homie!
+								else if (selected !== id) {
+												jquery(this).hide();
+										}
+				});
+		}
 }
 
 function gallery() {
