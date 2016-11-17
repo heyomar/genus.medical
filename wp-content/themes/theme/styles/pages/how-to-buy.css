@@ -37,6 +37,10 @@
 	& sup {
 		color: var(--green);
 	}
+
+	& input {
+		width: 100%;
+	}
 }
 
 
@@ -106,8 +110,11 @@
 		display: block;
 	}
 
+	& .inner {
+		padding-bottom: 25px;
+	}
+
 	& .logo {
-		border: 1px solid red;
 		height: 115px;
 		max-width: 160px;
 		@apply --background-standard;
@@ -122,6 +129,10 @@
 	––––––––––––––––––––––––––––*/
 @media (--tablet) {
 	.select-arrow {
+		width: 350px;
+	}
+
+	.zip-code {
 		width: 350px;
 	}
 }

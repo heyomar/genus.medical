@@ -2552,6 +2552,9 @@ textarea,
 	.find sup {
   color: hsla(116, 45%, 50%, 1);
 }
+	.find input {
+  width: 100%;
+}
 	/*––––
 	Nearby - for the distributors
 	select dropdown
@@ -2606,8 +2609,10 @@ textarea,
 	#location span {
   display: block;
 }
+	#location .inner {
+  padding-bottom: 25px;
+}
 	#location .logo {
-  border: 1px solid red;
   height: 115px;
   max-width: 160px;
   background-position: center;
@@ -2620,6 +2625,10 @@ textarea,
 	––––––––––––––––––––––––––––*/
 	@media screen and (min-width: 768px) {
 	.select-arrow {
+		width: 350px;
+	}
+
+	.zip-code {
 		width: 350px;
 	}
 }
