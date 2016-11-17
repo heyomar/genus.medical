@@ -91,9 +91,9 @@ function slug_register_meta() {
     );
 
     register_rest_field( 'location',
-        'logo',
+        'distributor',
         array(
-            'get_callback'    => 'slug_get_meta',
+            'get_callback'    => 'get_distributor',
             'update_callback' => null,
             'schema'          => null,
         )
@@ -111,4 +111,15 @@ function slug_register_meta() {
  */
 function slug_get_meta( $object, $field_name, $request ) {
     return get_field($field_name, $object[ 'id' ], false);
+}
+
+function get_distributor($object, $field_name, $request){
+    $distributors =  get_the_terms($object -> ID, 'distributor');
+
+    foreach ($distributors as $d) {
+        $d->logo = get_field('logo', $d);
+        $d->carries_syringes = get_field('carries_syringes', $d);
+        $d->carries_oral_contrast_products = get_field('carries_oral_contrast_products', $d);
+        return $d;
+    }
 }
