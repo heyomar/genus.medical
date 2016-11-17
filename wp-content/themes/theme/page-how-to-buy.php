@@ -69,6 +69,8 @@
 								<span class="city-state">{{city}}, {{state}}</span>
 								<span class="zip-code">{{zip_code}}</span>
 								<span class="phone-number">{{phone_number}}</span>
+								<div class="syringe {{distributor.carries_syringes}}"></div>
+								<div class="contrast {{distributor.carries_oral_contrast_products}}"></div>
 							</div>
 						</div>
 					{{/locations}}

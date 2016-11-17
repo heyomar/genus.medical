@@ -24,11 +24,14 @@ function locations() {
 						// inject the rendered template into the dom
 						$('#location').html(rendered) 
 					} 
+
+
 				},
 				error: function() {
 						console.log('There is an error with the locations function')
 				}
 		 });
+
 
 
 		// watch distributor dropdown for change then run filter
@@ -51,7 +54,7 @@ function locations() {
 						$('.location').show()
 				}
 
-				// check selected value against the id of the locations 
+				// check selected value against the id of the locations then show
 				else if (selected == id) {
 						$(this).fadeIn()
 				}
@@ -59,24 +62,10 @@ function locations() {
 				// if the selected doesnt match the id of the location, hide that homie!
 				else if (selected !== id){
 						$(this).hide()
-						
 				}
 			})
 		}
 
-
-
-
-
-
-
-
-
-
-
-
-
-}
-
+}// END EXPORT FUNCTION
 
 export default locations

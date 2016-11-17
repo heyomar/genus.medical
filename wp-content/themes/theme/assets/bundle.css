@@ -2543,6 +2543,9 @@ textarea,
 	.how-to-buy input {
   display: block;
 }
+	.how-to-buy.false {
+  display: none;
+}
 	/*––––
 	Find - for zip code input field
 	and button
@@ -2619,6 +2622,25 @@ textarea,
   background-size: cover;
   background-repeat: no-repeat;
   margin-bottom: 10px;
+}
+	#location .phone-number {
+  padding-bottom: 5px;
+}
+	.syringe {
+	display: inline-block
+}
+	.syringe.true {
+  height: 25px;
+  width: 25px;
+  background-image: url('../assets/images/legend__syringe.svg');
+}
+	.contrast {
+	display: inline-block
+}
+	.contrast.true {
+  height: 25px;
+  width: 25px;
+  background-image: url('../assets/images/legend__barium.svg');
 }
 	/*––––
 	Media Queries

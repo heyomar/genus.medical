@@ -25,6 +25,10 @@
 	& input {
 		display: block;
 	}
+
+	&.false {
+		display: none;
+	}
 }
 
 
@@ -120,8 +124,29 @@
 		@apply --background-standard;
 		margin-bottom: 10px;
 	}
+
+	& .phone-number {
+		padding-bottom: 5px;
+	}
 }
 
+.syringe {
+	display: inline-block;
+	&.true{
+		height: 25px;
+		width: 25px;
+		background-image: url('../assets/images/legend__syringe.svg');
+	}
+}
+
+.contrast {
+	display: inline-block;
+	&.true {
+		height: 25px;
+		width: 25px;
+		background-image: url('../assets/images/legend__barium.svg');
+	}
+}
 
 
 /*––––

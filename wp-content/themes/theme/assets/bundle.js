@@ -10968,7 +10968,7 @@ function locations() {
 								jquery('.location').show();
 						}
 
-						// check selected value against the id of the locations 
+						// check selected value against the id of the locations then show
 						else if (selected == id) {
 										jquery(this).fadeIn();
 								}
@@ -10979,7 +10979,7 @@ function locations() {
 										}
 				});
 		}
-}
+} // END EXPORT FUNCTION
 
 function gallery() {
 
