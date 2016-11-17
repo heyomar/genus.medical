@@ -19,14 +19,14 @@
 			<div class="col-xs-12 col-sm-6">
 					<div class="box">
 						<div class="inner callout-oralcontrast">
-							<a href="#"><span class="label">View Product</span></a>
+							<a href="#"><span class="label">Oral Contrast</span></a>
 						</div>
 					</div>
 			</div>
 			<div class="col-xs-12 col-sm-6">
 					<div class="box">
 						<div class="inner callout-powerinjector">
-							<a href="#"><span class="label">View Product</span></a>
+							<a href="#"><span class="label">Power Injector Syringes</span></a>
 						</div>
 					</div>
 			</div>
