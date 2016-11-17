@@ -1,12 +1,12 @@
 'use strict'
 
-import rest from './modules/rest-calls'
+import sidebar from './modules/product-sidebar'
 import navigation from './modules/navigation'
+import locations from './modules/locations'
 import gallery from './modules/gallery'
-
 
 
 navigation()
 gallery()
-rest()
-
+sidebar()
+locations()

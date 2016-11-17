@@ -1987,6 +1987,10 @@ textarea,
 	.nopad {
 	padding: 0;
 }
+	label {
+	font-weight: bold;
+	padding-bottom: 8px;
+}
 	input {
 	border: 1px solid hsla(116, 45%, 50%, 1);
 	-webkit-appearance:none;
@@ -2025,7 +2029,7 @@ textarea,
   border: 1px solid hsla(0, 0%, 20%, 1);
 }
 	select {
-	width: 250px;
+	width: 100%;
 	border: 1px solid hsla(116, 45%, 50%, 1);
 	-webkit-appearance:none;
 	   -moz-appearance:none;
@@ -2514,6 +2518,9 @@ textarea,
     position: absolute;
   }
 }
+	/*––––
+	General & Global stles for page
+	––––––––––––––––––––––––––––*/
 	.how-to-buy {
 }
 	.how-to-buy .hero {
@@ -2521,21 +2528,38 @@ textarea,
   background: linear-gradient(hsla(208, 100%, 30%, .89), hsla(208, 100%, 30%, .89)), url('../assets/images/howtobuy__hero-bg.jpg');
   background-position: center center;
 }
-	.legend {
+	.how-to-buy .content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 60px 20px;
 }
-	.legend .icon {
-  position: relative;
+	.how-to-buy .content .title {
+  color: hsla(116, 45%, 50%, 1);
+  font-weight: normal;
 }
-	.legend .icon::before {
-  content: url('../assets/images/legend__syringe.svg');
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
+	.how-to-buy label {
+  display: block;
 }
+	.how-to-buy input {
+  display: block;
+}
+	/*––––
+	Find - for zip code input field
+	and button
+	––––––––––––––––––––––––––––*/
+	.find {
+}
+	.find sup {
+  color: hsla(116, 45%, 50%, 1);
+}
+	/*––––
+	Nearby - for the distributors
+	select dropdown
+	––––––––––––––––––––––––––––*/
 	.select-arrow {
 	position: relative;
-	display: inline-block
+	display: inline-block;
+	width: 100%
 }
 	.select-arrow::after {
   content: '\0025BE';
@@ -2547,6 +2571,56 @@ textarea,
   border-left: none;
   padding: 10px;
   right: 0;
+  top: 0;
   z-index: -1;
+}
+	/*––––
+	Legend - for the keys and icons
+	––––––––––––––––––––––––––––*/
+	.legend {
+	padding: 20px 0
+}
+	.legend .icon {
+  position: relative;
+  padding-left: 30px;
+  padding-bottom: 10px;
+}
+	.legend .icon::before {
+  width: 15px;
+  margin-right: 10px;
+  position: absolute;
+  left: 0;
+}
+	.legend .icon.barium::before {
+  content: url('../assets/images/legend__barium.svg');
+}
+	.legend .icon.syringe::before {
+  content: url('../assets/images/legend__syringe.svg');
+}
+	/*––––
+	Locations - for the location blocks
+	that get pulled in via javascript
+	––––––––––––––––––––––––––––*/
+	#location {
+}
+	#location span {
+  display: block;
+}
+	#location .logo {
+  border: 1px solid red;
+  height: 115px;
+  max-width: 160px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 10px;
+}
+	/*––––
+	Media Queries
+	––––––––––––––––––––––––––––*/
+	@media screen and (min-width: 768px) {
+	.select-arrow {
+		width: 350px;
+	}
 }
 /*# sourceMappingURL=bundle.css.map */

@@ -1,28 +1,54 @@
+/*––––
+	General & Global stles for page
+	––––––––––––––––––––––––––––*/
 .how-to-buy {
 	& .hero {
 		background: linear-gradient(hsla(208, 100%, 30%, .89), hsla(208, 100%, 30%, .89)), url('../assets/images/howtobuy__hero-bg.jpg');
 		background-position: center center;
 	}
-}
 
-.legend {
-	& .icon {
-		position: relative;
+	& .content {
+		max-width: 600px;
+		margin: 0 auto;
+		padding: 60px 20px;
 
-		&::before {
-			content:url('../assets/images/legend__syringe.svg');
-			display: inline-block;
-			width: 20px;
-			height: 20px;
-			margin-right: 10px;
+		& .title {
+			color: var(--green);
+			font-weight: normal;
 		}
+	}
+
+	& label {
+		display: block;
+	}
+
+	& input {
+		display: block;
 	}
 }
 
 
+
+/*––––
+	Find - for zip code input field
+	and button
+	––––––––––––––––––––––––––––*/
+.find {
+	& sup {
+		color: var(--green);
+	}
+}
+
+
+
+/*––––
+	Nearby - for the distributors
+	select dropdown
+	––––––––––––––––––––––––––––*/
 .select-arrow {
 	position: relative;
 	display: inline-block;
+	width: 100%;
 
 		&::after {
 		content: '\0025BE';
@@ -34,6 +60,68 @@
 		border-left: none;
 		padding: 10px;
 		right: 0;
+		top: 0;
 		z-index: -1;
+	}
+}
+
+
+
+/*––––
+	Legend - for the keys and icons
+	––––––––––––––––––––––––––––*/
+.legend {
+	padding: 20px 0;
+
+	& .icon {
+		position: relative;
+		padding-left: 30px;
+		padding-bottom: 10px;
+
+		&::before {
+			width: 15px;
+			margin-right: 10px;
+			position: absolute;
+			left: 0;
+		}
+
+		&.barium::before {
+			content:url('../assets/images/legend__barium.svg');
+		}
+
+		&.syringe::before {
+			content:url('../assets/images/legend__syringe.svg');
+		}
+	}
+}
+
+
+
+/*––––
+	Locations - for the location blocks
+	that get pulled in via javascript
+	––––––––––––––––––––––––––––*/
+#location {
+	& span {
+		display: block;
+	}
+
+	& .logo {
+		border: 1px solid red;
+		height: 115px;
+		max-width: 160px;
+		@apply --background-standard;
+		margin-bottom: 10px;
+	}
+}
+
+
+
+/*––––
+	Media Queries
+	––––––––––––––––––––––––––––*/
+@media (--tablet) {
+	.select-arrow {
+		width: 350px;
 	}
 }
