@@ -2,16 +2,19 @@
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 	<div class="home-hero">
-		<div class="inner mxw-900-center">
-				<h1 class="title"><?php the_field('hero_title'); ?></h1>
-				<?php the_field('hero_copy'); ?>
-				<h3 class="sub-title"><?php the_field('hero_subline'); ?></h3>
+		<div class="inner mxw-1100-center">
+				<div class="content">
+          <div class="skin"><h1 class="title"><?php the_field('hero_title'); ?></h1>
+				      <?php the_field('hero_copy'); ?>
+				      <h3 class="sub-title"><?php the_field('hero_subline'); ?></h3>
+          </div>
+        </div>
 		</div>
-		<a href="#">
+		<!-- <a href="#">
 			<span class="arrowbox">
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/arrow__down.png">
 			</span>
-		</a>
+		</a> -->
 	</div>
 
 	<div class="med">
@@ -36,7 +39,7 @@
 	<div class="cta cta-green">
 		<div class="inner">
 			<h2><?php the_field('cta_title'); ?></h2>
-			<a href="/" class="btn white"><?php the_field('cta_button') ?></a>
+			<a href="/request-product-information" class="btn white"><?php the_field('cta_button') ?></a>
 		</div>
 </div>
 	<?php endwhile; ?>

@@ -4,6 +4,8 @@
 	––––––––––––––––––––––––––––*/
 nav {
 	border-top: 2px solid var(--green);
+	position: relative;
+	z-index: 1000;
 	& .inner {
 			background-color: #f8f8f8;
 	}

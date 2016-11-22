@@ -1,8 +1,9 @@
 .home-hero {
 	min-height: 800px;
-	background: linear-gradient(hsla(208, 100%, 30%, .85), hsla(208, 100%, 30%, .85)), url('../assets/images/home__hero.jpg');
-	background-size: cover;
-	background-position: center left;
+	background: url('../assets/images/home__hero.jpg');
+  @apply --background-standard;
+  overflow: hidden;
+
 	text-align: center;
 	color: var(--white);
 	position: relative;
@@ -11,11 +12,22 @@
 	& .inner {
 		@apply --absolute-center;
 		padding: 0 30px;
-    border: 1px solid red;
 	}
+
+  & .content {
+    &::after {
+      content:url('../assets/images/home__hero-figure.png');
+      position: absolute;
+      top: -180px;
+      height: 100px;
+      right: -200px;
+      z-index: -1;
+    }
+  }
 
 	& .title {
 		margin: 0;
+    padding: 20px 5px;
     border: 5px solid var(--green);
 	}
 
@@ -49,4 +61,39 @@
 
 .callout-powerinjector{
 	background-image: url('../assets/images/home__callout-powerinjector.jpg');
+}
+
+
+
+/*––––
+	Media Queries
+	––––––––––––––––––––––––––––*/
+@media (--tablet) {
+  .home-hero {
+    & .content {
+      min-height: 500px;
+      border: 5px solid var(--green);
+      position: relative;
+
+      &::after {
+        position: absolute;
+        top: -216px;
+        right: -220px;
+        z-index: 3;
+      }
+    }
+
+    & .skin {
+      padding: 0 50px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 4;
+    }
+
+    & .title {
+      border: none;
+    }
+  }
+
 }

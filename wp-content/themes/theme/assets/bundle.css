@@ -2083,7 +2083,9 @@ textarea,
 	 and some general styles
 	––––––––––––––––––––––––––––*/
 	nav {
-	border-top: 2px solid hsla(116, 45%, 50%, 1)
+	border-top: 2px solid hsla(116, 45%, 50%, 1);
+	position: relative;
+	z-index: 1000
 }
 	nav .inner {
   background-color: #f8f8f8;
@@ -2353,10 +2355,12 @@ textarea,
 }
 	.home-hero {
 	min-height: 800px;
-	background: -webkit-linear-gradient(hsla(208, 100%, 30%, .85), hsla(208, 100%, 30%, .85)), url('../assets/images/home__hero.jpg');
-	background: linear-gradient(hsla(208, 100%, 30%, .85), hsla(208, 100%, 30%, .85)), url('../assets/images/home__hero.jpg');
-	background-size: cover;
-	background-position: center left;
+	background: url('../assets/images/home__hero.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+
 	text-align: center;
 	color: hsla(0, 0%, 100%, 1);
 	position: relative;
@@ -2370,10 +2374,20 @@ textarea,
           transform: translate(-50%,-50%);
   width: 100%;
   padding: 0 30px;
-  border: 1px solid red;
+}
+	.home-hero .content {
+}
+	.home-hero .content::after {
+  content: url('../assets/images/home__hero-figure.png');
+  position: absolute;
+  top: -180px;
+  height: 100px;
+  right: -200px;
+  z-index: -1;
 }
 	.home-hero .title {
   margin: 0;
+  padding: 20px 5px;
   border: 5px solid hsla(116, 45%, 50%, 1);
 }
 	.home-hero p {
@@ -2402,6 +2416,36 @@ textarea,
 }
 	.callout-powerinjector{
 	background-image: url('../assets/images/home__callout-powerinjector.jpg');
+}
+	/*––––
+	Media Queries
+	––––––––––––––––––––––––––––*/
+	@media screen and (min-width: 768px) {
+  .home-hero {
+  }
+  .home-hero .content {
+    min-height: 500px;
+    border: 5px solid hsla(116, 45%, 50%, 1);
+    position: relative;
+  }
+  .home-hero .content::after {
+    position: absolute;
+    top: -216px;
+    right: -220px;
+    z-index: 3;
+  }
+  .home-hero .skin {
+    padding: 0 50px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    z-index: 4;
+  }
+  .home-hero .title {
+    border: none;
+  }
+
 }
 	.about-us {
 }
