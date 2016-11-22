@@ -2280,6 +2280,28 @@ textarea,
 	/*––––
 	Page Styles
 	––––––––––––––––––––––––––––*/
+	.error-404 {
+  background-image: url('../assets/images/404__bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: relative
+}
+	.error-404 .inner {
+  position: absolute;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+  width: 100%;
+  text-align: center;
+}
+	.error-404 .title {
+  color: hsla(0, 0%, 100%, 1);
+  font-size: 60px;
+}
 	.home-hero {
 	min-height: 800px;
 	background: -webkit-linear-gradient(hsla(208, 100%, 30%, .85), hsla(208, 100%, 30%, .85)), url('../assets/images/home__hero.jpg');
@@ -2693,4 +2715,5 @@ textarea,
   color: hsla(116, 45%, 50%, 1);
   text-decoration: underline;
 }
+
 /*# sourceMappingURL=bundle.css.map */

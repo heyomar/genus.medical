@@ -1,0 +1,17 @@
+.error-404 {
+  background-image: url('../assets/images/404__bg.jpg');
+  @apply --background-standard;
+  height: 100vh;
+  position: relative;
+
+  & .inner {
+    position: absolute;
+    @apply --absolute-center;
+    text-align: center;
+  }
+
+  & .title {
+    color: var(--white);
+    font-size: 60px;
+  }
+}

@@ -11027,7 +11027,6 @@ function locations() {
           // $('html, body').animate({
           //   scrollTop: $("#demo").offset().top
           // }, 2000);
-
         } else {
           console.log('not enough');
           jquery('.error').fadeIn();
