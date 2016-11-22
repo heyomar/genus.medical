@@ -1,6 +1,6 @@
 :root{
 /*––––
-	Colors 
+	Colors
 	––––––––––––––––––––––––––––*/
 	--white: hsla(0, 0%, 100%, 1);
 	--green: hsla(116, 45%, 50%, 1);
@@ -28,7 +28,7 @@
 
 
 /*––––
-	Type Element Mixins
+	Type Defualt Styles
 	––––––––––––––––––––––––––––*/
 	--h1: {
 		font-size: 72px;
@@ -68,8 +68,31 @@
 
 
 
+  /*––––
+  	Mobile Font Sizes
+  	––––––––––––––––––––––––––––*/
+  	--mobile-h1: {
+  		font-size: 38px;
+  		line-height: 1.5;
+  		font-weight: 500;
+  	};
+
+    --mobile-h2: {
+  		font-size: 26px;
+  		line-height: 1.5;
+  		font-weight: 500;
+  	};
+
+    --mobile-h3: {
+  		font-size: 18px;
+  		line-height: 1.5;
+  		font-weight: 500;
+  	};
+
+
+
 /*––––
-	Component Mixins 
+	Component Mixins
 	––––––––––––––––––––––––––––*/
 	--btn: {
 		font-size: 14px;
@@ -115,5 +138,3 @@
 	};
 
 }
-
-

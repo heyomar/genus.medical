@@ -1733,7 +1733,7 @@ textarea,
 	––––––––––––––––––––––––––––*/
 	:root{
 /*––––
-	Colors 
+	Colors
 	––––––––––––––––––––––––––––*/
 
 
@@ -1751,13 +1751,19 @@ textarea,
 
 
 /*––––
-	Type Element Mixins
+	Type Defualt Styles
 	––––––––––––––––––––––––––––*/;
 
 
 
+  /*––––
+  	Mobile Font Sizes
+  	––––––––––––––––––––––––––––*/;
+
+
+
 /*––––
-	Component Mixins 
+	Component Mixins
 	––––––––––––––––––––––––––––*/;
 
 
@@ -1917,22 +1923,25 @@ textarea,
   position: absolute;
   right: 10px;
 }
+	/*––––
+  Base
+	––––––––––––––––––––––––––––*/
 	body {
 	font-family: "Gotham SSm A", "Gotham SSm B", Gotham, sans-serif;
 }
 	h1 {
-	font-size: 72px;
+	font-size: 38px;
 	line-height: 1.5;
 	font-weight: 500;
 }
 	h2 {
-	font-size: 36px;
-	line-height: 1.2;
+	font-size: 26px;
+	line-height: 1.5;
 	font-weight: 500;
 }
 	h3 {
-	font-size: 24px;
-	line-height: 1;
+	font-size: 18px;
+	line-height: 1.5;
 	font-weight: 500;
 }
 	h4 {
@@ -1949,6 +1958,28 @@ textarea,
 	:link,:visited {
 	text-decoration: none;
 	color: inherit;
+}
+	/*––––
+	Responsive Headers
+	––––––––––––––––––––––––––––*/
+	@media screen and (min-width: 768px) {
+  h1 {
+  	font-size: 72px;
+  	line-height: 1.5;
+  	font-weight: 500;
+  }
+
+  h2 {
+  	font-size: 36px;
+  	line-height: 1.2;
+  	font-weight: 500;
+  }
+
+  h3 {
+  	font-size: 24px;
+  	line-height: 1;
+  	font-weight: 500;
+  }
 }
 	/*––––
 	Helper Classes
@@ -2339,9 +2370,11 @@ textarea,
           transform: translate(-50%,-50%);
   width: 100%;
   padding: 0 30px;
+  border: 1px solid red;
 }
-	.home-hero h1 {
+	.home-hero .title {
   margin: 0;
+  border: 5px solid hsla(116, 45%, 50%, 1);
 }
 	.home-hero p {
   color: hsla(0, 0%, 87%, 1);

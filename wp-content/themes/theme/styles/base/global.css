@@ -1,17 +1,20 @@
+/*––––
+  Base
+	––––––––––––––––––––––––––––*/
 body {
 	@apply --gotham;
 }
 
 h1 {
-	@apply --h1;
+	@apply --mobile-h1;
 }
 
 h2 {
-	@apply --h2;
+	@apply --mobile-h2;
 }
 
 h3 {
-	@apply --h3;
+	@apply --mobile-h3;
 }
 
 h4 {
@@ -24,4 +27,24 @@ p {
 
 :any-link {
 	@apply --a;
+}
+
+
+
+
+/*––––
+	Responsive Headers
+	––––––––––––––––––––––––––––*/
+@media (--tablet) {
+  h1 {
+  	@apply --h1;
+  }
+
+  h2 {
+  	@apply --h2;
+  }
+
+  h3 {
+  	@apply --h3;
+  }
 }

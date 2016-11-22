@@ -11,10 +11,12 @@
 	& .inner {
 		@apply --absolute-center;
 		padding: 0 30px;
+    border: 1px solid red;
 	}
 
-	& h1 {
+	& .title {
 		margin: 0;
+    border: 5px solid var(--green);
 	}
 
 	& p {

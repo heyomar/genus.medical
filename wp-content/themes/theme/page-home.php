@@ -3,9 +3,9 @@
 
 	<div class="home-hero">
 		<div class="inner mxw-900-center">
-				<h1><?php the_field('hero_title'); ?></h1>
+				<h1 class="title"><?php the_field('hero_title'); ?></h1>
 				<?php the_field('hero_copy'); ?>
-				<h3><?php the_field('hero_subline'); ?></h3>
+				<h3 class="sub-title"><?php the_field('hero_subline'); ?></h3>
 		</div>
 		<a href="#">
 			<span class="arrowbox">
@@ -13,7 +13,7 @@
 			</span>
 		</a>
 	</div>
-	
+
 	<div class="med">
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">

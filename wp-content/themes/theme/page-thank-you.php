@@ -1,8 +1,7 @@
 <?php get_header(); ?>
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-    <div class="bluehero">
-    </div>
+    <div class="bluehero"></div>
 
     <div class="content">
       <div class="inner mxw-900-center">
@@ -17,6 +16,7 @@
     			<a href="/request-product-information" class="btn white">Request Product Information</a>
     		</div>
     </div>
+    
 	<?php endwhile; ?>
 	<?php endif ?>
 <?php get_footer(); ?>
