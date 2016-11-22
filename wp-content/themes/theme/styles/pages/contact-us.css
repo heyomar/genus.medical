@@ -1,0 +1,40 @@
+/*––––
+	General Page Styles
+	––––––––––––––––––––––––––––*/
+.contact-us {
+	& .bluehero {
+		background:linear-gradient(hsla(208, 100%, 30%, .95), hsla(208, 100%, 30%, .95)), url('../assets/images/contactus__hero-bg.jpg');
+		@apply --background-standard;
+	}
+
+	& .content {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 60px 20px;
+
+		& .title {
+			color: var(--blue);
+		}
+
+		& .nf-field-element textarea {
+			height: 125px;
+		}
+	}
+}
+
+
+
+
+/*––––
+	Sidebar
+	––––––––––––––––––––––––––––*/
+.sidebar {
+	& address {
+		font-style: normal;
+	}
+
+	& a {
+		color: var(--green);
+		text-decoration: underline;
+	}
+}

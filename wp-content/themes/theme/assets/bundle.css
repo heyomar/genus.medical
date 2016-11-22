@@ -2034,11 +2034,15 @@ textarea,
 	-webkit-appearance:none;
 	   -moz-appearance:none;
 	        appearance:none;
-	--webkit-appearance:none;
 	padding: 8px 20px;
 	outline: none;
 	border-radius: 0;
 	border-right: 0;
+}
+	.error {
+  color: red;
+  font-size: 12px;
+  padding-top: 5px;
 }
 	/*––––
 	Page Modules
@@ -2653,5 +2657,40 @@ textarea,
 	.zip-code {
 		width: 350px;
 	}
+}
+	/*––––
+	General Page Styles
+	––––––––––––––––––––––––––––*/
+	.contact-us {
+}
+	.contact-us .bluehero {
+  background: -webkit-linear-gradient(hsla(208, 100%, 30%, .95), hsla(208, 100%, 30%, .95)), url('../assets/images/contactus__hero-bg.jpg');
+  background: linear-gradient(hsla(208, 100%, 30%, .95), hsla(208, 100%, 30%, .95)), url('../assets/images/contactus__hero-bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+	.contact-us .content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+	.contact-us .content .title {
+  color: hsla(208, 100%, 30%, 1);
+}
+	.contact-us .content .nf-field-element textarea {
+  height: 125px;
+}
+	/*––––
+	Sidebar
+	––––––––––––––––––––––––––––*/
+	.sidebar {
+}
+	.sidebar address {
+  font-style: normal;
+}
+	.sidebar a {
+  color: hsla(116, 45%, 50%, 1);
+  text-decoration: underline;
 }
 /*# sourceMappingURL=bundle.css.map */

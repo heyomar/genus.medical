@@ -10919,66 +10919,156 @@ var mustache = createCommonjsModule(function (module, exports) {
 }));
 });
 
-// init var
-var dataSet;
-
+// MAIN EXPORT START
 function locations() {
-		jquery.ajax({
-				url: 'http://gmt.dev/wp-json/wp/v2/location?per_page=100&callback=?',
-				success: function (data) {
 
-						if (jquery('body').hasClass('how-to-buy')) {
-								dataSet = { locations: data };
+  function geocodeUrl(zip) {
+    var apiKey = 'AIzaSyBOii_Qh6he0eb9rxEWpKMsROoh2LAuwXk';
+    var apiEndpoint = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + zip + '&key=' + apiKey;
+    return apiEndpoint;
+  }
 
-								// get the template
-								var template = jquery('#demo').html();
+  function toRad(x) {
+    return x * Math.PI / 180;
+  }
 
-								// parse the template
-								mustache.parse(template);
+  function haversine(lat1, lng1, lat2, lng2) {
 
-								// inject the data into the parsed template
-								var rendered = mustache.render(template, dataSet);
+    var R = 6371; // km earf
+    var x1 = lat2 - lat1;
+    var dLat = toRad(x1);
+    var x2 = lng2 - lng1;
+    var dLng = toRad(x2);
+    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLng / 2) * Math.sin(dLng / 2);
+    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    var d = R * c;
+    return d; // distance in km
+  }
+  // now entering callback hell. promisifying left as an exercise for the developer
 
-								// inject the rendered template into the dom
-								jquery('#location').html(rendered);
-						}
-				},
-				error: function () {
-						console.log('There is an error with the locations function');
-				}
-		});
 
-		// watch distributor dropdown for change then run filter
-		jquery('#select-distributor').change(function () {
-				filterLocations();
-		});
+  var dataSet;
+  function getLocations(zip) {
 
-		// filter locations
-		function filterLocations() {
+    //first geocode the zip
+    jquery.ajax({
+      url: geocodeUrl(zip),
+      success: function (data) {
+        // console.log(data)
+        // great now we have the zip, let's get the coords
+        var lat = data.results[0].geometry.location.lat;
+        var lng = data.results[0].geometry.location.lng;
 
-				// get the value of the selected option
-				var selected = jquery("#select-distributor option:selected").val();
+        // sweet, let's get the locations
+        jquery.ajax({
+          url: 'http://genus.hlkbeta.com/wp-json/wp/v2/location?filter[posts_per_page]=-1',
+          success: function (data) {
 
-				// for each item with a class of location get the data attribute
-				jquery('.location').each(function () {
-						var id = jquery(this).data('distid');
+            // ok awesome. let's sort these locations against the zip with the haversine formula
+            var locations = [];
+            var distance;
+            for (var i = 0; i < data.length; i++) {
+              distance = haversine(lat, lng, data[i].latitude, data[i].longitude);
+              data[i].distance = distance;
+              locations.push(data[i]);
+            }
 
-						// show everything on null or defualt selection
-						if (selected == 'null') {
-								jquery('.location').show();
-						}
+            locations.sort(function (a, b) {
+              return a.distance - b.distance;
+            });
 
-						// check selected value against the id of the locations then show
-						else if (selected == id) {
-										jquery(this).fadeIn();
-								}
+            dataSet = { 'locations': locations };
+            // get the template
+            var template = jquery('#demo').html();
 
-								// if the selected doesnt match the id of the location, hide that homie!
-								else if (selected !== id) {
-												jquery(this).hide();
-										}
-				});
-		}
+            // parse the template
+            mustache.parse(template);
+
+            // inject the data into the parsed template
+            var go = mustache.render(template, dataSet);
+
+            // inject the rendered template into the dom
+            jquery('#location').html(go);
+
+            // go forth, omar, and build!
+          },
+          error: function () {
+            console.log('There is an error with the rest function');
+          }
+        });
+      },
+      error: function (data) {
+        console.log(data);
+        jquery('#output').html("Error geocoding " + zip);
+      }
+    });
+  }
+
+  // Listen for click on find distributor button
+  jquery(document).ready(function () {
+    jquery('.error').hide();
+    jquery('.nearby').hide();
+    jquery('.legend').hide();
+    jquery('#findDist').on('click', function (e) {
+      e.preventDefault();
+      var theZip = jquery('#zipcode').val();
+
+      // validate data
+      function zipLength(zip) {
+        var zipString = zip.toString();
+
+        if (zipString.length > 4 && zipString.length < 6) {
+          getLocations(theZip);
+          console.log('right!');
+          jquery('.error').hide();
+          jquery('.nearby').slideDown();
+          jquery('.legend').slideDown();
+
+          // $('html, body').animate({
+          //   scrollTop: $("#demo").offset().top
+          // }, 2000);
+
+        } else {
+          console.log('not enough');
+          jquery('.error').fadeIn();
+        }
+      }
+
+      zipLength(theZip);
+    });
+  });
+
+  // watch distributor dropdown for change then run filter
+  jquery('#select-distributor').change(function () {
+    filterLocations();
+  });
+
+  // filter locations
+  function filterLocations() {
+
+    // get the value of the selected option
+    var selected = jquery("#select-distributor option:selected").val();
+
+    // for each item with a class of location get the data attribute
+    jquery('.location').each(function () {
+      var id = jquery(this).data('distid');
+
+      // show everything on null or defualt selection
+      if (selected == 'null') {
+        jquery('.location').show();
+      }
+
+      // check selected value against the id of the locations then show
+      else if (selected == id) {
+          jquery(this).fadeIn();
+        }
+
+        // if the selected doesnt match the id of the location, hide that homie!
+        else if (selected !== id) {
+            jquery(this).hide();
+          }
+    });
+  }
 } // END EXPORT FUNCTION
 
 function gallery() {
@@ -11014,10 +11104,54 @@ function gallery() {
 		});
 }
 
+function string$1() {
+
+		// parses url for query string value
+		function getParameterByName(name, url) {
+				if (!url) url = window.location.href;
+				name = name.replace(/[\[\]]/g, "\\$&");
+				var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+				    results = regex.exec(url);
+				if (!results) return null;
+				if (!results[2]) return '';
+				return decodeURIComponent(results[2].replace(/\+/g, " "));
+		}
+
+		// Clean css url
+		function cleanCssURL(link) {
+				var one = link.replace('url("', '');
+				var two = one.replace('")', '');
+				return two;
+		}
+
+		// 		$('#request').on('click', function(e){
+		// 				e.preventDefault()
+		//
+		// 				// var productImageURL = $('.product-hero').css('background-image')
+		// 				const productName = $('.name').text()
+		// 				const productCategory = $('.category').text()
+		// 				// console.log(productImageURL)
+		// 				console.log(productName)
+		// 				console.log(productCategory)
+		//
+		// var someVarName = 'helloooooo';
+		// localStorage.setItem('someVarName', someVarName)
+		//
+		//
+		//
+		// 				window.location.replace("/request-product-information")
+		//
+		// 				$('.category').text(productCategory)
+		// 				$('.name').text(productName)
+		//
+		// 		})
+} //END MAIN FUNCTION
+
 navigation();
 gallery();
 rest$1();
 locations();
+string$1();
 
 }());
 //# sourceMappingURL=bundle.js.map

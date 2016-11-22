@@ -25,8 +25,11 @@
 					<p>Enter your zip code to find a list of local distributors.</p>
 					<div class="zip-code">
 						<label for="zip-code">Zip Code<sup>*</sup></label>
-						<input type="number" name="zip-code">
-						<a class="btn blue" onclick="findDistributors()" href="">Find Distributors</a>
+						<input id="zipcode" type="number" name="zip-code">
+            <div class="error">
+                please check field and submit again
+            </div>
+						<a id="findDist" class="btn blue" href="">Find Distributors</a>
 					</div>
 				</div>
 
@@ -37,13 +40,13 @@
 						<div class="select-arrow">
 							<select id="select-distributor" name="sort-by-distributors">
 								<option value="null">Select</option>
-									<?php 
+									<?php
 										$terms = get_terms( 'distributor', array(
 												'hide_empty' => false,
 										) );
 
 										foreach ($terms as $term) {
-											echo "<option value='" . $term->term_id . "'>" . $term->name . "</option>"; 
+											echo "<option value='" . $term->term_id . "'>" . $term->name . "</option>";
 										}
 									?>
 							</select>

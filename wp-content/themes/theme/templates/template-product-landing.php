@@ -104,7 +104,7 @@
 
 
 <div class="cta cta-green">
-		<div class="inner">
+		<div class="inner mxw-900-center">
 			<h2><?php the_field('cta_title') ?></h2>
 			<?php the_field('cta_copy') ?>
 			<a href="<?php the_field('cta_button_link') ?>" class="btn white"><?php the_field('cta_button_copy') ?></a>

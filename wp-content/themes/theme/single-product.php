@@ -5,7 +5,7 @@
 <div style="background-image: url('<?php the_field('hero_image') ?>');" class="product-hero">
 	<div class="inner mxw-1100-center">
 		<span class="category">Oral Contrast</span>
-		<div class="name"><?php echo 'This is the name' ?></div>
+		<div class="name"><?php the_title(); ?></div>
 	</div>
 </div>
 
@@ -66,7 +66,7 @@
 		<div class="inner">
 			<h2>Make the most of your oral contrast budget.</h2>
 			<p>Learn more about how you can save money on Vanilla SilQ CT Barium.</p>
-			<a href="/" class="btn white">Request Product Information</a>
+			<a id="request" href="/request-product-information" class="btn white">Request Product Information</a>
 		</div>
 </div>
 

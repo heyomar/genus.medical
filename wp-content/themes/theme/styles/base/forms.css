@@ -46,13 +46,19 @@ textarea {
 	}
 }
 
+
 select {
 	width: 100%;
 	border: 1px solid var(--green);
 	appearance:none;
-	--webkit-appearance:none;
 	padding: 8px 20px;
 	outline: none;
 	border-radius: 0;
 	border-right: 0;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  padding-top: 5px;
 }

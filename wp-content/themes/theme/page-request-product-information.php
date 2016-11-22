@@ -1,7 +1,10 @@
 <?php get_header(); ?>
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<div class="bluehero"></div>
+<div class="bluehero">
+	<span style="background-image: url('');" class="category">fsdfs</span>
+	<div class="name">fdsafsad</div>
+</div>
 
 <div class="content">
 	<div class="row">
