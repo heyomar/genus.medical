@@ -2302,6 +2302,22 @@ textarea,
   color: hsla(0, 0%, 100%, 1);
   font-size: 60px;
 }
+	.thank-you {
+}
+	.thank-you .bluehero {
+  background-image: url('../assets/images/thankyou__hero-bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+	.thank-you .content {
+}
+	.thank-you .content .inner {
+  padding: 50px 20px;
+}
+	.thank-you .content .title {
+  color: hsla(208, 100%, 30%, 1);
+}
 	.home-hero {
 	min-height: 800px;
 	background: -webkit-linear-gradient(hsla(208, 100%, 30%, .85), hsla(208, 100%, 30%, .85)), url('../assets/images/home__hero.jpg');

@@ -37,6 +37,7 @@
 	Page Styles
 	––––––––––––––––––––––––––––*/
   @import 'pages/404.css';
+  @import 'pages/thank-you.css';
 	@import 'pages/home.css';
 	@import 'pages/about-us.css';
 	@import 'pages/request-product-information.css';

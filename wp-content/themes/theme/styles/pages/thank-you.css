@@ -1,0 +1,16 @@
+.thank-you {
+  & .bluehero {
+    background-image: url('../assets/images/thankyou__hero-bg.jpg');
+    @apply --background-standard;
+  }
+
+  & .content {
+    & .inner {
+      padding: 50px 20px;
+    }
+
+    & .title {
+      color: var(--blue);
+    }
+  }
+}
