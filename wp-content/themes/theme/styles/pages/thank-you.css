@@ -6,10 +6,12 @@
 
   & .content {
     & .inner {
-      padding: 50px 20px;
+      padding: 80px 20px;
     }
 
     & .title {
+      margin-top: 0;
+      font-size: 48px;
       color: var(--blue);
     }
   }
