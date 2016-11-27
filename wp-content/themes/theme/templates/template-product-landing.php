@@ -36,12 +36,12 @@
 		<?php
 			$dept = $post->post_name;
 
-			// get the taxonomy item and save the id for later 
+			// get the taxonomy item and save the id for later
 			$parent_term = get_term_by( "slug", $dept, 'category');
 
-			// now look for any children taxonomy items 
+			// now look for any children taxonomy items
 			$term_children = get_term_children( $parent_term->term_id, 'category' );
-			
+
 			$term_array = array();
 			foreach ( $term_children as $child ) {
 				$term = get_term_by( 'id', $child, 'category' );
@@ -59,20 +59,20 @@
 						),
 					),
 					'orderby'          => 'post_title',
-					'order'            => 'ASC',	
+					'order'            => 'ASC',
 					'post_status'      => 'publish',
 					'suppress_filters' => true
 				);
 				$term_array[$term_order] = array('name' => $term->name, 'args' => $t_args);
 			};
 			ksort($term_array); ?>
-			
+
 			<?php foreach ($term_array as $term) {
 
 				$child_q = new WP_Query($term['args']); ?>
 
 				<?php if ( $child_q->have_posts() ) { ?>
-					
+
 					<div class="<?php echo str_replace(' ', '-', strtolower($term['name'])); ?>">
 						<div class="inner mxw-1100-center">
 							<h4 class="title small"><?php echo $term['name']; ?></h4>
@@ -82,9 +82,9 @@
 													<div class="box">
 														<div class="med-sm">
 															<div style="background-image: url('<?php the_field('product_image'); ?>');" class="image">
-																<a href="/products/<?php 
+																<a href="/products/<?php
 																$title = strtolower(get_the_title());
-																echo $string = str_replace(' ', '-', $title ); ?>">
+																echo $string = str_replace(' ', '', $title ); ?>">
 																	<span class="label">VIEW PRODUCT</span></a>
 															</div>
 															<div class="description">
@@ -113,4 +113,3 @@
 	<?php endwhile; ?>
 	<?php endif ?>
 <?php get_footer(); ?>
-

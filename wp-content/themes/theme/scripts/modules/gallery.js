@@ -32,6 +32,15 @@ function gallery() {
 				$('.image').addClass('zoomIn')
 		}
 	})
+
+
+  // Hide thumbs if they dont have a image
+  $('.lity-link').each(function(){
+    const mobileThumbURL = $(this).attr('href')
+    if (mobileThumbURL === '') {
+      $(this).hide()
+    }
+  })
 }
 
 export default gallery

@@ -2078,6 +2078,193 @@ textarea,
 	/*––––
 	Page Modules
 	––––––––––––––––––––––––––––*/
+	/*! Lity - v2.2.1 - 2016-11-21
+* http://sorgalla.com/lity/
+* Copyright (c) 2015-2016 Jan Sorgalla; Licensed MIT */
+	.lity {
+  z-index: 9990;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  white-space: nowrap;
+  background: #0b0b0b;
+  background: rgba(0, 0, 0, 0.9);
+  outline: none !important;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+	.lity.lity-opened {
+  opacity: 1;
+}
+	.lity.lity-closed {
+  opacity: 0;
+}
+	.lity * {
+  box-sizing: border-box;
+}
+	.lity-wrap {
+  z-index: 9990;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  outline: none !important;
+}
+	.lity-wrap:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+	.lity-loader {
+  z-index: 9991;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  margin-top: -0.8em;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+	.lity-loading .lity-loader {
+  opacity: 1;
+}
+	.lity-container {
+  z-index: 9992;
+  position: relative;
+  text-align: left;
+  vertical-align: middle;
+  display: inline-block;
+  white-space: normal;
+  max-width: 100%;
+  max-height: 100%;
+  outline: none !important;
+}
+	.lity-content {
+  z-index: 9993;
+  width: 100%;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+	.lity-loading .lity-content,
+.lity-closed .lity-content {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+	.lity-content:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  display: block;
+  right: 0;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
+	.lity-close {
+  z-index: 9994;
+  width: 35px;
+  height: 35px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  -webkit-appearance: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  padding: 0;
+  color: #fff;
+  font-style: normal;
+  font-size: 35px;
+  font-family: Arial, Baskerville, monospace;
+  line-height: 35px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  border: 0;
+  background: none;
+  outline: none;
+  box-shadow: none;
+}
+	.lity-close::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+	.lity-close:hover,
+.lity-close:focus,
+.lity-close:active,
+.lity-close:visited {
+  text-decoration: none;
+  text-align: center;
+  padding: 0;
+  color: #fff;
+  font-style: normal;
+  font-size: 35px;
+  font-family: Arial, Baskerville, monospace;
+  line-height: 35px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  border: 0;
+  background: none;
+  outline: none;
+  box-shadow: none;
+}
+	.lity-close:active {
+  top: 1px;
+}
+	/* Image */
+	.lity-image img {
+  max-width: 100%;
+  display: block;
+  line-height: 0;
+  border: 0;
+}
+	/* iFrame */
+	.lity-iframe .lity-container,
+.lity-youtube .lity-container,
+.lity-vimeo .lity-container,
+.lity-facebookvideo .lity-container,
+.lity-googlemaps .lity-container {
+  width: 100%;
+  max-width: 964px;
+}
+	.lity-iframe-container {
+  width: 100%;
+  height: 0;
+  padding-top: 56.25%;
+  overflow: auto;
+  pointer-events: auto;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-overflow-scrolling: touch;
+}
+	.lity-iframe-container iframe {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  background: #000;
+}
+	.lity-hide {
+  display: none;
+}
 	/*––––
 	 style main navigation strip items
 	 and some general styles
@@ -2526,7 +2713,8 @@ textarea,
 	position: relative;
 	background-position: center;
 	background-size: cover;
-	background-repeat: no-repeat
+	background-repeat: no-repeat;
+  background-position: right
 }
 	.product-hero .inner {
   position: absolute;
@@ -2536,6 +2724,7 @@ textarea,
           transform: translate(-50%,-50%);
   width: 100%;
   padding: 20px;
+  display: none;
 }
 	.product-hero .category {
   font-size: 12px;
@@ -2544,6 +2733,26 @@ textarea,
 	.product-hero .name {
   font-size: 48px;
   color: hsla(0, 0%, 100%, 1);
+}
+	.identify {
+  padding-top: 15px
+}
+	.identify .inner {
+  text-align: center;
+  padding: 20px;
+}
+	.identify .category {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+	.identify .name {
+  font-size: 48px;
+  color: hsla(208, 100%, 30%, 1);
+  padding-bottom: 20px;
+}
+	.identify a {
+  padding-right: 50px;
+  padding-left: 50px;
 }
 	.product {
 }
@@ -2559,7 +2768,8 @@ textarea,
 	.gallery {
 	padding: 75px 0 0 0;
 	position: relative;
-	min-height: 350px
+	min-height: 350px;
+  display: none
 }
 	.gallery .inner {
   position: relative;
@@ -2593,6 +2803,22 @@ textarea,
   height: 85px;
   width: 117px;
   margin: 15px 5px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+	.mobile-gallery {
+  margin-top: 10px;
+  height: 100%;
+  overflow: hidden;
+  padding-bottom: 10px
+}
+	.mobile-gallery .mobile-thumb {
+  margin-top: 8px;
+  margin-right: 5px;
+  height: 100px;
+  min-width: 120px;
+  display: inline-block;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2633,10 +2859,23 @@ textarea,
 	@media screen and (min-width: 768px) {
 	.gallery {
 		padding: 75px 0;
-		min-height:500px
+		min-height:500px;
+    display: block
 	}
 	.gallery .inner {
     position: absolute;
+  }
+
+  .product-hero .inner {
+    display: block;
+  }
+
+  .identify {
+    display: none;
+  }
+
+  .mobile-gallery {
+    display: none;
   }
 }
 	/*––––

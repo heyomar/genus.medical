@@ -21,6 +21,7 @@
 /*––––
 	Page Modules
 	––––––––––––––––––––––––––––*/
+  @import "modules/lity.css";
 	@import 'modules/navigation.css';
 	@import 'modules/footer.css';
 
@@ -29,7 +30,7 @@
 /*––––
 	Templates
 	––––––––––––––––––––––––––––*/
-		@import 'templates/product-landing.css';
+	@import 'templates/product-landing.css';
 
 
 
