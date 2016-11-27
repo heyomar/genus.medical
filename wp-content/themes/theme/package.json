@@ -1,7 +1,7 @@
 {
-  "name": "fooddialogues",
+  "name": "GMT",
   "version": "0.1.0",
-  "description": "FoodDialogues.com Website",
+  "description": "Genus Medical Technologies Website",
   "main": "index.js",
   "scripts": {
     "build:dev": "run-s js:compile styles:compile",
@@ -18,9 +18,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@hlk.git.beanstalkapp.com:/hlk/usfra-food-dialogues.git"
+    "url": "git@hlk.git.beanstalkapp.com:/hlk/gmt-wp.git"
   },
-  "author": "Steven Brien <sbrien@hlkagency.com>",
+  "author": "Omar Rasool <orasool@hlkagency.com>",
   "contributors": [
     "Paul Graham <pgraham@hlkagency.com>"
   ],
@@ -31,10 +31,11 @@
     "cssnano": "^3.7.6",
     "eslint": "^3.7.1",
     "eslint-config-standard": "^6.2.0",
-    "eslint-plugin-promise": "^2.0.1",
+    "eslint-plugin-promise": "^3.3.0",
     "eslint-plugin-standard": "^2.0.1",
     "flexboxgrid": "^6.3.1",
     "jquery": "^3.1.1",
+    "lity": "^2.2.1",
     "mustache": "^2.3.0",
     "nodemon": "^1.10.2",
     "normalize.css": "^5.0.0",
