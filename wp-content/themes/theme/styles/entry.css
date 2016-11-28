@@ -42,6 +42,7 @@
 	@import 'pages/home.css';
 	@import 'pages/about-us.css';
 	@import 'pages/request-product-information.css';
+  @import 'pages/email-sign-up.css';
 	@import 'pages/single-product.css';
 	@import 'pages/how-to-buy.css';
 	@import 'pages/contact-us.css';

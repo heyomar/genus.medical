@@ -36,10 +36,33 @@
 		</div>
 	</div>
 
+  <div class="events">
+    <h4 class="title small">Upcoming Events</h4>
+    <div class="inner mxw-900-center">
+      <?php $events = new WP_Query( array( 'post_type' => 'event' ) );?>
+      <?php if( $events->have_posts()): ?>
+        <div class="row">
+          <?php while ( $events->have_posts()) : $events->the_post();  ?>
+            <div class="col-xs-12 col-sm-4 col-lg-4">
+              <div class="single-event">
+                <strong><?php the_title(); ?></strong><br/>
+                <?php the_field('location') ?><br>
+                <?php the_field('start_date') ?>&nbsp;&hyphen;&nbsp;<?php the_field('end_date') ?><br/>
+                <?php the_field('start_time') ?>&nbsp;&hyphen;&nbsp;
+                <?php the_field('end_time') ?>
+              </div>
+            </div>
+
+          <?php endwhile; ?>
+        </div>
+      <?php endif ?>
+    </div>
+  </div>
+<?php wp_reset_query(); ?>
 	<div class="cta cta-green">
 		<div class="inner">
 			<h2><?php the_field('cta_title'); ?></h2>
-			<a href="/request-product-information" class="btn white"><?php the_field('cta_button') ?></a>
+			<a href="/request-product-information" class="btn white"><?php the_field('cta_button_copy') ?></a>
 		</div>
 </div>
 	<?php endwhile; ?>

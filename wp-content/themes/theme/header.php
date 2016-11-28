@@ -23,7 +23,7 @@
 						<?php wp_nav_menu( array( 'theme_location' => 'main-navigation' ) ); ?>
 
 						<div class="desktop-cta">
-								<a href="#" class="btn green">Email&nbsp;Sign&nbsp;Up</a>
+								<a href="/email-sign-up" class="btn green">Email&nbsp;Sign&nbsp;Up</a>
 								<a href="/request-product-information" class="btn green">Request&nbsp;Product&nbsp;Information</a>
 							</div>
 
@@ -35,7 +35,7 @@
 
 						<div class="dropdown">
 							<div class="mobile-cta">
-								<a href="#" class="btn green">Email&nbsp;Sign&nbsp;Up</a>
+								<a href="/email-sign-up" class="btn green">Email&nbsp;Sign&nbsp;Up</a>
 								<a href="/request-product-information" class="btn green">Request&nbsp;Product&nbsp;Information</a>
 							</div>
 							<?php wp_nav_menu( array( 'theme_location' => 'main-navigation' ) ); ?>

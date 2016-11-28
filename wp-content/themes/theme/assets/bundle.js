@@ -11151,9 +11151,22 @@ function string$1() {
 		// 		})
 } //END MAIN FUNCTION
 
-function events() {
-  console.log('events');
-} // END MAIN EXPORT
+// get the events
+// $.ajax({
+//     url:'http://gmt.dev/wp-json/wp/v2/event',
+//     success: function(data) {
+//       $.each(data, function (i, val) {
+//
+//
+//           $('.events').append("<li>" + val['name'] + "</li>")
+//
+//       })
+//     },
+//     error: function() {
+//         console.log('There is an error with the rest function')
+//     }
+//  });
+// END MAIN EXPORT
 
 var lity = createCommonjsModule(function (module) {
 /*! Lity - v2.2.1 - 2016-11-21
@@ -11795,7 +11808,6 @@ gallery();
 rest$1();
 locations();
 string$1();
-events();
 
 }());
 //# sourceMappingURL=bundle.js.map

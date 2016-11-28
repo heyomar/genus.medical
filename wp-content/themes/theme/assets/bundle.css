@@ -2608,6 +2608,28 @@ textarea,
 	/*––––
 	Media Queries
 	––––––––––––––––––––––––––––*/
+	.events {
+  padding: 20px 20px 50px 20px;
+  background-color: hsla(0, 0%, 97%, 1)
+
+}
+	.events .title {
+  text-align: center;
+}
+	.events .title::after {
+  padding-top: 20px;
+  margin: 0 auto;
+  width: 75px;
+  content: "";
+  display: block;
+  border-bottom: 2px solid hsla(116, 45%, 50%, 1);
+}
+	.events .single-event {
+  text-align: center;
+}
+	/*––––
+	Media Queries
+	––––––––––––––––––––––––––––*/
 	@media screen and (min-width: 768px) {
   .home-hero {
   }
@@ -2707,6 +2729,21 @@ textarea,
 	.label-hidden .nf-field-element {
 		width: auto !important;
 	}
+	.email-sign-up {
+}
+	.email-sign-up .bluehero {
+  background: -webkit-linear-gradient(hsla(208, 100%, 30%, .95), hsla(208, 100%, 30%, .95)), url('../assets/images/component__bluehero-bg.jpg');
+  background: linear-gradient(hsla(208, 100%, 30%, .95), hsla(208, 100%, 30%, .95)), url('../assets/images/component__bluehero-bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+	.email-sign-up .title {
+  color: hsla(208, 100%, 30%, 1);
+}
+	.email-sign-up .content {
+  padding: 50px 20px;
+}
 	.product-hero {
 	min-height: 275px;
 	border-bottom: 2px solid hsla(116, 45%, 50%, 1);

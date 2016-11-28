@@ -1,0 +1,14 @@
+.email-sign-up {
+	& .bluehero {
+		background:linear-gradient(hsla(208, 100%, 30%, .95), hsla(208, 100%, 30%, .95)), url('../assets/images/component__bluehero-bg.jpg');
+		@apply --background-standard;
+	}
+
+	& .title {
+		color: var(--blue);
+	}
+
+	& .content {
+		padding: 50px 20px;
+	}
+}

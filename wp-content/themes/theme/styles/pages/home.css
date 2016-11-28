@@ -22,7 +22,7 @@
       height: 100px;
       right: -200px;
       z-index: -1;
-      
+
     }
   }
 
@@ -62,6 +62,34 @@
 
 .callout-powerinjector{
 	background-image: url('../assets/images/home__callout-powerinjector.jpg');
+}
+
+
+
+/*––––
+	Media Queries
+	––––––––––––––––––––––––––––*/
+.events {
+  padding: 20px 20px 50px 20px;
+  background-color: var(--offwhite);
+
+  & .title {
+    text-align: center;
+
+    &::after {
+      padding-top: 20px;
+      margin: 0 auto;
+      width: 75px;
+      content: "";
+      display: block;
+      border-bottom: 2px solid var(--green);
+    }
+  }
+
+  & .single-event {
+    text-align: center;
+  }
+
 }
 
 
