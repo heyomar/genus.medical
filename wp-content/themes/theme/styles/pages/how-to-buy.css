@@ -73,12 +73,15 @@
 	}
 }
 
-
+.nearby {
+	display: none;
+}
 
 /*––––
 	Legend - for the keys and icons
 	––––––––––––––––––––––––––––*/
 .legend {
+	display: none;
 	padding: 20px 0;
 
 	& .icon {

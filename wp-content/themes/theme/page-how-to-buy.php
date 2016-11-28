@@ -27,7 +27,7 @@
 						<label for="zip-code">Zip Code<sup>*</sup></label>
 						<input id="zipcode" type="number" name="zip-code">
             <div class="error">
-                please check field and submit again
+                Please check field and submit again
             </div>
 						<a id="findDist" class="btn blue" href="">Find Distributors</a>
 					</div>

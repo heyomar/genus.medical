@@ -4,7 +4,11 @@
 
 <div style="background-image: url('<?php the_field('hero_image') ?>');" class="product-hero">
 	<div class="inner mxw-1100-center">
-		<span class="category">Oral Contrast</span>
+		<span class="category">
+      <?php $category = get_the_category();
+            $parent = get_category($category[0]->category_parent);
+            echo $parent->slug; ?>
+    </span>
 		<div class="name"><?php the_title(); ?></div>
 	</div>
 </div>

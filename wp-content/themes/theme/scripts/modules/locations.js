@@ -92,9 +92,6 @@ function locations() {
 
     // Listen for click on find distributor button
     $(document).ready(function() {
-        $('.error').hide()
-        $('.nearby').hide()
-        $('.legend').hide()
         $('#findDist').on('click', function(e){
           e.preventDefault()
           var theZip = ($('#zipcode').val())

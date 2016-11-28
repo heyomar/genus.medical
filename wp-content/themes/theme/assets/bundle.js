@@ -11006,9 +11006,6 @@ function locations() {
 
   // Listen for click on find distributor button
   jquery(document).ready(function () {
-    jquery('.error').hide();
-    jquery('.nearby').hide();
-    jquery('.legend').hide();
     jquery('#findDist').on('click', function (e) {
       e.preventDefault();
       var theZip = jquery('#zipcode').val();

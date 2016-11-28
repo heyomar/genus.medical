@@ -2071,6 +2071,7 @@ textarea,
 	border-right: 0;
 }
 	.error {
+  display: none;
   color: red;
   font-size: 12px;
   padding-top: 5px;
@@ -2940,10 +2941,14 @@ textarea,
   top: 0;
   z-index: -1;
 }
+	.nearby {
+	display: none;
+}
 	/*––––
 	Legend - for the keys and icons
 	––––––––––––––––––––––––––––*/
 	.legend {
+	display: none;
 	padding: 20px 0
 }
 	.legend .icon {
