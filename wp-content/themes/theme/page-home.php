@@ -48,8 +48,7 @@
                 <strong><?php the_title(); ?></strong><br/>
                 <?php the_field('location') ?><br>
                 <?php the_field('start_date') ?>&nbsp;&hyphen;&nbsp;<?php the_field('end_date') ?><br/>
-                <?php the_field('start_time') ?>&nbsp;&hyphen;&nbsp;
-                <?php the_field('end_time') ?>
+                <?php the_field('start_time') ?>&nbsp;&hyphen;&nbsp;<?php the_field('end_time') ?>
               </div>
             </div>
 
