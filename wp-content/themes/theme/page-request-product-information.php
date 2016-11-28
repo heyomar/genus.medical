@@ -1,9 +1,28 @@
 <?php get_header(); ?>
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<div class="bluehero">
-	<span style="background-image: url('');" class="category">fsdfs</span>
-	<div class="name">fdsafsad</div>
+  <?php
+  $productCategory = $_GET['cat'];
+  $productID = intval($_GET['pid']);
+  $productTitle = get_the_title($productID);
+  $heroImage = get_field('hero_image', $productID);
+  ?>
+
+<div style="
+  <?php
+  if($heroImage != null)
+  echo "background-image:url('" . $heroImage ?>');"  class="bluehero">
+	<div class="inner">
+    <div class="content mxw-1100-center">
+      <span class="category"><?php echo str_replace('-', ' ', $productCategory); ?></span>
+	    <div class="name">
+      <?php
+      if($productTitle !== 'Request Product Information')
+       echo str_replace(' ', '&nbsp;',$productTitle);
+      ?>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="content">

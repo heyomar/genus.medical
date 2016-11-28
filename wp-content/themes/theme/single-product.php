@@ -4,12 +4,12 @@
 
 <div style="background-image: url('<?php the_field('hero_image') ?>');" class="product-hero">
 	<div class="inner mxw-1100-center">
-		<span class="category">
+		<span class="category productCategory">
       <?php $category = get_the_category();
             $parent = get_category($category[0]->category_parent);
-            echo $parent->slug; ?>
+            echo $parentCat = str_replace('-', ' ', $parent->slug); ?>
     </span>
-		<div class="name"><?php the_title(); ?></div>
+		<div class="name productName"><?php the_title(); ?></div>
 	</div>
 </div>
 
@@ -73,7 +73,7 @@
                                   </a>
                               </div>
                             </div>
-														<a class="btn blue" href="#">Find A Distributor</a>
+														<a class="btn blue" href="/how-to-buy">Find A Distributor</a>
 														<a class="btn green-link" href="<?php the_field('pdf'); ?>">Download a package insert</a>
 												</div>
 											</div>
@@ -94,7 +94,7 @@
 		<div class="inner">
 			<h2>Make the most of your oral contrast budget.</h2>
 			<p>Learn more about how you can save money on Vanilla SilQ CT Barium.</p>
-			<a id="request" href="/request-product-information" class="btn white">Request Product Information</a>
+			<a id="request" href="/request-product-information?pid=<?php echo get_the_ID(); ?>&amp;cat=<?php echo $parentCat = str_replace(' ', '', $parent->slug); ?>" class="btn white">Request Product Information</a>
 		</div>
 </div>
 

@@ -11,6 +11,16 @@
 	& .content {
 		padding: 50px 20px;
 	}
+
+  & .category {
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  & .name {
+    color: var(--white);
+    font-size: 48px;
+  }
 }
 
 /*––––
@@ -30,7 +40,7 @@
 		max-width: 95%;
 	}
 
-	#nf-field-11-wrap .nf-field-element { 
+	#nf-field-11-wrap .nf-field-element {
 		width: none;
 		display: inline-block;
 	}

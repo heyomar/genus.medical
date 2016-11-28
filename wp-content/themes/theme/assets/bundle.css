@@ -2707,6 +2707,14 @@ textarea,
 	.request-product-information .content {
   padding: 50px 20px;
 }
+	.request-product-information .category {
+  font-size: 12px;
+  text-transform: uppercase;
+}
+	.request-product-information .name {
+  color: hsla(0, 0%, 100%, 1);
+  font-size: 48px;
+}
 	/*––––
 	Modifies RPI Ninja Form
 	––––––––––––––––––––––––––––*/
@@ -2721,7 +2729,7 @@ textarea,
 		display: inline-block;
 		max-width: 95%;
 	}
-	#nf-field-11-wrap .nf-field-element { 
+	#nf-field-11-wrap .nf-field-element {
 		width: none;
 		display: inline-block;
 	}
