@@ -10235,18 +10235,16 @@ return jQuery;
 });
 
 function rest$1() {
-
 	if (jquery('body').hasClass('single-product') || jquery('body').hasClass('how-to-buy')) {
 		// Populate sidebar list of products
 		jquery.ajax({
 			url: 'http://gmt.dev/wp-json/wp/v2/categories?filter[cat]=3',
 			success: function (data) {
 				jquery.each(data, function (i, val) {
-
-					if (val['parent'] == '3') {
-						jquery('.oral-contrast').append("<li>" + val['name'] + "</li>");
-					} else if (val['parent'] == '4') {
-						jquery('.power-injector').append("<li>" + val['name'] + "</li>");
+					if (val['parent'] === '3') {
+						jquery('.oral-contrast').append('<li>' + val['name'] + '</li>');
+					} else if (val['parent'] === '4') {
+						jquery('.power-injector').append('<li>' + val['name'] + '</li>');
 					}
 				});
 			},
@@ -10258,7 +10256,6 @@ function rest$1() {
 }
 
 function navigation() {
-
 	// add carets to mobile nav items on hover
 	jquery('.dropdown li').hover(function () {
 		jquery(this).toggleClass('caret');
@@ -10920,216 +10917,230 @@ var mustache = createCommonjsModule(function (module, exports) {
 });
 
 // MAIN EXPORT START
+
 function locations() {
+	var template = jquery('#demo').html();
+	mustache.parse(template);
+	var locations = [];
+	var locationsPerPage = 1;
 
-  function geocodeUrl(zip) {
-    var apiKey = 'AIzaSyBOii_Qh6he0eb9rxEWpKMsROoh2LAuwXk';
-    var apiEndpoint = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + zip + '&key=' + apiKey;
-    return apiEndpoint;
-  }
+	function geocodeUrl(zip) {
+		var apiKey = 'AIzaSyBOii_Qh6he0eb9rxEWpKMsROoh2LAuwXk';
+		var apiEndpoint = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + zip + '&key=' + apiKey;
+		return apiEndpoint;
+	}
 
-  function toRad(x) {
-    return x * Math.PI / 180;
-  }
+	function toRad(x) {
+		return x * Math.PI / 180;
+	}
 
-  function haversine(lat1, lng1, lat2, lng2) {
+	function haversine(lat1, lng1, lat2, lng2) {
+		var R = 6371; // km earf
+		var x1 = lat2 - lat1;
+		var dLat = toRad(x1);
+		var x2 = lng2 - lng1;
+		var dLng = toRad(x2);
+		var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLng / 2) * Math.sin(dLng / 2);
+		var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+		var d = R * c;
+		return d; // distance in km
+	}
+	// now entering callback hell. promisifying left as an exercise for the developer
 
-    var R = 6371; // km earf
-    var x1 = lat2 - lat1;
-    var dLat = toRad(x1);
-    var x2 = lng2 - lng1;
-    var dLng = toRad(x2);
-    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLng / 2) * Math.sin(dLng / 2);
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    var d = R * c;
-    return d; // distance in km
-  }
-  // now entering callback hell. promisifying left as an exercise for the developer
+	var dataSet;
+	function getLocations(zip) {
+		// first geocode the zip
+		jquery.ajax({
+			url: geocodeUrl(zip),
+			success: function (data) {
+				// console.log(data)
+				// great now we have the zip, let's get the coords
+				var lat = data.results[0].geometry.location.lat;
+				var lng = data.results[0].geometry.location.lng;
 
+				// sweet, let's get the locations
+				jquery.ajax({
+					url: 'http://genus.hlkbeta.com/wp-json/wp/v2/location?filter[posts_per_page]=-1',
+					success: function (data) {
+						console.log(data);
 
-  var dataSet;
-  function getLocations(zip) {
+						// ok awesome. let's sort these locations against the zip with the haversine formula
+						var distance;
+						for (var i = 0; i < data.length; i++) {
+							distance = haversine(lat, lng, data[i].latitude, data[i].longitude);
+							data[i].distance = distance;
+							locations.push(data[i]);
+						}
 
-    //first geocode the zip
-    jquery.ajax({
-      url: geocodeUrl(zip),
-      success: function (data) {
-        // console.log(data)
-        // great now we have the zip, let's get the coords
-        var lat = data.results[0].geometry.location.lat;
-        var lng = data.results[0].geometry.location.lng;
+						locations.sort(function (a, b) {
+							return a.distance - b.distance;
+						});
 
-        // sweet, let's get the locations
-        jquery.ajax({
-          url: 'http://genus.hlkbeta.com/wp-json/wp/v2/location?filter[posts_per_page]=-1',
-          success: function (data) {
+						dataSet = { 'locations': locations.slice(0, locationsPerPage) }; // gimme the first 9 items
+						locations.splice(0, locationsPerPage); // remove the first nine items
 
-            // ok awesome. let's sort these locations against the zip with the haversine formula
-            var locations = [];
-            var distance;
-            for (var i = 0; i < data.length; i++) {
-              distance = haversine(lat, lng, data[i].latitude, data[i].longitude);
-              data[i].distance = distance;
-              locations.push(data[i]);
-            }
+						// inject the data into the parsed template
+						var go = mustache.render(template, dataSet);
 
-            locations.sort(function (a, b) {
-              return a.distance - b.distance;
-            });
+						// inject the rendered template into the dom
+						jquery('#location').html(go);
 
-            dataSet = { 'locations': locations };
-            // get the template
-            var template = jquery('#demo').html();
+						// go forth, omar, and build!
+					},
+					error: function () {
+						console.log('There is an error with the rest function');
+					}
+				});
+			},
 
-            // parse the template
-            mustache.parse(template);
+			error: function (data) {
+				console.log(data);
+				jquery('#output').html('Error geocoding ' + zip);
+			}
+		});
+	}
 
-            // inject the data into the parsed template
-            var go = mustache.render(template, dataSet);
+	// Listen for click on find distributor button
+	jquery(document).ready(function () {
+		jquery('#findDist').on('click', function (e) {
+			e.preventDefault();
+			var theZip = jquery('#zipcode').val();
+			// validate data
+			function zipLength(zip) {
+				var zipString = zip.toString();
+				if (zipString.length > 4 && zipString.length < 6) {
+					getLocations(theZip);
+					console.log('right!');
+					jquery('.error').hide();
+					jquery('.nearby').slideDown();
+					jquery('.legend').slideDown();
+					jquery('#loadmore').slideDown();
 
-            // inject the rendered template into the dom
-            jquery('#location').html(go);
+					jquery('html, body').animate({
+						scrollTop: jquery('.loadmore').offset().top
+					}, 1500);
+				} else {
+					console.log('not enough');
+					jquery('.error').fadeIn();
+				}
+			}
 
-            // go forth, omar, and build!
-          },
-          error: function () {
-            console.log('There is an error with the rest function');
-          }
-        });
-      },
-      error: function (data) {
-        console.log(data);
-        jquery('#output').html("Error geocoding " + zip);
-      }
-    });
-  }
+			zipLength(theZip);
+		});
 
-  // Listen for click on find distributor button
-  jquery(document).ready(function () {
-    jquery('#findDist').on('click', function (e) {
-      e.preventDefault();
-      var theZip = jquery('#zipcode').val();
+		jquery('.loadmore').on('click', function (e) {
+			e.preventDefault();
+			var loadMoreDataSet = { 'locations': locations.slice(0, locationsPerPage) }; // gimme the first 9 items
+			locations.splice(0, locationsPerPage); // remove the first nine items
+			var loadMoreLocations = mustache.render(template, loadMoreDataSet);
+			// inject the rendered template into the dom
+			jquery('#location').append(loadMoreLocations);
+		});
+	});
 
-      // validate data
-      function zipLength(zip) {
-        var zipString = zip.toString();
+	// watch distributor dropdown for change then run filter
+	jquery('#select-distributor').change(function () {
+		filterLocations();
+	});
 
-        if (zipString.length > 4 && zipString.length < 6) {
-          getLocations(theZip);
-          console.log('right!');
-          jquery('.error').hide();
-          jquery('.nearby').slideDown();
-          jquery('.legend').slideDown();
+	// filter locations
+	function filterLocations() {
+		// get the value of the selected option
+		var selected = jquery('#select-distributor option:selected').val();
 
-          // $('html, body').animate({
-          //   scrollTop: $("#demo").offset().top
-          // }, 2000);
-        } else {
-          console.log('not enough');
-          jquery('.error').fadeIn();
-        }
-      }
+		// for each item with a class of location get the data attribute
+		jquery('.location').each(function () {
+			var id = jquery(this).data('distid');
 
-      zipLength(theZip);
-    });
-  });
+			// show everything on null or defualt selection
+			if (selected === 'null') {
+				jquery('.location').show();
+			}
 
-  // watch distributor dropdown for change then run filter
-  jquery('#select-distributor').change(function () {
-    filterLocations();
-  });
+			// check selected value against the id of the locations then show
+			else if (selected === id) {
+					jquery(this).fadeIn();
+				}
 
-  // filter locations
-  function filterLocations() {
-
-    // get the value of the selected option
-    var selected = jquery("#select-distributor option:selected").val();
-
-    // for each item with a class of location get the data attribute
-    jquery('.location').each(function () {
-      var id = jquery(this).data('distid');
-
-      // show everything on null or defualt selection
-      if (selected == 'null') {
-        jquery('.location').show();
-      }
-
-      // check selected value against the id of the locations then show
-      else if (selected == id) {
-          jquery(this).fadeIn();
-        }
-
-        // if the selected doesnt match the id of the location, hide that homie!
-        else if (selected !== id) {
-            jquery(this).hide();
-          }
-    });
-  }
+				// if the selected doesnt match the id of the location, hide that homie!
+				else if (selected !== id) {
+						jquery(this).hide();
+					}
+		});
+	}
 } // END EXPORT FUNCTION
 
 function gallery() {
+	// initialize var
+	var isClicked = false;
 
-		// initialize var
-		var isClicked = false;
+	// event listener on thumbnail images
+	jquery('.thumb').click(function (e) {
+		// se
+		isClicked = true;
 
-		//event listener on thumbnail images
-		jquery('.thumb').click(function (e) {
-				// se
-				isClicked = true;
+		// get the background image url
+		const bgImage = jquery(this).css('background-image');
+		const viewImage = jquery('.image').css('background-image');
 
-				// get the background image url
-				const bgImage = jquery(this).css("background-image");
-				const viewImage = jquery('.image').css('background-image');
+		// swap the images
+		if (isClicked = true) {
+			jquery('.image').css('background-image', bgImage);
+			jquery(this).css('background-image', viewImage);
+		}
+	});
 
-				// swap the images
-				if (isClicked = true) {
-						jquery(".image").css('background-image', bgImage);
-						jquery(this).css('background-image', viewImage);
-				}
-		});
+	// Zoom feature
+	jquery('.view').on('click', function () {
+		if (jquery('.zoomIn')[0]) {
+			jquery('.image').removeClass('zoomIn');
+			jquery('.image').addClass('zoomNormal');
+		} else {
+			jquery('.image').removeClass('zoomNormal');
+			jquery('.image').addClass('zoomIn');
+		}
+	});
 
-		// Zoom feature
-		jquery('.view').on('click', function () {
-				if (jquery('.zoomIn')[0]) {
-						jquery('.image').removeClass('zoomIn');
-						jquery('.image').addClass('zoomNormal');
-				} else {
-						jquery('.image').removeClass('zoomNormal');
-						jquery('.image').addClass('zoomIn');
-				}
-		});
-
-		// Hide thumbs if they dont have a image
-		jquery('.lity-link').each(function () {
-				const mobileThumbURL = jquery(this).attr('href');
-				if (mobileThumbURL === '') {
-						jquery(this).hide();
-				}
-		});
+	// Hide thumbs if they dont have a image
+	jquery('.lity-link').each(function () {
+		const mobileThumbURL = jquery(this).attr('href');
+		if (mobileThumbURL === '') {
+			jquery(this).hide();
+		}
+	});
 }
 
 function string$1() {
+	// Clean css url
+	// function cleanCssURL (link) {
+	// 	var one = link.replace('url("', '')
+	// 	var two = one.replace('")', '')
+	// 	return two
+	// }
 
-  // Clean css url
-  function cleanCssURL(link) {
-    var one = link.replace('url("', '');
-    var two = one.replace('")', '');
-    return two;
-  }
+	// function removeAllSpaces (str) {
+	// 	str.replace(/\s/g, '')
+	// 	return str
+	// }
 
-  function removeAllSpaces(str) {
-    var str = str.replace(/\s/g, '');
-    return str;
-  }
+	jquery(document).ready(function () {
+		if (jquery('body').hasClass('request-product-information')) {
+			if (jquery('.category').text() === 'oral contrast') {
+				jquery('#nf-field-9-0').prop('checked', true);
+			} else {}
+		}
+	});
+} // END MAIN FUNCTION
 
-  jquery(document).ready(function () {
-    if (jquery('body').hasClass('request-product-information')) {
-      if (jquery('.category').text() === 'oral contrast') {
-        jquery('#nf-field-9-0').prop('checked', true);
-      } else {}
-    }
-  });
-} //END MAIN FUNCTION
+function events() {
+	if (jquery('body').hasClass('home')) {
+		// if a single event exists do nothing
+		if (jquery('.single-event')[0]) {} else {
+			// if no events are find then hide the events section on the home page
+			jquery('.events').hide();
+		}
+	}
+} // END MAIN EXPORT
 
 var lity = createCommonjsModule(function (module) {
 /*! Lity - v2.2.1 - 2016-11-21
@@ -11771,6 +11782,8 @@ gallery();
 rest$1();
 locations();
 string$1();
+events();
+lity();
 
 }());
 //# sourceMappingURL=bundle.js.map

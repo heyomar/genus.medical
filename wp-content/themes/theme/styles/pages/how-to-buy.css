@@ -106,6 +106,10 @@
 	}
 }
 
+#loadmore {
+	display: none;
+}
+
 
 
 /*––––
@@ -150,6 +154,7 @@
 		background-image: url('../assets/images/legend__barium.svg');
 	}
 }
+
 
 
 /*––––

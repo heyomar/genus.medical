@@ -4,7 +4,8 @@
 	<div class="home-hero">
 		<div class="inner mxw-1100-center">
 				<div class="content">
-          <div class="skin"><h1 class="title"><?php the_field('hero_title'); ?></h1>
+          <div class="skin">
+              <h1 class="title"><?php the_field('hero_title'); ?></h1>
 				      <?php the_field('hero_copy'); ?>
 				      <h3 class="sub-title"><?php the_field('hero_subline'); ?></h3>
           </div>
@@ -36,13 +37,21 @@
 		</div>
 	</div>
 
-  <div class="events">
-    <h4 class="title small">Upcoming Events</h4>
-    <div class="inner mxw-900-center">
-      <?php $events = new WP_Query( array( 'post_type' => 'event' ) );?>
-      <?php if( $events->have_posts()): ?>
-        <div class="row">
-          <?php while ( $events->have_posts()) : $events->the_post();  ?>
+
+
+
+
+    <?php
+
+    $posts = get_field('homepage_event');
+
+    if( $posts ): ?>
+    <div class="events">
+      <h4 class="title small">Upcoming Events</h4>
+      <div class="inner mxw-900-center">
+      <div class="row">
+        <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+            <?php setup_postdata($post); ?>
             <div class="col-xs-12 col-sm-4 col-lg-4">
               <div class="single-event">
                 <strong><?php the_title(); ?></strong><br/>
@@ -52,12 +61,15 @@
               </div>
             </div>
 
-          <?php endwhile; ?>
-        </div>
-      <?php endif ?>
+        <?php endforeach; ?>
+      </div>
+
+
     </div>
-  </div>
-<?php wp_reset_query(); ?>
+      </div>
+        <?php wp_reset_postdata();  ?>
+    <?php endif; ?>
+
 	<div class="cta cta-green">
 		<div class="inner">
 			<h2><?php the_field('cta_title'); ?></h2>

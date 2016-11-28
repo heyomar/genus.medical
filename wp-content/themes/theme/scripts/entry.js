@@ -8,10 +8,10 @@ import strings from './modules/strings'
 import events from './modules/events'
 import lity from 'lity'
 
-
 navigation()
 gallery()
 sidebar()
 locations()
 strings()
 events()
+lity()

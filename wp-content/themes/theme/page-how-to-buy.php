@@ -61,8 +61,10 @@
 				</div>
 
 
+
 				<div id="location" class="row"></div>
 
+        <div id="loadmore"><a class="btn blue loadmore" href="#">Load More</a></div>
 				<script id='demo' type='x-tmpl-mustache'>
 					{{#locations}}
 						<div data-distid="{{distributor.term_id}}" class="location col-xs-6 col-sm-4 col-md-4">
@@ -71,7 +73,7 @@
 								<strong>{{title.rendered}}</strong>
 								<span class="city-state">{{city}}, {{state}}</span>
 								<span class="zip-code">{{zip_code}}</span>
-								<span class="phone-number">{{phone_number}}</span>
+								<span class="phone-number"><a href="">{{phone_number}}</a></span>
 								<div class="syringe {{distributor.carries_syringes}}"></div>
 								<div class="contrast {{distributor.carries_oral_contrast_products}}"></div>
 							</div>
