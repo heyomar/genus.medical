@@ -157,6 +157,23 @@
 
 
 
+.gpos {
+	padding-top: 30px;
+
+	& .logo {
+		text-align: left;
+
+		& img {
+			height: 80px;
+		}
+	}
+
+	& .title {
+  	line-height: 1.2;
+	}
+}
+
+
 /*––––
 	Media Queries
 	––––––––––––––––––––––––––––*/

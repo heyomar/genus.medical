@@ -3060,6 +3060,18 @@ textarea,
   width: 25px;
   background-image: url('../assets/images/legend__barium.svg');
 }
+	.gpos {
+	padding-top: 30px
+}
+	.gpos .logo {
+  text-align: left;
+}
+	.gpos .logo img {
+  height: 80px;
+}
+	.gpos .title {
+  line-height: 1.2;
+}
 	/*––––
 	Media Queries
 	––––––––––––––––––––––––––––*/

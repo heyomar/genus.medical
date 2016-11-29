@@ -65,6 +65,24 @@
 				<div id="location" class="row"></div>
 
         <div id="loadmore"><a class="btn blue loadmore" href="#">Load More</a></div>
+
+
+				<?php if( have_rows('gpos') ): ?>
+					<div class="gpos">
+						<h3 class="title">We Are Pleased to Be Affiliated with the following GPOs</h3>
+						<div class="row">
+
+				    <?php while ( have_rows('gpos') ) : the_row(); ?>
+							<div class="col-xs-6 col-sm-4">
+								<div class="logo">
+									<img class="logo" src="<?php the_sub_field('gpo_logo'); ?>" alt="">
+								</div>
+							</div>
+						<?php endwhile; ?>
+
+						</div>
+					</div>
+				<?php endif; ?>
 				<script id='demo' type='x-tmpl-mustache'>
 					{{#locations}}
 						<div data-distid="{{distributor.term_id}}" class="location col-xs-6 col-sm-4 col-md-4">
@@ -88,22 +106,7 @@
 
 
 
-<?php if( have_rows('gpos') ): ?>
-	<div class="gpos">
-		<h3 class="title">We Are Pleased to Be Affiliated with the following GPOs</h3>
-		<div class="row">
 
-    <?php while ( have_rows('gpos') ) : the_row(); ?>
-			<div class="col-xs-6 col-sm-4">
-				<div class="content">
-					<img src="<?php the_sub_field('gpo_logo'); ?>" alt="">
-				</div>
-			</div>
-		<?php endwhile; ?>
-		
-		</div>
-	</div>
-<?php endif; ?>
 
 
 
