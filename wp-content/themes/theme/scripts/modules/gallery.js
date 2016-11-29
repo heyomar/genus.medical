@@ -2,11 +2,10 @@ import $ from 'jquery'
 
 function gallery () {
 	// initialize var
-	var isClicked = false
+	let isClicked = false
 
 	// event listener on thumbnail images
 	$('.thumb').click(function (e) {
-		// se
 		isClicked = true
 
 		// get the background image url
@@ -14,7 +13,7 @@ function gallery () {
 		const viewImage = $('.image').css('background-image')
 
 			// swap the images
-		if (isClicked = true) {
+		if (isClicked === true) {
 			$('.image').css('background-image', bgImage)
 			$(this).css('background-image', viewImage)
 		}
