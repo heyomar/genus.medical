@@ -4,14 +4,14 @@ import Mustache from 'mustache'
 // MAIN EXPORT START
 
 function locations () {
-	var template = $('#demo').html()
+	const template = $('#demo').html()
 	Mustache.parse(template)
-	var locations = []
-	var locationsPerPage = 1
+	const locations = []
+	const locationsPerPage = 1
 
 	function geocodeUrl (zip) {
-		var apiKey = 'AIzaSyBOii_Qh6he0eb9rxEWpKMsROoh2LAuwXk'
-		var apiEndpoint = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + zip + '&key=' + apiKey
+		const apiKey = 'AIzaSyBOii_Qh6he0eb9rxEWpKMsROoh2LAuwXk'
+		const apiEndpoint = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + zip + '&key=' + apiKey
 		return apiEndpoint
 	}
 
@@ -20,21 +20,21 @@ function locations () {
 	}
 
 	function haversine (lat1, lng1, lat2, lng2) {
-		var R = 6371 // km earf
-		var x1 = lat2 - lat1
-		var dLat = toRad(x1)
-		var x2 = lng2 - lng1
-		var dLng = toRad(x2)
-		var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+		const R = 6371 // km earf
+		const x1 = lat2 - lat1
+		const dLat = toRad(x1)
+		const x2 = lng2 - lng1
+		const dLng = toRad(x2)
+		const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
 		Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
 		Math.sin(dLng / 2) * Math.sin(dLng / 2)
-		var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
-		var d = R * c
+		const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
+		const d = R * c
 		return d // distance in km
 	}
 		// now entering callback hell. promisifying left as an exercise for the developer
 
-	var dataSet
+	let dataSet
 	function getLocations (zip) {
 		// first geocode the zip
 		$.ajax({
@@ -42,8 +42,8 @@ function locations () {
 			success: function (data) {
 			// console.log(data)
 			// great now we have the zip, let's get the coords
-				var lat = data.results[0].geometry.location.lat
-				var lng = data.results[0].geometry.location.lng
+				const lat = data.results[0].geometry.location.lat
+				const lng = data.results[0].geometry.location.lng
 
 				// sweet, let's get the locations
 				$.ajax({
@@ -52,8 +52,8 @@ function locations () {
 						console.log(data)
 
 						// ok awesome. let's sort these locations against the zip with the haversine formula
-						var distance
-						for (var i = 0; i < data.length; i++) {
+						let distance
+						for (let i = 0; i < data.length; i++) {
 							distance = haversine(lat, lng, data[i].latitude, data[i].longitude)
 							data[i].distance = distance
 							locations.push(data[i])
@@ -65,7 +65,7 @@ function locations () {
 						locations.splice(0, locationsPerPage) // remove the first nine items
 
 						// inject the data into the parsed template
-						var go = Mustache.render(template, dataSet)
+						const go = Mustache.render(template, dataSet)
 
 						// inject the rendered template into the dom
 						$('#location').html(go)
@@ -89,10 +89,10 @@ function locations () {
 	$(document).ready(function () {
 		$('#findDist').on('click', function (e) {
 			e.preventDefault()
-			var theZip = ($('#zipcode').val())
+			const theZip = ($('#zipcode').val())
 			// validate data
 			function zipLength (zip) {
-				var zipString = zip.toString()
+				const zipString = zip.toString()
 				if (zipString.length > 4 && zipString.length < 6) {
 					getLocations(theZip)
 					console.log('right!')
@@ -115,9 +115,9 @@ function locations () {
 
 		$('.loadmore').on('click', function (e) {
 			e.preventDefault()
-			var loadMoreDataSet = {'locations': locations.slice(0, locationsPerPage)} // gimme the first 9 items
+			const loadMoreDataSet = {'locations': locations.slice(0, locationsPerPage)} // gimme the first 9 items
 			locations.splice(0, locationsPerPage) // remove the first nine items
-			var loadMoreLocations = Mustache.render(template, loadMoreDataSet)
+			const loadMoreLocations = Mustache.render(template, loadMoreDataSet)
 			// inject the rendered template into the dom
 			$('#location').append(loadMoreLocations)
 		})
@@ -131,24 +131,18 @@ function locations () {
 		// filter locations
 	function filterLocations () {
 		// get the value of the selected option
-		var selected = $('#select-distributor option:selected').val()
+		const selected = $('#select-distributor option:selected').val()
 
 			// for each item with a class of location get the data attribute
 		$('.location').each(function () {
-			var id = $(this).data('distid')
+			const id = $(this).data('distid')
 
 				// show everything on null or defualt selection
 			if (selected === 'null') {
 				$('.location').show()
-			}
-
-				// check selected value against the id of the locations then show
-			else if (selected === id) {
+			} else if (selected === id) {
 				$(this).fadeIn()
-			}
-
-				// if the selected doesnt match the id of the location, hide that homie!
-			else if (selected !== id) {
+			} else if (selected !== id) {
 				$(this).hide()
 			}
 		})
