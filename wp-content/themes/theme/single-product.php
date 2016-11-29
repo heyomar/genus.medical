@@ -74,7 +74,7 @@
                               </div>
                             </div>
 														<a class="btn blue" href="/how-to-buy">Find A Distributor</a>
-														<a class="btn green-link" href="<?php the_field('pdf'); ?>">Download a package insert</a>
+														<a class="btn green-link <?php the_field('show_pdf_link') ?>" href="<?php the_field('pdf'); ?>">Download a package insert</a>
 												</div>
 											</div>
 										</div>
@@ -92,8 +92,8 @@
 
 <div class="cta cta-blue">
 		<div class="inner">
-			<h2>Make the most of your oral contrast budget.</h2>
-			<p>Learn more about how you can save money on Vanilla SilQ CT Barium.</p>
+			<h2><?php the_field('product_cta_title') ?></h2>
+			<?php the_field('product_cta_copy') ?>
 			<a id="request" href="/request-product-information?pid=<?php echo get_the_ID(); ?>&amp;cat=<?php echo $parentCat = str_replace(' ', '', $parent->slug); ?>" class="btn white">Request Product Information</a>
 		</div>
 </div>

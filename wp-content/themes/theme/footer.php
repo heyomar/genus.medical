@@ -15,7 +15,7 @@
 
 				<div class="social">
 						<span>Connect with Us</span><br>
-							<a href="/">
+							<a href="https://www.linkedin.com/company/genus-medical-technologies">
 								<img class="linkedin" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/footer__social-linkedin.png">
 							</a>
 				</div>

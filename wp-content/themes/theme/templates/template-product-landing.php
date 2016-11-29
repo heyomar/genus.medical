@@ -88,7 +88,9 @@
 																	<span class="label">VIEW PRODUCT</span></a>
 															</div>
 															<div class="description">
-																<h4 class="name"><?php the_title(); ?></h4>
+																<h4 class="name"><a href="/products/<?php
+																$title = strtolower(get_the_title());
+																echo $string = str_replace(' ', '', $title ); ?>"><?php the_title(); ?></a></h4>
 																<?php the_field('product_copy') ?>
 															</div>
 														</div>

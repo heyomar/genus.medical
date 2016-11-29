@@ -73,7 +73,7 @@
 								<strong>{{title.rendered}}</strong>
 								<span class="city-state">{{city}}, {{state}}</span>
 								<span class="zip-code">{{zip_code}}</span>
-								<span class="phone-number"><a href="">{{phone_number}}</a></span>
+								<span class="phone-number"><a href="tel:{{phone_number}}">{{phone_number}}</a></span>
 								<div class="syringe {{distributor.carries_syringes}}"></div>
 								<div class="contrast {{distributor.carries_oral_contrast_products}}"></div>
 							</div>
@@ -83,6 +83,33 @@
 			</div>
 		</div>
 	</div>
+
+
+
+
+
+<?php if( have_rows('gpos') ): ?>
+	<div class="gpos">
+		<h3 class="title">We Are Pleased to Be Affiliated with the following GPOs</h3>
+		<div class="row">
+
+    <?php while ( have_rows('gpos') ) : the_row(); ?>
+			<div class="col-xs-6 col-sm-4">
+				<div class="content">
+					<img src="<?php the_sub_field('gpo_logo'); ?>" alt="">
+				</div>
+			</div>
+		<?php endwhile; ?>
+		
+		</div>
+	</div>
+<?php endif; ?>
+
+
+
+
+
+
 
 	<?php get_template_part('modules/product-sidebar') ?>
 </div>

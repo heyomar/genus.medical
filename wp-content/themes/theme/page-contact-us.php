@@ -20,26 +20,29 @@
 		</div>
 
 		<div class="col-xs-12 col-sm-12 col-md-4 nopad">
-			<div class="sidebar">
+			<div class="contact-sidebar">
 
-				<h4 class="title small">Corporate Offices</h4>
-				<address>
-					<strong>Genus Medical Technologies</strong><br/>
-					215 Chesterfield Business Pkwy <br/>
-					Chesterfield, MO 63005 <br/>
-					<br>
-					<strong>Genus Medical Technologies</strong> <br/>
-					207 Chesterfield Towne Center <br/>
-					Chesterfield, MO 63005 <br/>
-					<br>
-				</address>
+				<div class="inner">
+					<h4 class="title small">Corporate Offices</h4>
+					<address>
+						<strong>Genus Medical Technologies</strong><br/>
+						215 Chesterfield Business Pkwy <br/>
+						Chesterfield, MO 63005 <br/>
+						<br>
+						<strong>Genus Medical Technologies</strong> <br/>
+						207 Chesterfield Towne Center <br/>
+						Chesterfield, MO 63005 <br/>
+						<br>
+					</address>
 
 					<strong>Customer Service</strong> <br/>
 					<a href="">customerservice@genusmedical.com</a> <br/>
 					<a href="tel:1-866-468-5157">1-866-468-5157</a> (p)<br/>
 					<a href="tel:1-314-899-2953">1-314-899-2953</a> (f)
+				</div>
 
 			</div>
+			<div class="map"></div>
 		</div>
 </div>
 

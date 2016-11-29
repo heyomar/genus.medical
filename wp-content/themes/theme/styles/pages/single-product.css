@@ -61,6 +61,14 @@
 		color: var(--green);
 		font-weight: 400;
 	}
+
+	& a.showPDFLink {
+		display: block;
+	}
+
+	& a.hidePDFLink {
+		display: none;
+	}
 }
 
 .gallery {

@@ -28,7 +28,11 @@
 /*––––
 	Sidebar
 	––––––––––––––––––––––––––––*/
-.sidebar {
+.contact-sidebar {
+	& .inner {
+		background-color: var(--offwhite);
+		padding: 50px;
+	}
 	& address {
 		font-style: normal;
 	}
@@ -37,4 +41,11 @@
 		color: var(--green);
 		text-decoration: underline;
 	}
+}
+
+.map {
+	background-image: url('../assets/images/contactus__map.jpg');
+	@apply --background-standard;
+	width: 100%;
+	height: 540px;
 }

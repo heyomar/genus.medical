@@ -2810,6 +2810,12 @@ textarea,
   color: hsla(116, 45%, 50%, 1);
   font-weight: 400;
 }
+	.info a.showPDFLink {
+  display: block;
+}
+	.info a.hidePDFLink {
+  display: none;
+}
 	.gallery {
 	padding: 75px 0 0 0;
 	position: relative;
@@ -3092,14 +3098,26 @@ textarea,
 	/*––––
 	Sidebar
 	––––––––––––––––––––––––––––*/
-	.sidebar {
+	.contact-sidebar {
 }
-	.sidebar address {
+	.contact-sidebar .inner {
+  background-color: hsla(0, 0%, 97%, 1);
+  padding: 50px;
+}
+	.contact-sidebar address {
   font-style: normal;
 }
-	.sidebar a {
+	.contact-sidebar a {
   color: hsla(116, 45%, 50%, 1);
   text-decoration: underline;
+}
+	.map {
+	background-image: url('../assets/images/contactus__map.jpg');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 540px;
 }
 
 /*# sourceMappingURL=bundle.css.map */
