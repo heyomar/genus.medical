@@ -123,3 +123,10 @@ function get_distributor($object, $field_name, $request){
         return $d;
     }
 }
+
+
+
+// Image sizes
+add_image_size( 'Rez1080p', 1920, 1080, true );
+add_image_size( 'Product-Image-Rez720p', 1280, 720, true );
+add_image_size( 'Product-Thumb-Rez480p', 720, 480, true );
