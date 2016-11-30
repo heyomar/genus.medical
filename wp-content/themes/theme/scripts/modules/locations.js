@@ -37,6 +37,7 @@ function locations () {
 	let dataSet
 	function getLocations (zip, distributorId) {
 		// first geocode the zip
+		console.log(distributorId)
 		$.ajax({
 			url: geocodeUrl(zip),
 			success: function (data) {
@@ -49,14 +50,15 @@ function locations () {
 				$.ajax({
 					url: 'http://genus.hlkbeta.com/wp-json/wp/v2/location?filter[posts_per_page]=-1',
 					success: function (data) {
-						console.log(data)
+						
 
 						// ok awesome. let's sort these locations against the zip with the haversine formula
 						let distance
 						for (let i = 0; i < data.length; i++) {
 							distance = haversine(lat, lng, data[i].latitude, data[i].longitude)
 							data[i].distance = distance
-							if (data[i].distributor.term_id == distributorId && distributorId > 0){
+							console.log(data[i])
+							if (data[i].distributor.term_id != distributorId){
 								locations.push(data[i])
 							}
 						}
