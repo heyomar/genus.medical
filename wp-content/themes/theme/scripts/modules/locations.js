@@ -58,7 +58,7 @@ function locations () {
 							distance = haversine(lat, lng, data[i].latitude, data[i].longitude)
 							data[i].distance = distance
 							console.log(data[i])
-							if (data[i].distributor.term_id != distributorId){
+							if (distributorId == 0 || data[i].distributor.term_id == distributorId){
 								locations.push(data[i])
 							}
 						}
