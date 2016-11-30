@@ -100,8 +100,9 @@ function locations () {
 				if (zipString.length > 4 && zipString.length < 6) {
 					if ($('#select-distributor').length) {
 							getLocations(theZip, parseInt($('#select-distributor').val()))
+					} else {
+							getLocations(theZip, 0)
 					}
-					getLocations(theZip, 0)
 					console.log('right!')
 					$('.error').hide()
 					$('.nearby').slideDown()
@@ -109,7 +110,7 @@ function locations () {
 					$('#loadmore').slideDown()
 
 					$('html, body').animate({
-						scrollTop: $('.loadmore').offset().top
+						scrollTop: $('.nearby').offset().top
 					}, 1500)
 				} else {
 					console.log('not enough')
@@ -133,6 +134,7 @@ function locations () {
 		// watch distributor dropdown for change then run filter
 	$('#select-distributor').change(function () {
 		//filterLocations()
+		$('#location').html('')
 		$('#findDist').click() // yeah, this is dumb
 	})
 

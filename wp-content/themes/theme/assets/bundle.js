@@ -11654,8 +11654,9 @@ function locations() {
 				if (zipString.length > 4 && zipString.length < 6) {
 					if (jquery('#select-distributor').length) {
 						getLocations(theZip, parseInt(jquery('#select-distributor').val()));
+					} else {
+						getLocations(theZip, 0);
 					}
-					getLocations(theZip, 0);
 					console.log('right!');
 					jquery('.error').hide();
 					jquery('.nearby').slideDown();
@@ -11663,7 +11664,7 @@ function locations() {
 					jquery('#loadmore').slideDown();
 
 					jquery('html, body').animate({
-						scrollTop: jquery('.loadmore').offset().top
+						scrollTop: jquery('.nearby').offset().top
 					}, 1500);
 				} else {
 					console.log('not enough');
@@ -11687,6 +11688,7 @@ function locations() {
 	// watch distributor dropdown for change then run filter
 	jquery('#select-distributor').change(function () {
 		//filterLocations()
+		jquery('#location').html('');
 		jquery('#findDist').click(); // yeah, this is dumb
 	});
 
