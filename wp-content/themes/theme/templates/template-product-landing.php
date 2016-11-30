@@ -81,7 +81,12 @@
 												<div class="col-xs-12 col-sm-4">
 													<div class="box">
 														<div class="med-sm">
-															<div style="background-image: url('<?php the_field('product_image'); ?>');" class="image">
+															<div style="background-image: url('<?php
+															$image = get_field('product_image');
+															if( !empty($image) ):
+															echo $image['sizes'][ 'large' ];
+															endif;
+															?>');" class="image">
 																<a href="/products/<?php
 																$title = strtolower(get_the_title());
 																echo $string = str_replace(' ', '', $title ); ?>">
