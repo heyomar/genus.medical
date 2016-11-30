@@ -117,7 +117,7 @@
 			height: 50px;
 			width: 100%;
 			display: block;
-			background-color: color(var(--gray) alpha(-18%));
+			background-color: color(var(--gray));
 			color: var(--white);
 			text-transform: uppercase;
 			padding: 14px;
@@ -150,7 +150,7 @@
 		height: 50px;
 		width: 100%;
 		display: block;
-		background-color: color(var(--gray) alpha(-18%));
+		background-color: color(var(--gray));
 		color: var(--white);
 		text-transform: uppercase;
 		padding: 14px;
@@ -162,11 +162,13 @@
 				right: 10px;
 		}
 	}
+
+	& .name {
+		margin-bottom: 0;
+		color: var(--gray);
+	}
+
+	& p {
+		margin-top: 5px;
+	}
 }
-
-
-
-
-
-
-

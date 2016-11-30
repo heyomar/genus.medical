@@ -1879,7 +1879,7 @@ textarea,
   height: 50px;
   width: 100%;
   display: block;
-  background-color: rgba(51, 51, 51, 0.8200000000000001);
+  background-color: rgb(51, 51, 51);
   color: hsla(0, 0%, 100%, 1);
   text-transform: uppercase;
   padding: 14px;
@@ -1910,7 +1910,7 @@ textarea,
   height: 50px;
   width: 100%;
   display: block;
-  background-color: rgba(51, 51, 51, 0.8200000000000001);
+  background-color: rgb(51, 51, 51);
   color: hsla(0, 0%, 100%, 1);
   text-transform: uppercase;
   padding: 14px;
@@ -1922,6 +1922,13 @@ textarea,
   content: url('../assets/images/arrow__down.png');
   position: absolute;
   right: 10px;
+}
+	.med-sm .name {
+  margin-bottom: 0;
+  color: hsla(0, 0%, 20%, 1);
+}
+	.med-sm p {
+  margin-top: 5px;
 }
 	/*––––
   Base
@@ -2306,8 +2313,9 @@ textarea,
 }
 	.handle .arrow {
   border: 1px solid hsla(116, 45%, 50%, 1);
-  padding: 8px 13px;
+  padding: 8px 15px;
   font-size: 16px;
+  display: inline-block;
 }
 	.desktop-cta {
 	display: none;
@@ -2361,6 +2369,21 @@ textarea,
   position: absolute;
   height: 10px;
   line-height: 25px;
+}
+	.ds-caret {
+	color: hsla(116, 45%, 50%, 1);
+	position: relative
+
+}
+	.ds-caret::after {
+  content: '\0025BE';
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  color: hsla(116, 45%, 50%, 1);
+  display: inline-block;
+  position: absolute;
+  bottom: -20px;
+  left: 49%;
 }
 	/*––––
 	media queries

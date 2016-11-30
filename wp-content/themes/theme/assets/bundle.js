@@ -10902,10 +10902,12 @@ function navigation() {
 			jquery('.dropdown').removeClass('open');
 			jquery('.dropdown').slideUp();
 			jquery('body').css('overflow', 'scroll');
+			jquery('.arrow').css('transform', 'rotate(0deg)');
 		} else {
 			jquery('.dropdown').slideDown().show();
 			jquery('.dropdown').addClass('open');
 			jquery('body').css('overflow', 'hidden');
+			jquery('.arrow').css('transform', 'rotate(180deg)');
 		}
 	});
 
@@ -10916,6 +10918,9 @@ function navigation() {
 			jquery('body').css('overflow', 'scroll');
 		}
 	});
+
+	// active page highlight on desktop nav
+	jquery('.current-menu-item').toggleClass('ds-caret');
 }
 
 var mustache = createCommonjsModule(function (module, exports) {
@@ -11760,22 +11765,11 @@ function string$1() {
 	});
 } // END MAIN FUNCTION
 
-function events() {
-	if (jquery('body').hasClass('home')) {
-		// if a single event exists do nothing
-		if (jquery('.single-event')[0]) {} else {
-			// if no events are find then hide the events section on the home page
-			jquery('.events').hide();
-		}
-	}
-} // END MAIN EXPORT
-
 navigation();
 gallery();
 rest$1();
 locations();
 string$1();
-events();
 
 }());
 //# sourceMappingURL=bundle.js.map
