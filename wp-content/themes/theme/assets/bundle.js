@@ -11562,7 +11562,7 @@ function locations() {
 	const template = jquery('#demo').html();
 	mustache.parse(template);
 	const locations = [];
-	const locationsPerPage = 1;
+	const locationsPerPage = 9;
 
 	function geocodeUrl(zip) {
 		const apiKey = 'AIzaSyBOii_Qh6he0eb9rxEWpKMsROoh2LAuwXk';
@@ -11588,7 +11588,7 @@ function locations() {
 	// now entering callback hell. promisifying left as an exercise for the developer
 
 	let dataSet;
-	function getLocations(zip) {
+	function getLocations(zip, distributorId) {
 		// first geocode the zip
 		jquery.ajax({
 			url: geocodeUrl(zip),
@@ -11609,7 +11609,9 @@ function locations() {
 						for (let i = 0; i < data.length; i++) {
 							distance = haversine(lat, lng, data[i].latitude, data[i].longitude);
 							data[i].distance = distance;
-							locations.push(data[i]);
+							if (data[i].distributor.term_id == distributorId && distributorId > 0) {
+								locations.push(data[i]);
+							}
 						}
 
 						locations.sort(function (a, b) {
@@ -11649,7 +11651,10 @@ function locations() {
 			function zipLength(zip) {
 				const zipString = zip.toString();
 				if (zipString.length > 4 && zipString.length < 6) {
-					getLocations(theZip);
+					if (jquery('#select-distributor').length) {
+						getLocations(theZip, parseInt(jquery('#select-distributor').val()));
+					}
+					getLocations(theZip, 0);
 					console.log('right!');
 					jquery('.error').hide();
 					jquery('.nearby').slideDown();

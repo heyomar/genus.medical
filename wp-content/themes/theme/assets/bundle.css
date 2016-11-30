@@ -1870,7 +1870,7 @@ textarea,
   background-position: center;
   background-size: cover;
   position: relative;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
 }
 	.med .inner .label {
   border-bottom: 3px solid hsla(116, 45%, 50%, 1);
@@ -1900,7 +1900,7 @@ textarea,
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url('http://placehold.it/350x250');
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
   position: relative;
 }
 	.med-sm .label {
@@ -2098,7 +2098,7 @@ textarea,
   left: 0;
   white-space: nowrap;
   background: #0b0b0b;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, .9);
   outline: none !important;
   opacity: 0;
   -webkit-transition: opacity 0.3s ease;
@@ -2184,7 +2184,7 @@ textarea,
   width: auto;
   height: auto;
   z-index: -1;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 8px rgba(0, 0, 0, .6);
 }
 	.lity-close {
   z-index: 9994;
@@ -2203,7 +2203,7 @@ textarea,
   font-size: 35px;
   font-family: Arial, Baskerville, monospace;
   line-height: 35px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
   border: 0;
   background: none;
   outline: none;
@@ -2225,7 +2225,7 @@ textarea,
   font-size: 35px;
   font-family: Arial, Baskerville, monospace;
   line-height: 35px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
   border: 0;
   background: none;
   outline: none;
@@ -2267,7 +2267,7 @@ textarea,
   left: 0;
   width: 100%;
   height: 100%;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 8px rgba(0, 0, 0, .6);
   background: #000;
 }
 	.lity-hide {
@@ -2606,7 +2606,7 @@ textarea,
 }
 	.arrowbox {
 	background-color: rgba(78, 185, 70, 0.8200000000000001);
-	box-shadow: -1px 9px 30px 0px rgba(50, 50, 50, 0.36);
+	box-shadow: -1px 9px 30px 0px rgba(50, 50, 50, .36);
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -2709,7 +2709,7 @@ textarea,
   background-repeat: no-repeat;
   height: 250px;
   width: auto;
-  box-shadow: 0px 3px 10px -2px rgba(0,0,0,0.41);
+  box-shadow: 0px 3px 10px -2px rgba(0, 0, 0, .41);
   border-bottom: 2px solid hsla(116, 45%, 50%, 1);
 }
 	.mangement .inner .bio {
