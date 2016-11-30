@@ -33,12 +33,27 @@
 														<div class="inner">
 															<div class="images">
 																	<div class="view">
-																		<div style="background-image: url('<?php the_field('product_image_1') ?>');" class="image"></div>
+																		<div style="background-image: url('<?php
+																		$image = get_field('product_image_1');
+																		if( !empty($image) ):
+																		echo $image['sizes'][ 'large' ];
+																		endif;
+																		?>');" class="image"></div>
 																	</div>
 																	<div class="thumbs">
-																		<div style="background-image: url('<?php the_field('product_image_2') ?>');" class="thumb"></div>
+																		<div style="background-image: url('<?php
+																		$image = get_field('product_image_2');
+																		if( !empty($image) ):
+																		echo $image['sizes'][ 'large' ];
+																		endif;
+																		?>');" class="thumb"></div>
 
-																		<div style="background-image: url('<?php the_field('product_image_3') ?>');" class="thumb"></div>
+																		<div style="background-image: url('<?php
+																		$image = get_field('product_image_3');
+																		if( !empty($image) ):
+																		echo $image['sizes'][ 'large' ];
+																		endif;
+																		?>');" class="thumb"></div>
 																	</div>
 															</div>
 														</div>
