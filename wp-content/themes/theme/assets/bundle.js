@@ -11686,7 +11686,8 @@ function locations() {
 
 	// watch distributor dropdown for change then run filter
 	jquery('#select-distributor').change(function () {
-		filterLocations();
+		//filterLocations()
+		jquery('#findDist').click(); // yeah, this is dumb
 	});
 
 	// filter locations

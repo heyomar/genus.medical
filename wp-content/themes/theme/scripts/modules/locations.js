@@ -132,7 +132,8 @@ function locations () {
 
 		// watch distributor dropdown for change then run filter
 	$('#select-distributor').change(function () {
-		filterLocations()
+		//filterLocations()
+		$('#findDist').click() // yeah, this is dumb
 	})
 
 		// filter locations
