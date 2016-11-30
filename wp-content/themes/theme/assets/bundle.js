@@ -11606,11 +11606,13 @@ function locations() {
 
 						// ok awesome. let's sort these locations against the zip with the haversine formula
 						let distance;
+						console.log(data.length);
 						for (let i = 0; i < data.length; i++) {
 							distance = haversine(lat, lng, data[i].latitude, data[i].longitude);
 							data[i].distance = distance;
-							console.log(data[i]);
-							if (data[i].distributor.term_id != distributorId) {
+							console.log(data[i].distributor.term_id);
+
+							if (distributorId == 0 || data[i].distributor.term_id == distributorId) {
 								locations.push(data[i]);
 							}
 						}
