@@ -102,18 +102,6 @@
 		</div>
 	</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
 	<?php get_template_part('modules/product-sidebar') ?>
 </div>
 
