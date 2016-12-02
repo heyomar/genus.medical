@@ -48,18 +48,16 @@ function locations () {
 
 				// sweet, let's get the locations
 				$.ajax({
-					//url: 'http://genus.hlkbeta.com/wp-json/wp/v2/location?filter[posts_per_page]=-1',
-					url: 'http://genus.hlkbeta.com/wp-content/data/locations.json',
+					// url: 'http://genus.hlkbeta.com/wp-json/wp/v2/location?filter[posts_per_page]=-1',
+					url: '/wp-content/data/locations.json',
 					success: function (data) {
-						
-
 						// ok awesome. let's sort these locations against the zip with the haversine formula
 						let distance
 						for (let i = 0; i < data.length; i++) {
 							distance = haversine(lat, lng, data[i].latitude, data[i].longitude)
 							data[i].distance = distance
-							
-							if (isNaN(distributorId) || data[i].distributor.term_id == distributorId){
+
+							if (isNaN(distributorId) || data[i].distributor.term_id === distributorId) {
 								console.log('der')
 								locations.push(data[i])
 							}
@@ -100,13 +98,13 @@ function locations () {
 			function zipLength (zip) {
 				const zipString = zip.toString()
 				if (zipString.length > 4 && zipString.length < 6) {
-					var dist = $('#select-distributor').val()
+					const dist = $('#select-distributor').val()
 					if (dist !== null) {
-							getLocations(theZip, parseInt(dist))
+						getLocations(theZip, parseInt(dist))
 					} else {
-							getLocations(theZip, 0)
+						getLocations(theZip, 0)
 					}
-					
+
 					$('.error').hide()
 					$('.nearby').slideDown()
 					$('.legend').slideDown()
@@ -136,7 +134,7 @@ function locations () {
 
 		// watch distributor dropdown for change then run filter
 	$('#select-distributor').change(function () {
-		//filterLocations()
+		// filterLocations()
 		$('#location').html('')
 		$('#findDist').click() // yeah, this is dumb
 	})
