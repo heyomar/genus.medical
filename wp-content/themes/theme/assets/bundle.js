@@ -11655,11 +11655,11 @@ function locations() {
 			function zipLength(zip) {
 				const zipString = zip.toString();
 				if (zipString.length > 4 && zipString.length < 6) {
-					console.log(jquery('#select-distributor').val());
-					if (jquery('#select-distributor').val()) {
-						getLocations(theZip, parseInt(jquery('#select-distributor').val()));
-					} else {
+					var dist = jquery('#select-distributor').val();
+					if (dist === null) {
 						getLocations(theZip, 0);
+					} else {
+						getLocations(theZip, parseInt(dist));
 					}
 					console.log('right!');
 					jquery('.error').hide();

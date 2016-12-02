@@ -101,11 +101,11 @@ function locations () {
 			function zipLength (zip) {
 				const zipString = zip.toString()
 				if (zipString.length > 4 && zipString.length < 6) {
-					console.log($('#select-distributor').val())
-					if ($('#select-distributor').val()) {
-							getLocations(theZip, parseInt($('#select-distributor').val()))
-					} else {
+					var dist = $('#select-distributor').val()
+					if (dist === null) {
 							getLocations(theZip, 0)
+					} else {
+							getLocations(theZip, parseInt(dist))
 					}
 					console.log('right!')
 					$('.error').hide()
