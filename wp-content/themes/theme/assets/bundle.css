@@ -3162,5 +3162,10 @@ textarea,
 	.syringes .card {
   margin-bottom: 30px;
 }
+	.syringes .label {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
 
 /*# sourceMappingURL=bundle.css.map */

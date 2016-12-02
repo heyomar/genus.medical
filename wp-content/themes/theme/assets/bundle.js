@@ -11773,7 +11773,12 @@ function syringeCategories() {
 			success: function (data) {
 				jquery.each(data, function (i, val) {
 					if (val['parent'] === 4) {
-						jquery('#categoriesRow').append('<div class="card col-xs-12 col-sm-4"><div class="med-sm"><div class="image"><a href=""><span class="label">' + val['name'] + '</span<</a></div></div></div>');
+						jquery('#categoriesRow').append('<div class="card col-xs-12 col-sm-4"><div class="med-sm"><div class="image"><a href="/' + val['name'].replace(/\s+/g, '-').toLowerCase() + '"><span class="label">' + val['name'] + '</span<</a></div></div></div>');
+						// $('.card .med-sm .label').each(function () {
+						// 	const labelText = $(this).text()
+						// 	const labelLength = labelText.length
+						// 	console.log(labelLength)
+						// })
 					} else {}
 				});
 			},
@@ -11783,6 +11788,8 @@ function syringeCategories() {
 		});
 	} else {}
 }
+
+window.jQuery = window.$ = jquery;
 
 navigation();
 gallery();

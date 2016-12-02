@@ -1,5 +1,8 @@
 'use strict'
 
+import $ from 'jquery'
+window.jQuery = window.$ = $
+
 import lity from 'lity'
 import sidebar from './modules/product-sidebar'
 import navigation from './modules/navigation'

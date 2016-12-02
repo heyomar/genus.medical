@@ -6,4 +6,10 @@
 	& .card {
 		margin-bottom: 30px;
 	}
+
+	& .label {
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+	}
 }
