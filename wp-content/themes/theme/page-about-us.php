@@ -13,7 +13,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="row">
 			<div class="col-xs-12 col-sm-12">
 				<div class="box">
@@ -30,10 +30,14 @@
 	<div class="row mxw-1100-center">
 		<?php if( have_rows('members_repeater') ): ?>
 			<?php while ( have_rows('members_repeater') ) : the_row(); ?>
+				<?php $member_image = get_sub_field('member_image');?>
+
 				<div class="col-xs-12 col-sm-4">
 					<div class="box">
 						<div class="inner">
-							<div style="background-image: url('<?php the_sub_field('member_image') ?>')" class="img"></div>
+							<div class="image">
+							<?php echo wp_get_attachment_image( $member_image[ID], 'medium' ); ?>
+							</div>
 							<h4 class="name"><?php the_sub_field('member_name'); ?></h4>
 							<p class="bio">
 								<?php the_sub_field('member_bio'); ?>
