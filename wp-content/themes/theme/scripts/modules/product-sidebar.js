@@ -4,7 +4,7 @@ function rest () {
 	if ($('body').hasClass('single-product') || $('body').hasClass('how-to-buy')) {
 		// Populate sidebar list of products
 		$.ajax({
-			url: 'http://gmt.dev/wp-json/wp/v2/categories?filter[cat]=3',
+			url: '/wp-json/wp/v2/categories?filter[cat]=3',
 			success: function (data) {
 				$.each(data, function (i, val) {
 					if (val['parent'] === 3) {

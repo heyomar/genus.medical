@@ -1,7 +1,7 @@
 <?php
 /*
  * Template Name: Syringe Landing
- * Description: Page template for product landing
+ * Description: Page template for syringe landing
  */
 
 ?>
@@ -16,7 +16,7 @@
 			<div class="col-xs-12 col-sm-6">
 				<div class="box">
 					<div class="content">
-						<h1 class="title"><?php the_title(); ?>dfsds</h1>
+						<h1 class="title"><?php the_title(); ?></h1>
 						<p class="copy"><?php the_field('hero_copy') ?></p>
 					</div>
 				</div>
