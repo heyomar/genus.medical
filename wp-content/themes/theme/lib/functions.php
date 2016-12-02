@@ -100,19 +100,21 @@ function slug_register_meta() {
     );
 }
 
+
+
 // we're caching this json
 function cache_location_json($post_id) {
   if ( wp_is_post_revision( $post_id ) ) {
     return; // if it's just a revision, don't regenerate json
   }
-  
+
   $p = get_post( $post_id );
   if ( $p->post_type == 'location' ) {
     $max_loops = 100; // 100 loops = 10,000 locations
     $page = 1; // let's start at the very beginning
-    $url = "http://" . $_SERVER['HTTP_HOST'] . "/wp-json/wp/v2/location?per_page=100&page="; // this page intentionally left blank 
+    $url = "http://" . $_SERVER['HTTP_HOST'] . "/wp-json/wp/v2/location?per_page=100&page="; // this page intentionally left blank
     $all_locs = [];
-    
+
     for ( $i = 1; $i <= $max_loops; $i+=1 ) {
       $locs_json = file_get_contents( $url . $i ); // gimme the page -- better be json!
       $locs = json_decode( $locs_json );
@@ -121,30 +123,22 @@ function cache_location_json($post_id) {
           array_push($all_locs, $loc);
         }
       } else {
-        // we outta here 
+        // we outta here
         break;
       }
     }
-    // now i got all the locs 
+    // now i got all the locs
     $d = wp_upload_dir();
     $write_dir =  $d['basedir'] . "/../data/";
     file_put_contents( $write_dir . "locations.json", json_encode( $all_locs ) );
   }
-		
+
 }
 // hook `em
 add_action( 'save_post', 'cache_location_json' );
 
 
-/**
- * Get the value of the "starship" field
- *
- * @param array $object Details of current post.
- * @param string $field_name Name of field.
- * @param WP_REST_Request $request Current request
- *
- * @return mixed
- */
+
 function slug_get_meta( $object, $field_name, $request ) {
     return get_field($field_name, $object[ 'id' ], false);
 }
