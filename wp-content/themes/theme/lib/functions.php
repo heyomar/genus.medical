@@ -117,7 +117,7 @@ function cache_location_json($post_id) {
       $locs_json = file_get_contents( $url . $i ); // gimme the page -- better be json!
       $locs = json_decode( $locs_json );
       if ( is_array($locs) && count($locs) > 0 ) {
-        array_push( $all_locs, $locs );
+        array_merge( $all_locs, $locs );
       } else {
         // we outta here 
         break;
