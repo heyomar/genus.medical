@@ -60,6 +60,7 @@ function locations () {
 							data[i].distance = distance
 							
 							if (isNan(distributorId) || data[i].distributor.term_id == distributorId){
+								console.log('der')
 								locations.push(data[i])
 							}
 						}
