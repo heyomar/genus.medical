@@ -11602,7 +11602,7 @@ function locations() {
 				// sweet, let's get the locations
 				jquery.ajax({
 					//url: 'http://genus.hlkbeta.com/wp-json/wp/v2/location?filter[posts_per_page]=-1',
-					url: 'http://genus.hlkbeta.com/wp-content/data/location.json',
+					url: 'http://genus.hlkbeta.com/wp-content/data/locations.json',
 					success: function (data) {
 
 						// ok awesome. let's sort these locations against the zip with the haversine formula
