@@ -11611,7 +11611,6 @@ function locations() {
 						for (let i = 0; i < data.length; i++) {
 							distance = haversine(lat, lng, data[i].latitude, data[i].longitude);
 							data[i].distance = distance;
-							console.log(data[i].distributor.term_id);
 
 							if (distributorId == 0 || data[i].distributor.term_id == distributorId) {
 								locations.push(data[i]);
@@ -11656,10 +11655,10 @@ function locations() {
 				const zipString = zip.toString();
 				if (zipString.length > 4 && zipString.length < 6) {
 					var dist = jquery('#select-distributor').val();
-					if (dist === null) {
-						getLocations(theZip, 0);
-					} else {
+					if (dist !== null) {
 						getLocations(theZip, parseInt(dist));
+					} else {
+						getLocations(theZip, 0);
 					}
 
 					jquery('.error').hide();
