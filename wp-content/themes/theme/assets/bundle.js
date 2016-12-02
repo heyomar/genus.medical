@@ -10873,7 +10873,7 @@ function rest$1() {
 	if (jquery('body').hasClass('single-product') || jquery('body').hasClass('how-to-buy')) {
 		// Populate sidebar list of products
 		jquery.ajax({
-			url: 'http://gmt.dev/wp-json/wp/v2/categories?filter[cat]=3',
+			url: '/wp-json/wp/v2/categories?filter[cat]=3',
 			success: function (data) {
 				jquery.each(data, function (i, val) {
 					if (val['parent'] === 3) {
@@ -11776,11 +11776,38 @@ function string$1() {
 	});
 } // END MAIN FUNCTION
 
+function syringeCategories() {
+	if (jquery('body').hasClass('syringes')) {
+		// Populate syringe landing with categories
+		jquery.ajax({
+			url: '/wp-json/wp/v2/categories?filter[cat]=3',
+			success: function (data) {
+				jquery.each(data, function (i, val) {
+					if (val['parent'] === 4) {
+						jquery('#categoriesRow').append('<div class="card col-xs-12 col-sm-4"><div class="med-sm"><div class="image"><a href="/' + val['name'].replace(/\s+/g, '-').toLowerCase() + '"><span class="label">' + val['name'] + '</span<</a></div></div></div>');
+						// $('.card .med-sm .label').each(function () {
+						// 	const labelText = $(this).text()
+						// 	const labelLength = labelText.length
+						// 	console.log(labelLength)
+						// })
+					} else {}
+				});
+			},
+			error: function () {
+				console.log('There is an error with the rest function');
+			}
+		});
+	} else {}
+}
+
+window.jQuery = window.$ = jquery;
+
 navigation();
 gallery();
 rest$1();
 locations();
 string$1();
+syringeCategories();
 
 }());
 //# sourceMappingURL=bundle.js.map

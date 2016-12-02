@@ -1,0 +1,15 @@
+.syringes {
+	& .categories {
+		padding: 80px 20px 50px 20px;
+	}
+
+	& .card {
+		margin-bottom: 30px;
+	}
+
+	& .label {
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+}
