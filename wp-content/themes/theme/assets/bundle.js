@@ -11655,7 +11655,7 @@ function locations() {
 			function zipLength(zip) {
 				const zipString = zip.toString();
 				if (zipString.length > 4 && zipString.length < 6) {
-					if (jquery('#select-distributor').length) {
+					if (jquery('#select-distributor').val()) {
 						getLocations(theZip, parseInt(jquery('#select-distributor').val()));
 					} else {
 						getLocations(theZip, 0);
