@@ -11621,7 +11621,7 @@ function locations() {
 						locations.sort(function (a, b) {
 							return a.distance - b.distance;
 						});
-
+						console.log(locations);
 						dataSet = { 'locations': locations.slice(0, locationsPerPage) }; // gimme the first 9 items
 						locations.splice(0, locationsPerPage); // remove the first nine items
 
@@ -11661,7 +11661,7 @@ function locations() {
 					} else {
 						getLocations(theZip, parseInt(dist));
 					}
-					console.log('right!');
+
 					jquery('.error').hide();
 					jquery('.nearby').slideDown();
 					jquery('.legend').slideDown();
