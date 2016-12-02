@@ -48,7 +48,8 @@ function locations () {
 
 				// sweet, let's get the locations
 				$.ajax({
-					url: 'http://genus.hlkbeta.com/wp-json/wp/v2/location?filter[posts_per_page]=-1',
+					//url: 'http://genus.hlkbeta.com/wp-json/wp/v2/location?filter[posts_per_page]=-1',
+					url: 'http://genus.hlkbeta.com/wp-content/data/location.json',
 					success: function (data) {
 						
 
