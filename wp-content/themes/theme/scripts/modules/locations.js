@@ -55,13 +55,11 @@ function locations () {
 
 						// ok awesome. let's sort these locations against the zip with the haversine formula
 						let distance
-						console.log(data.length)
-						console.log(distributorId)
 						for (let i = 0; i < data.length; i++) {
 							distance = haversine(lat, lng, data[i].latitude, data[i].longitude)
 							data[i].distance = distance
 							
-							if (distributorId == 0 || data[i].distributor.term_id == distributorId){
+							if (isNan(distributorId) || data[i].distributor.term_id == distributorId){
 								locations.push(data[i])
 							}
 						}
