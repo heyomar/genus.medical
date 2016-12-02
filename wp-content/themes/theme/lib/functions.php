@@ -125,7 +125,7 @@ function cache_location_json($post_id) {
     }
     // now i got all the locs 
     $d = wp_upload_dir();
-    
+    var_dump($d); exit;
     $write_dir =  $d['path'] . "../data/";
     file_put_contents( $write_dir . "locations.json", json_encode( $all_locs ) );
   }
