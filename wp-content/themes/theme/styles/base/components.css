@@ -66,11 +66,11 @@
 	@apply --background-standard;
 
 	&.cta-green {
-		background:linear-gradient(hsla(116, 45%, 50%, .90), hsla(116, 45%, 50%, .90)), url('../assets/images/cta__module__green-bg.jpg');
+		background-image: url('../assets/images/cta__module__green-bg.jpg');
 	}
 
 	&.cta-blue {
-		background:linear-gradient(hsla(208, 100%, 30%, .90), hsla(208, 100%, 30%, .90)), url('../assets/images/cta__module__blue-bg.jpg');
+		background-image: url('../assets/images/cta__module__blue-bg.jpg');
 	}
 
 	& .inner {
