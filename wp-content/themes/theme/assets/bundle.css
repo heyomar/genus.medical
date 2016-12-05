@@ -2675,7 +2675,7 @@ textarea,
 	background-image: url('../assets/images/home__callout-powerinjector.jpg');
 }
 	/*––––
-	Media Queries
+	Events Section
 	––––––––––––––––––––––––––––*/
 	.events {
   padding: 20px 20px 50px 20px;
@@ -2693,7 +2693,21 @@ textarea,
   border-bottom: 2px solid hsla(116, 45%, 50%, 1);
 }
 	.events .single-event {
-  text-align: center;
+  text-align: left;
+  margin: 5px;
+}
+	.events .single-event .link {
+  color: hsla(116, 45%, 50%, 1);
+  text-decoration: underline;
+}
+	.events .single-event .image {
+  margin-bottom: 20px;
+  border-bottom: 2px solid hsla(116, 45%, 50%, 1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+	.events .single-event img {
+  max-width: 100%;
+  height: auto;
 }
 	/*––––
 	Media Queries
