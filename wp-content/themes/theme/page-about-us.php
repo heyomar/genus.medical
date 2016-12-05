@@ -4,7 +4,12 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-12">
 				<div class="box">
-					<div class="hero">
+					<div style="background-image:url(<?php
+					$image = get_field('hero_background');
+					if( !empty($image) ):
+					echo $image['sizes'][ 'large' ];
+					endif;
+					?>);" class="hero">
 								<div class="mxw-900-center">
 									<h1 class="title"><?php the_title(); ?></h1>
 									<p class="copy"><?php the_field('hero_copy') ?><p>

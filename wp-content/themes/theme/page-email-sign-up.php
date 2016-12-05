@@ -1,7 +1,12 @@
 <?php get_header(); ?>
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<div class="bluehero"></div>
+<div style="background-image:url(<?php
+$image = get_field('hero_background');
+if( !empty($image) ):
+echo $image['sizes'][ 'large' ];
+endif;
+?>);" class="bluehero"></div>
 
 <div class="content">
 	<div class="row">

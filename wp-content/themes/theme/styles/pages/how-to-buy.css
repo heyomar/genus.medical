@@ -3,8 +3,7 @@
 	––––––––––––––––––––––––––––*/
 .how-to-buy {
 	& .hero {
-		background: linear-gradient(hsla(208, 100%, 30%, .89), hsla(208, 100%, 30%, .89)), url('../assets/images/howtobuy__hero-bg.jpg');
-		background-position: center center;
+		@apply --background-standard;
 	}
 
 	& .content {

@@ -10,6 +10,7 @@
 
 <div style="
   <?php
+
   if($heroImage != null)
   echo "background-image:url('" . $heroImage ?>');"  class="bluehero">
 	<div class="inner">

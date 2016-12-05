@@ -3,7 +3,7 @@
 	––––––––––––––––––––––––––––*/
 .contact-us {
 	& .bluehero {
-		background:linear-gradient(hsla(208, 100%, 30%, .95), hsla(208, 100%, 30%, .95)), url('../assets/images/contactus__hero-bg.jpg');
+		background-image: url('../assets/images/rpi__hero-bg.jpg');
 		@apply --background-standard;
 	}
 

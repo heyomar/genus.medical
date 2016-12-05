@@ -2728,8 +2728,9 @@ textarea,
 	.about-us {
 }
 	.about-us .hero {
-  background: -webkit-linear-gradient(hsla(208, 100%, 30%, .89), hsla(208, 100%, 30%, .89)), url('../assets/images/aboutus__hero-bg.jpg');
-  background: linear-gradient(hsla(208, 100%, 30%, .89), hsla(208, 100%, 30%, .89)), url('../assets/images/aboutus__hero-bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 	.ourmission {
 	text-align: center;
@@ -2761,8 +2762,7 @@ textarea,
 	.request-product-information {
 }
 	.request-product-information .bluehero {
-  background: -webkit-linear-gradient(hsla(208, 100%, 30%, .95), hsla(208, 100%, 30%, .95)), url('../assets/images/component__bluehero-bg.jpg');
-  background: linear-gradient(hsla(208, 100%, 30%, .95), hsla(208, 100%, 30%, .95)), url('../assets/images/component__bluehero-bg.jpg');
+  background-image: url('../assets/images/rpi__hero-bg.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -3001,9 +3001,9 @@ textarea,
 	.how-to-buy {
 }
 	.how-to-buy .hero {
-  background: -webkit-linear-gradient(hsla(208, 100%, 30%, .89), hsla(208, 100%, 30%, .89)), url('../assets/images/howtobuy__hero-bg.jpg');
-  background: linear-gradient(hsla(208, 100%, 30%, .89), hsla(208, 100%, 30%, .89)), url('../assets/images/howtobuy__hero-bg.jpg');
-  background-position: center center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 	.how-to-buy .content {
   max-width: 600px;
@@ -3156,8 +3156,7 @@ textarea,
 	.contact-us {
 }
 	.contact-us .bluehero {
-  background: -webkit-linear-gradient(hsla(208, 100%, 30%, .95), hsla(208, 100%, 30%, .95)), url('../assets/images/contactus__hero-bg.jpg');
-  background: linear-gradient(hsla(208, 100%, 30%, .95), hsla(208, 100%, 30%, .95)), url('../assets/images/contactus__hero-bg.jpg');
+  background-image: url('../assets/images/rpi__hero-bg.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
