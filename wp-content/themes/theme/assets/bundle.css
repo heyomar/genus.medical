@@ -2521,23 +2521,34 @@ textarea,
     text-align: right;
   }
 }
-	.category {
-	border: 1px solid red;
+	.archive.category {
+
 }
-	.syringes {
+	.archive.category .clearhero {
+  position: relative;
+}
+	.archive.category .content {
+  position: absolute;
+  top: 48%;
+  -webkit-transform: translateY(-48%);
+          transform: translateY(-48%);
+}
+	.syringes-cat {
 	padding: 50px 20px
 }
-	.syringes .name {
+	.syringes-cat .name {
   color: hsla(116, 45%, 50%, 1);
   font-weight: bold;
   padding-top: 15px;
 }
-	.syringes .inner {
+	.syringes-cat .inner {
   padding-bottom: 35px;
-  border-bottom: 1px solid black;
 }
 	.border-1px-btm {
 	border-bottom: 1px solid black;
+}
+	.pad-20px-top {
+	padding-top: 20px;
 }
 	/*––––
 	Page Styles

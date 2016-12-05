@@ -1,8 +1,16 @@
-.category {
-	border: 1px solid red;
+.archive.category {
+	& .clearhero {
+		position: relative;
+	}
+	& .content {
+		position: absolute;
+		top: 48%;
+		transform: translateY(-48%);
+	}
+
 }
 
-.syringes {
+.syringes-cat {
 	padding: 50px 20px;
 	& .name {
 		color: var(--green);
@@ -12,11 +20,14 @@
 
 	& .inner {
 		padding-bottom: 35px;
-		border-bottom: 1px solid black;
 	}
 }
 
 
 .border-1px-btm {
 	border-bottom: 1px solid black;
+}
+
+.pad-20px-top {
+	padding-top: 20px;
 }

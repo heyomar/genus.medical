@@ -6,7 +6,7 @@
 					<div class="col-xs-12 col-sm-12">
 							<div class="content">
 								<h1 class="title"><?php single_cat_title(); ?></h1>
-								<p class="copy"><?php the_field('hero_copy') ?></p>
+								<p class="copy">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
 							</div>
 					</div>
 				</div>
@@ -18,7 +18,7 @@
 	<div class="inner">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-8">
-				<div class="syringes mxw-900-center">
+				<div class="syringes-cat mxw-900-center">
 					<div class="row">
 
 					<?php
@@ -41,14 +41,14 @@
 
 									<?php  $the_query->the_post(); ?>
 
-									<div class="border-1px-btm col-xs-12 col-sm-3 col-md-3">
+									<div class="pad-20px-top border-1px-btm col-xs-12 col-sm-3 col-md-3">
 										<div class="name"><?php the_title(); ?></div>
 									</div>
 
-									<div class="nopad col-xs-12 col-sm-9 col-md-9">
+									<div class=" pad-20px-top border-1px-btm nopad col-xs-12 col-sm-9 col-md-9">
 										<div class="inner"><?php echo get_field('description',get_the_ID()); ?>
-										<?php echo get_field('product_code',get_the_ID()); ?>
-										<?php echo get_field('product_description',get_the_ID()); ?></div>
+										<?php the_field('product_code') ?><br>
+										<?php the_field('product_description'); ?></div>
 									</div>
 
 
