@@ -14,10 +14,6 @@
 			</div>
 		</div>
 
-
-
-
-
 		<?php
 			$dept = $post->post_name;
 
@@ -62,7 +58,7 @@
 								<div class="card col-xs-12 col-sm-4">
 									<div class="med-sm">
 										<div style="background-image:url('<?php echo $term['background'] ?>');" class="image">
-											<a href="">
+											<a href="/category/syringes/<?php echo strtolower(str_replace(' ', '-', $term['name']));  ?>">
 												<span class="label"><?php echo $term['name']; ?></span>
 											</a>
 										</div>
