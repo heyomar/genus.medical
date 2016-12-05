@@ -1,0 +1,22 @@
+.category {
+	border: 1px solid red;
+}
+
+.syringes {
+	padding: 50px 20px;
+	& .name {
+		color: var(--green);
+		font-weight: bold;
+		padding-top: 15px;
+	}
+
+	& .inner {
+		padding-bottom: 35px;
+		border-bottom: 1px solid black;
+	}
+}
+
+
+.border-1px-btm {
+	border-bottom: 1px solid black;
+}

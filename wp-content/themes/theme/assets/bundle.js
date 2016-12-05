@@ -10870,7 +10870,7 @@ var lity = createCommonjsModule(function (module) {
 });
 
 function rest$1() {
-	if (jquery('body').hasClass('single-product') || jquery('body').hasClass('how-to-buy')) {
+	if (jquery('body').hasClass('single-product') || jquery('body').hasClass('how-to-buy') || jquery('body').hasClass('category')) {
 		// Populate sidebar list of products
 		jquery.ajax({
 			url: '/wp-json/wp/v2/categories?filter[cat]=3',

@@ -1,7 +1,7 @@
 import $ from 'jquery'
 
 function rest () {
-	if ($('body').hasClass('single-product') || $('body').hasClass('how-to-buy')) {
+	if ($('body').hasClass('single-product') || $('body').hasClass('how-to-buy') || $('body').hasClass('category')) {
 		// Populate sidebar list of products
 		$.ajax({
 			url: '/wp-json/wp/v2/categories?filter[cat]=3',
