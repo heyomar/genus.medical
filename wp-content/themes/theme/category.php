@@ -34,30 +34,23 @@
 					$the_query = new WP_Query( $args );
 
 					// The Loop
-
 					if ( $the_query->have_posts() ) { ?>
 
 					    <?php while ( $the_query->have_posts() ) { ?>
 
 									<?php  $the_query->the_post(); ?>
 
-									<div class="pad-20px-top border-1px-btm col-xs-12 col-sm-3 col-md-3">
+									<div class="pad-20px-top rule-name nopad col-xs-12 col-sm-3 col-md-3">
 										<div class="name"><?php the_title(); ?></div>
 									</div>
 
-									<div class=" pad-20px-top border-1px-btm nopad col-xs-12 col-sm-9 col-md-9">
+									<div class=" pad-20px-top rule-body nopad col-xs-12 col-sm-9 col-md-9">
 										<div class="inner"><?php echo get_field('description',get_the_ID()); ?>
 										<?php the_field('product_code') ?><br>
 										<?php the_field('product_description'); ?></div>
 									</div>
-
-
-
 					<?php } ?>
-					<?php } else { ?>
-					    // no posts found
-					<?php } ?>
-
+					<?php } else {} ?>
 
 					</div>
 

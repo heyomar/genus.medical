@@ -42,3 +42,7 @@
 .nopad {
 	padding: 0;
 }
+
+.pad-20px-top {
+	padding-top: 20px;
+}

@@ -6,12 +6,13 @@
 		position: absolute;
 		top: 48%;
 		transform: translateY(-48%);
+
 	}
 
 }
 
 .syringes-cat {
-	padding: 50px 20px;
+	padding: 0px 20px 50px 20px;
 	& .name {
 		color: var(--green);
 		font-weight: bold;
@@ -20,14 +21,33 @@
 
 	& .inner {
 		padding-bottom: 35px;
+		color: var(--gray);
 	}
 }
 
 
-.border-1px-btm {
-	border-bottom: 1px solid black;
+
+/*––––
+	Page Helpers
+	––––––––––––––––––––––––––––*/
+.rule-name {
+	border-bottom: 0;
 }
 
-.pad-20px-top {
-	padding-top: 20px;
+.rule-body {
+	border-bottom: 1px solid var(--gray);
+}
+
+
+
+/*––––
+	Media
+	––––––––––––––––––––––––––––*/
+@media (--tablet) {
+	.syringes-cat {
+		padding: 50px 80px;
+	}
+	.rule-name {
+		border-bottom: 1px solid var(--gray);
+	}
 }

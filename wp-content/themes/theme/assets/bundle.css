@@ -2025,6 +2025,9 @@ textarea,
 	.nopad {
 	padding: 0;
 }
+	.pad-20px-top {
+	padding-top: 20px;
+}
 	label {
 	font-weight: bold;
 	padding-bottom: 8px;
@@ -2534,7 +2537,7 @@ textarea,
           transform: translateY(-48%);
 }
 	.syringes-cat {
-	padding: 50px 20px
+	padding: 0px 20px 50px 20px
 }
 	.syringes-cat .name {
   color: hsla(116, 45%, 50%, 1);
@@ -2543,12 +2546,27 @@ textarea,
 }
 	.syringes-cat .inner {
   padding-bottom: 35px;
+  color: hsla(0, 0%, 20%, 1);
 }
-	.border-1px-btm {
-	border-bottom: 1px solid black;
+	/*––––
+	Page Helpers
+	––––––––––––––––––––––––––––*/
+	.rule-name {
+	border-bottom: 0;
 }
-	.pad-20px-top {
-	padding-top: 20px;
+	.rule-body {
+	border-bottom: 1px solid hsla(0, 0%, 20%, 1);
+}
+	/*––––
+	Media
+	––––––––––––––––––––––––––––*/
+	@media screen and (min-width: 768px) {
+	.syringes-cat {
+		padding: 50px 80px;
+	}
+	.rule-name {
+		border-bottom: 1px solid hsla(0, 0%, 20%, 1);
+	}
 }
 	/*––––
 	Page Styles
@@ -3181,8 +3199,6 @@ textarea,
 	height: 540px;
 }
 	.syringes {
-
-
 }
 	.syringes .clearhero {
   position: relative;

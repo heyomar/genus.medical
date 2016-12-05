@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		<div style="background-image:url(<?php the_field('hero_backgroound') ?>)" class="clearhero">
+		<div style="background-image:url(<?php the_field('hero_background') ?>)" class="clearhero">
 			<div class="mxw-1100-center">
 				<div class="row middle-sm">
 					<div class="col-xs-12 col-sm-10">
@@ -57,7 +57,12 @@
 								<!-- category cards injected via js in syringe-landing.js -->
 								<div class="card col-xs-12 col-sm-4">
 									<div class="med-sm">
-										<div style="background-image:url('<?php echo $term['background'] ?>');" class="image">
+										<div style="background-image:url('<?php
+										$image = $term['background'];
+										if( !empty($image) ):
+										echo $image['sizes'][ 'large' ];
+										endif;
+										?>');" class="image">
 											<a href="/category/syringes/<?php echo strtolower(str_replace(' ', '-', $term['name']));  ?>">
 												<span class="label"><?php echo $term['name']; ?></span>
 											</a>
