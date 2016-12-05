@@ -2609,7 +2609,7 @@ textarea,
   color: hsla(208, 100%, 30%, 1);
 }
 	.home-hero {
-	min-height: 800px;
+	height: 100vh;
 	background: url('../assets/images/home__hero.jpg');
   background-position: center;
   background-size: cover;
@@ -2705,6 +2705,7 @@ textarea,
 }
 	.events .single-event img {
   max-width: 100%;
+  width: 100%;
   height: auto;
 }
 	/*––––
@@ -2712,6 +2713,7 @@ textarea,
 	––––––––––––––––––––––––––––*/
 	@media screen and (min-width: 768px) {
   .home-hero {
+		min-height: 800px
   }
   .home-hero .content {
     min-height: 500px;

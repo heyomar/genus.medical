@@ -11,11 +11,6 @@
           </div>
         </div>
 		</div>
-		<!-- <a href="#">
-			<span class="arrowbox">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/arrow__down.png">
-			</span>
-		</a> -->
 	</div>
 
 	<div class="med">
