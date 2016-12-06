@@ -7,7 +7,7 @@
 					<div class="col-xs-12 col-sm-10">
 							<div class="content">
 								<h1 class="title"><?php the_title(); ?></h1>
-								<p class="copy"><?php the_field('hero_copy') ?></p>
+								<?php the_field('hero_copy') ?>
 							</div>
 					</div>
 				</div>

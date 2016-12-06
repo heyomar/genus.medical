@@ -1,14 +1,5 @@
 .syringes {
 
-	& .clearhero {
-		position: relative;
-		& .content {
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-		}
-	}
-
 	& .categories {
 		padding: 80px 20px 50px 20px;
 	}

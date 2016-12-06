@@ -17,14 +17,14 @@ echo $image['sizes'][ 'Rez1080p' ];
 endif;
 ?>);" class="clearhero">
 	<div class="mxw-1100-center">
-		<div class="row middle-sm">
+		<div class="row bottom-sm">
 			<div class="col-xs-12 col-sm-6">
-				<div class="box">
+
 					<div class="content">
-						<h1 class="title"><?php the_title(); ?></h1>
-						<p class="copy"><?php the_field('hero_copy') ?></p>
+							<h1 class="title"><?php the_title(); ?></h1>
+							<?php the_field('hero_copy') ?>
 					</div>
-				</div>
+
 			</div>
 		</div>
 	</div>
@@ -102,7 +102,6 @@ endif;
 							</div>
 						</div>
 					</div>
-
 			<?php  } } wp_reset_query(); ?>
 
 
