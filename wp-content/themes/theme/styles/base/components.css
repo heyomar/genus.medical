@@ -63,6 +63,7 @@
 	min-height: 260px;
 	text-align: center;
 	position: relative;
+	padding: 20px;
 	@apply --background-standard;
 
 	&.cta-green {
@@ -165,7 +166,8 @@
 
 	& .name {
 		margin-bottom: 0;
-		color: var(--gray);
+		color: var(--green);
+		letter-spacing: 0.5px;
 	}
 
 	& p {

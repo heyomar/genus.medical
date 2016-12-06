@@ -1,3 +1,6 @@
+/*––––
+	Hero
+	––––––––––––––––––––––––––––*/
 .clearhero {
 	min-height: 400px;
 	width: 100%;
@@ -27,7 +30,7 @@
 }
 
 .x-ray-and-fluoroscopy {
-	background-color: var(--fadegray);
+	background-color: var(--offwhite);
 	padding: 30px 20px;
 }
 
@@ -51,6 +54,10 @@
 
 
 
+
+/*––––
+	Media Queries
+	––––––––––––––––––––––––––––*/
 @media (--tablet) {
 	.clearhero {
 			& .image {

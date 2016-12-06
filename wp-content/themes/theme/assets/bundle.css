@@ -1828,6 +1828,7 @@ textarea,
 	min-height: 260px;
 	text-align: center;
 	position: relative;
+	padding: 20px;
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat
@@ -1923,7 +1924,8 @@ textarea,
 }
 	.med-sm .name {
   margin-bottom: 0;
-  color: hsla(0, 0%, 20%, 1);
+  color: hsla(116, 45%, 50%, 1);
+  letter-spacing: 0.5px;
 }
 	.med-sm p {
   margin-top: 5px;
@@ -2474,6 +2476,9 @@ textarea,
 	/*––––
 	Templates
 	––––––––––––––––––––––––––––*/
+	/*––––
+	Hero
+	––––––––––––––––––––––––––––*/
 	.clearhero {
 	min-height: 400px;
 	width: 100%;
@@ -2498,7 +2503,7 @@ textarea,
 	padding: 30px 20px;
 }
 	.x-ray-and-fluoroscopy {
-	background-color: hsla(0, 0%, 87%, 1);
+	background-color: hsla(0, 0%, 97%, 1);
 	padding: 30px 20px;
 }
 	.related-products {
@@ -2514,6 +2519,9 @@ textarea,
 	.mr-syringes {
 	padding: 30px 20px;
 }
+	/*––––
+	Media Queries
+	––––––––––––––––––––––––––––*/
 	@media screen and (min-width: 768px) {
 	.clearhero {
 	}
