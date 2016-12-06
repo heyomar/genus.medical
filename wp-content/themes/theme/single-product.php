@@ -89,7 +89,7 @@
                               </div>
                             </div>
 														<a class="btn blue" href="/how-to-buy">Find A Distributor</a>
-														<a class="btn green-link <?php the_field('show_pdf_link') ?>" href="<?php the_field('pdf'); ?>">Download a package insert</a>
+														<a target="_blank" class="btn green-link <?php the_field('show_pdf_link') ?>" href="<?php the_field('pdf'); ?>">Download a package insert</a>
 												</div>
 											</div>
 										</div>

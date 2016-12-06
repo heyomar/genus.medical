@@ -10897,7 +10897,7 @@ function navigation() {
 	});
 
 	// mobile nav activation and fullscreen lock
-	jquery('.handle').on('click touchend', function () {
+	jquery('.handle').on('click', function () {
 		if (jquery('.open')[0]) {
 			jquery('.dropdown').removeClass('open');
 			jquery('.dropdown').slideUp();

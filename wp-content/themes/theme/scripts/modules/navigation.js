@@ -7,7 +7,7 @@ function navigation () {
 	})
 
 // mobile nav activation and fullscreen lock
-	$('.handle').on('click touchend', function () {
+	$('.handle').on('click', function () {
 		if ($('.open')[0]) {
 			$('.dropdown').removeClass('open')
 			$('.dropdown').slideUp()

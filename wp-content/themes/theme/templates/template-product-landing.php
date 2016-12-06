@@ -13,7 +13,7 @@
 <div style="background-image:url(<?php
 $image = get_field('hero_image');
 if( !empty($image) ):
-echo $image['sizes'][ 'large' ];
+echo $image['sizes'][ 'Rez1080p' ];
 endif;
 ?>);" class="clearhero">
 	<div class="mxw-1100-center">
