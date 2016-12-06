@@ -11,14 +11,16 @@ function navigation () {
 		if ($('.open')[0]) {
 			$('.dropdown').removeClass('open')
 			$('.dropdown').slideUp()
-			$('html').css('position', 'relative')
 			$('html').css('overflow', 'scroll')
+			$('body').css('overflow', 'scroll')
+			$('body').css('height', '100%')
 			$('.arrow').css('transform', 'rotate(0deg)')
 		} else {
 			$('.dropdown').slideDown().show()
 			$('.dropdown').addClass('open')
-			$('html').css('position', 'relative')
 			$('html').css('overflow', 'hidden')
+			$('body').css('overflow', 'hidden')
+			$('body').css('height', '100%')
 			$('.arrow').css('transform', 'rotate(180deg)')
 		}
 	})

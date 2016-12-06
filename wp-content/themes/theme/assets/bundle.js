@@ -10901,14 +10901,16 @@ function navigation() {
 		if (jquery('.open')[0]) {
 			jquery('.dropdown').removeClass('open');
 			jquery('.dropdown').slideUp();
-			jquery('html').css('position', 'relative');
 			jquery('html').css('overflow', 'scroll');
+			jquery('body').css('overflow', 'scroll');
+			jquery('body').css('height', '100%');
 			jquery('.arrow').css('transform', 'rotate(0deg)');
 		} else {
 			jquery('.dropdown').slideDown().show();
 			jquery('.dropdown').addClass('open');
-			jquery('html').css('position', 'relative');
 			jquery('html').css('overflow', 'hidden');
+			jquery('body').css('overflow', 'hidden');
+			jquery('body').css('height', '100%');
 			jquery('.arrow').css('transform', 'rotate(180deg)');
 		}
 	});
