@@ -10901,11 +10901,13 @@ function navigation() {
 		if (jquery('.open')[0]) {
 			jquery('.dropdown').removeClass('open');
 			jquery('.dropdown').slideUp();
+			jquery('body').css('position', 'relative');
 			jquery('body').css('overflow', 'scroll');
 			jquery('.arrow').css('transform', 'rotate(0deg)');
 		} else {
 			jquery('.dropdown').slideDown().show();
 			jquery('.dropdown').addClass('open');
+			jquery('body').css('position', 'relative');
 			jquery('body').css('overflow', 'hidden');
 			jquery('.arrow').css('transform', 'rotate(180deg)');
 		}
