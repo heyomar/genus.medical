@@ -2730,7 +2730,7 @@ textarea,
   }
   .home-hero .content::after {
     position: absolute;
-    top: -216px;
+    top: -100px;
     right: -220px;
     z-index: 3;
   }
