@@ -11,14 +11,14 @@ function navigation () {
 		if ($('.open')[0]) {
 			$('.dropdown').removeClass('open')
 			$('.dropdown').slideUp()
-			$('body').css('position', 'relative')
-			$('body').css('overflow', 'scroll')
+			$('html').css('position', 'relative')
+			$('html').css('overflow', 'scroll')
 			$('.arrow').css('transform', 'rotate(0deg)')
 		} else {
 			$('.dropdown').slideDown().show()
 			$('.dropdown').addClass('open')
-			$('body').css('position', 'relative')
-			$('body').css('overflow', 'hidden')
+			$('html').css('position', 'relative')
+			$('html').css('overflow', 'hidden')
 			$('.arrow').css('transform', 'rotate(180deg)')
 		}
 	})
