@@ -11,4 +11,8 @@
 	& .content {
 		padding: 50px 20px;
 	}
+
+	& div.nf-field-description {
+		width: 90%;
+	}
 }
