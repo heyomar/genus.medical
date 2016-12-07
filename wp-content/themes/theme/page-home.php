@@ -52,7 +52,7 @@
                 <?php the_field('location') ?><br>
                 <?php the_field('start_date') ?>&nbsp;&hyphen;&nbsp;<?php the_field('end_date') ?><br/>
                 <?php the_field('start_time') ?>&nbsp;&hyphen;&nbsp;<?php the_field('end_time') ?><br>
-								<a class="link" href="<?php get_field('more_info_link'); ?>">More Information ></a>
+								<a class="link" href="<?php echo get_field('more_info_link'); ?>">More Information ></a>
               </div>
             </div>
 

@@ -3196,6 +3196,9 @@ textarea,
 	.contact-us .content .nf-field-element textarea {
   height: 125px;
 }
+	.contact-us div.nf-field-description {
+  width: 90%;
+}
 	/*––––
 	Sidebar
 	––––––––––––––––––––––––––––*/
