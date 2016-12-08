@@ -24,6 +24,10 @@
 	& div.nf-field-description {
 		width: 90%;
 	}
+
+	& .wordbreak {
+		text-decoration: underline;
+	}
 }
 
 

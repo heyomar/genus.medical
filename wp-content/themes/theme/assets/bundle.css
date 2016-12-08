@@ -3206,6 +3206,9 @@ textarea,
 	.contact-us div.nf-field-description {
   width: 90%;
 }
+	.contact-us .wordbreak {
+  text-decoration: underline;
+}
 	/*––––
 	Sidebar
 	––––––––––––––––––––––––––––*/
