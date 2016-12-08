@@ -10877,9 +10877,13 @@ function rest$1() {
 			success: function (data) {
 				jquery.each(data, function (i, val) {
 					if (val['parent'] === 3) {
-						jquery('.oral-contrast').append('<li>' + val['name'] + '</li>');
+						const contrastName = val['name'];
+						const cleanContrastName = contrastName.replace(/\s+/g, '').toLowerCase();
+						jquery('.oral-contrast').append('<li><a href="/oral-contrast/#' + cleanContrastName + '">' + val['name'] + '</li>');
 					} else if (val['parent'] === 4) {
-						jquery('.power-injector').append('<li>' + val['name'] + '</li>');
+						const injectorName = val['name'];
+						const cleanInjectorName = injectorName.replace(/\s+/g, '-').toLowerCase();
+						jquery('.power-injector').append('<li><a href="/category/syringes/' + cleanInjectorName + '">' + val['name'] + '</li>');
 					}
 				});
 			},

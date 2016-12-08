@@ -72,7 +72,10 @@ endif;
 
 					<div class="<?php echo str_replace(' ', '-', strtolower($term['name'])); ?>">
 						<div class="inner mxw-1100-center">
-							<h4 class="title small"><?php echo $term['name']; ?></h4>
+							<h4 id="<?php
+							$categoryName = str_replace(' ', '', $term['name']);
+							echo strtolower($categoryName);
+							?>" class="title small"><?php echo $term['name']; ?></h4>
 								<div class="row">
 										<?php	while ( $child_q->have_posts() ) : $child_q->the_post(); ?>
 												<div class="col-xs-12 col-sm-4">
