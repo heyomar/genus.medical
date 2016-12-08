@@ -13,4 +13,15 @@
 		overflow: hidden;
 		white-space: nowrap;
 	}
+
+	& .clearhero {
+		min-height: 280px;
+	}
+}
+
+
+@media (--tablet) {
+	.syringes .clearhero {
+		min-height: 400px;
+	}
 }

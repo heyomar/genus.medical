@@ -46,13 +46,13 @@
             <div class="col-xs-12 col-sm-4 col-lg-4">
               <div class="single-event">
 								<div class="image">
-									<img src="http://placehold.it/300x150" alt="">
+									<?php the_post_thumbnail('post-thumbnail'); ?>
 								</div>
                 <strong><?php the_title(); ?></strong><br/>
                 <?php the_field('location') ?><br>
                 <?php the_field('start_date') ?>&nbsp;&hyphen;&nbsp;<?php the_field('end_date') ?><br/>
                 <?php the_field('start_time') ?>&nbsp;&hyphen;&nbsp;<?php the_field('end_time') ?><br>
-								<a class="link" href="<?php echo get_field('more_info_link'); ?>">More Information ></a>
+								<a target="_blank" class="link" href="<?php echo get_field('more_info_link'); ?>">More Information ></a>
               </div>
             </div>
 

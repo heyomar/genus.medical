@@ -45,6 +45,12 @@
 	padding-top: 20px;
 }
 
-.wordbreak{
-	word-break: break-all;
+.wordbreak {
+	display: block;
+}
+
+@media (--tablet) {
+	.wordbreak {
+		display: inline-block;
+	}
 }

@@ -2031,8 +2031,13 @@ textarea,
 	.pad-20px-top {
 	padding-top: 20px;
 }
-	.wordbreak{
-	word-break: break-all;
+	.wordbreak {
+	display: block;
+}
+	@media screen and (min-width: 768px) {
+	.wordbreak {
+		display: inline-block;
+	}
 }
 	label {
 	font-weight: bold;
@@ -2486,7 +2491,7 @@ textarea,
 	Hero
 	––––––––––––––––––––––––––––*/
 	.clearhero {
-	min-height: 400px;
+	min-height: 280px;
 	width: 100%;
 	background-position: center;
 	background-size: cover;
@@ -2541,6 +2546,7 @@ textarea,
 	––––––––––––––––––––––––––––*/
 	@media screen and (min-width: 768px) {
 	.clearhero {
+		min-height: 400px
 	}
 	.clearhero .image {
     text-align: right;
@@ -3235,6 +3241,14 @@ textarea,
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+	.syringes .clearhero {
+  min-height: 280px;
+}
+	@media screen and (min-width: 768px) {
+	.syringes .clearhero {
+		min-height: 400px;
+	}
 }
 
 /*# sourceMappingURL=bundle.css.map */

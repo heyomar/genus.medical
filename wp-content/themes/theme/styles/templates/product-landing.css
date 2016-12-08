@@ -2,7 +2,7 @@
 	Hero
 	––––––––––––––––––––––––––––*/
 .clearhero {
-	min-height: 400px;
+	min-height: 280px;
 	width: 100%;
 	@apply --background-standard;
 	background-position: bottom;
@@ -70,6 +70,7 @@
 	––––––––––––––––––––––––––––*/
 @media (--tablet) {
 	.clearhero {
+		min-height: 400px;
 			& .image {
 				text-align: right;
 		}
