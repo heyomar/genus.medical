@@ -67,10 +67,16 @@
 
 	&.cta-green {
 		background-image: url('../assets/images/cta__module__green-bg.jpg');
+		& a:hover {
+			color: var(--green);
+		}
 	}
 
 	&.cta-blue {
 		background-image: url('../assets/images/cta__module__blue-bg.jpg');
+		& a:hover {
+			color: var(--blue);
+		}
 	}
 
 	& .inner {

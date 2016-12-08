@@ -1835,8 +1835,14 @@ textarea,
 	.cta.cta-green {
   background-image: url('../assets/images/cta__module__green-bg.jpg');
 }
+	.cta.cta-green a:hover {
+  color: hsla(116, 45%, 50%, 1);
+}
 	.cta.cta-blue {
   background-image: url('../assets/images/cta__module__blue-bg.jpg');
+}
+	.cta.cta-blue a:hover {
+  color: hsla(208, 100%, 30%, 1);
 }
 	.cta .inner {
   position: absolute;
