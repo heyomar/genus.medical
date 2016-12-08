@@ -22,7 +22,7 @@
 <!--[––––
 			↓ HERO ↓
 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––//]-->
-<div style="background-image:url(//localhost:3000/wp-content/uploads/2016/11/syringe-header.jpg)" class="clearhero">
+<div style="background-image:url('<?php echo get_stylesheet_directory_uri(); ?>/assets/images/syringe-header.jpg')" class="clearhero">
 	<div class="mxw-1100-center">
 		<div class="row middle-sm">
 			<div class="col-xs-12 col-sm-12">
