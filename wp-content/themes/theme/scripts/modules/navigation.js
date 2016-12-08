@@ -1,26 +1,22 @@
 import $ from 'jquery'
 
 function navigation () {
-	// add carets to mobile nav items on hover
-	$('.dropdown li').hover(function () {
-		$(this).toggleClass('caret')
-	})
-
 // mobile nav activation and fullscreen lock
 	$('.handle').on('click', function () {
 		if ($('.open')[0]) {
 			$('.dropdown').removeClass('open')
 			$('.dropdown').slideUp()
-			$('html').css('overflow', 'scroll')
 			$('body').css('overflow', 'scroll')
-			$('body').css('height', '100%')
 			$('.arrow').css('transform', 'rotate(0deg)')
 		} else {
 			$('.dropdown').slideDown().show()
 			$('.dropdown').addClass('open')
-			$('html').css('overflow', 'hidden')
+			$(document).bind(
+				'touchmove',
+				function (e) {
+					e.preventDefault()
+				})
 			$('body').css('overflow', 'hidden')
-			$('body').css('height', '100%')
 			$('.arrow').css('transform', 'rotate(180deg)')
 		}
 	})

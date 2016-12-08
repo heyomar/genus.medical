@@ -10895,26 +10895,20 @@ function rest$1() {
 }
 
 function navigation() {
-	// add carets to mobile nav items on hover
-	jquery('.dropdown li').hover(function () {
-		jquery(this).toggleClass('caret');
-	});
-
 	// mobile nav activation and fullscreen lock
 	jquery('.handle').on('click', function () {
 		if (jquery('.open')[0]) {
 			jquery('.dropdown').removeClass('open');
 			jquery('.dropdown').slideUp();
-			jquery('html').css('overflow', 'scroll');
 			jquery('body').css('overflow', 'scroll');
-			jquery('body').css('height', '100%');
 			jquery('.arrow').css('transform', 'rotate(0deg)');
 		} else {
 			jquery('.dropdown').slideDown().show();
 			jquery('.dropdown').addClass('open');
-			jquery('html').css('overflow', 'hidden');
+			jquery(document).bind('touchmove', function (e) {
+				e.preventDefault();
+			});
 			jquery('body').css('overflow', 'hidden');
-			jquery('body').css('height', '100%');
 			jquery('.arrow').css('transform', 'rotate(180deg)');
 		}
 	});
