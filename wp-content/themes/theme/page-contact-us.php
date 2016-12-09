@@ -36,7 +36,7 @@
 					</address>
 
 					<strong>Customer Service</strong> <br/>
-					<a href="">customerservice@<span class="wordbreak">genusmedical.com</span></a> <br/>
+					<a href="mailto:customerservice@genusmedical.com">customerservice@<span class="wordbreak">genusmedical.com</span></a> <br/>
 					<a href="tel:1-866-468-5157">1-866-468-5157</a> (p)<br/>
 					<a href="tel:1-314-899-2953">1-314-899-2953</a> (f)
 				</div>
