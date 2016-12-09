@@ -53,6 +53,10 @@
 				<div class="inner mxw-1100-center">
 						<div id="categoriesRow" class="row">
 			<?php foreach ($term_array as $term) { ?>
+				<?php
+				$category = get_category_by_slug($term['name']);
+				$count = $category->category_count;
+				?>
 
 								<!-- category cards injected via js in syringe-landing.js -->
 								<div class="card col-xs-12 col-sm-4">
@@ -63,12 +67,16 @@
 										echo $image['sizes'][ 'large' ];
 										endif;
 										?>');" class="image">
-											<a href="/category/syringes/<?php echo strtolower(str_replace(' ', '-', $term['name']));  ?>">
+											<a <?php
+												if ($count > 0) { ?>
+													href="/category/syringes/<?php echo strtolower(str_replace(' ', '-', $term['name']));  ?>">
+												<?php } ?>
 												<span class="label"><?php echo $term['name']; ?></span>
 											</a>
 										</div>
 									</div>
 								</div>
+
 
 			<?php } wp_reset_query(); ?>
 		</div>
