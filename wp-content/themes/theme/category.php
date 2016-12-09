@@ -85,8 +85,15 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––//]-->
 <div class="cta cta-green">
 		<div class="inner mxw-1100-center">
-			<h2>Find what you need, with no minimum purchase.</h2>
-			<p>Make your purchases efficiently to save storage space and your disposable budget.</p>
+			<?php
+			$queried_object = get_queried_object();
+			$term_id = $queried_object->term_id;
+
+			$cta_title = get_field('cta_title', $taxonomy . '_' . $term_id);
+			$cta_copy = get_field('cta_copy', $taxonomy . '_' . $term_id);
+			?>
+			<h2><?php echo $cta_title; ?></h2>
+			<?php echo $cta_copy; ?>
 			<a href="/request-product-information" class="btn white">Request Product Information</a>
 		</div>
 </div>
