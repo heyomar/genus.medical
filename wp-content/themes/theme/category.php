@@ -28,11 +28,6 @@
 			<div class="col-xs-12 col-sm-12">
 					<div class="content">
 						<h1 class="title"><?php single_cat_title(); ?></h1>
-						<p class="copy">
-							Lorem ipsum dolor sit amet, consectetur adipisicing
-							elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-							aliqua.
-						</p>
 					</div>
 			</div>
 		</div>
