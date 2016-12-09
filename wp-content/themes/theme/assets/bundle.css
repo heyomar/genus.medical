@@ -3260,5 +3260,18 @@ textarea,
 		min-height: 400px;
 	}
 }
+	.legal-page {
+}
+	.legal-page .title {
+  color: hsla(208, 100%, 30%, 1);
+}
+	.legal-page .bluehero {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+	.legal-page .content {
+  padding: 20px 20px 50px 20px;
+}
 
 /*# sourceMappingURL=bundle.css.map */

@@ -1,0 +1,15 @@
+.legal-page {
+	& .title {
+		color: var(--blue);
+	}
+	
+	& .bluehero {
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: bottom;
+	}
+
+	& .content {
+		padding: 20px 20px 50px 20px;
+	}
+}
