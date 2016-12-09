@@ -8,8 +8,9 @@
 				<div class="legal">
 						<div class="copy">2016 &copy; Genus Medical Technologies</div>
 						<div class="links">
-								<a href="/contact">Contact Us</a>&nbsp;
-								<!-- <a href="/terms">Terms of Use</a> -->
+								<a href="/contact">Contact Us</a><br>
+								<a href="/terms-of-use">Terms of Use</a> |
+								<a href="/privacy-policy">Privacy Policy</a>
 						</div>
 				</div>
 
