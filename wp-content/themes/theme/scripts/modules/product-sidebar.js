@@ -17,8 +17,6 @@ function rest () {
 						} else {
 							$('.oral-contrast').append('<li><a href="/oral-contrast/#' + contrastName + '">' + val['name'] + '</li>')
 						}
-
-						console.log(contrastCatName)
 					} else if (val['parent'] === 4) {
 						let injectorName = val['name']
 						const cleanInjectorName = injectorName.replace(/\s+/g, '-').toLowerCase()
