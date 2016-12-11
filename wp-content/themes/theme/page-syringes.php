@@ -69,7 +69,7 @@
 										?>');" class="image">
 											<a <?php
 												if ($count > 0) { ?>
-													href="/category/syringes/<?php echo strtolower(str_replace(' ', '-', $term['name']));  ?>">
+													href="/category/syringes/<?php echo strtolower(str_replace(' ', '-', $term['name']));  ?>?cat=<?php echo strtolower(str_replace(' ', '-', $term['name']));?>">
 												<?php } ?>
 												<span class="label"><?php echo $term['name']; ?></span>
 											</a>

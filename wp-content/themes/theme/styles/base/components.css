@@ -30,6 +30,11 @@
 				color: var(--gray);
 				background-color: var(--white);
 			}
+
+			&:active {
+				color: var(--gray);
+				background-color: var(--white);
+			}
 		}
 
 		&.green {
@@ -38,6 +43,11 @@
 			transition: background-color ease .15s;
 
 			&:hover {
+				color: var(--white);
+				background-color: var(--green);
+			}
+
+			&:active {
 				color: var(--white);
 				background-color: var(--green);
 			}
@@ -70,11 +80,19 @@
 		& a:hover {
 			color: var(--green);
 		}
+
+		& a:active {
+			color: var(--green);
+		}
 	}
 
 	&.cta-blue {
 		background-image: url('../assets/images/cta__module__blue-bg.jpg');
 		& a:hover {
+			color: var(--blue);
+		}
+
+		& a:active {
 			color: var(--blue);
 		}
 	}

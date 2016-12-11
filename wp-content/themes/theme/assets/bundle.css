@@ -1803,6 +1803,10 @@ textarea,
   color: hsla(0, 0%, 20%, 1);
   background-color: hsla(0, 0%, 100%, 1);
 }
+	.btn.white:active {
+  color: hsla(0, 0%, 20%, 1);
+  background-color: hsla(0, 0%, 100%, 1);
+}
 	.btn.green {
   border: 2px solid hsla(116, 45%, 50%, 1);
   color: hsla(116, 45%, 50%, 1);
@@ -1810,6 +1814,10 @@ textarea,
   transition: background-color ease .15s;
 }
 	.btn.green:hover {
+  color: hsla(0, 0%, 100%, 1);
+  background-color: hsla(116, 45%, 50%, 1);
+}
+	.btn.green:active {
   color: hsla(0, 0%, 100%, 1);
   background-color: hsla(116, 45%, 50%, 1);
 }
@@ -1838,10 +1846,16 @@ textarea,
 	.cta.cta-green a:hover {
   color: hsla(116, 45%, 50%, 1);
 }
+	.cta.cta-green a:active {
+  color: hsla(116, 45%, 50%, 1);
+}
 	.cta.cta-blue {
   background-image: url('../assets/images/cta__module__blue-bg.jpg');
 }
 	.cta.cta-blue a:hover {
+  color: hsla(208, 100%, 30%, 1);
+}
+	.cta.cta-blue a:active {
   color: hsla(208, 100%, 30%, 1);
 }
 	.cta .inner {
@@ -2040,6 +2054,9 @@ textarea,
 }
 	.wordbreak {
 	display: block;
+}
+	.sidebar-caret {
+	
 }
 	@media screen and (min-width: 768px) {
 	.wordbreak {
@@ -3137,11 +3154,11 @@ textarea,
   padding-bottom: 25px;
 }
 	#location .logo {
-  height: 115px;
+  max-height: 100%;
+  height: 90px;
   max-width: 160px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: contain;
   margin-bottom: 10px;
 }
 	#location .phone-number {
