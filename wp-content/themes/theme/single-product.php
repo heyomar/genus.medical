@@ -9,6 +9,9 @@
             $parent = get_category($category[0]->category_parent);
             echo $parentCat = str_replace('-', ' ', $parent->slug); ?>
     </span>
+		<span class="hidethis hidden-cat">
+			<?php if(!empty($category)){echo $the_cat = esc_html( $category[0]->name );}?>
+		</span>
 		<div class="name productName"><?php the_title(); ?></div>
 	</div>
 </div>

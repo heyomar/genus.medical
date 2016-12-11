@@ -49,6 +49,20 @@
 	display: block;
 }
 
+.hidethis {
+	visibility: hidden;
+}
+
+.sidebar-caret {
+	position: relative;
+
+	&::before {
+		content: '\0025B8';
+		position: absolute;
+		left: -15px;
+	}
+}
+
 @media (--tablet) {
 	.wordbreak {
 		display: inline-block;

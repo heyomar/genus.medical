@@ -10874,20 +10874,34 @@ function rest$1() {
 		// Populate sidebar list of products
 		jquery.ajax({
 			url: '/wp-json/wp/v2/categories?filter[cat]=3',
-			success: function (data) {
+			success: function success(data) {
 				jquery.each(data, function (i, val) {
 					if (val['parent'] === 3) {
-						const contrastName = val['name'];
-						const cleanContrastName = contrastName.replace(/\s+/g, '').toLowerCase();
-						jquery('.oral-contrast').append('<li><a href="/oral-contrast/#' + cleanContrastName + '">' + val['name'] + '</li>');
+						var contrastName = val['name'];
+						contrastName = contrastName.replace(/\s+/g, '').toLowerCase();
+						var contrastCatName = jquery('.hidden-cat').text();
+						contrastCatName = contrastCatName.replace(/\s+/g, '').toLowerCase();
+						if (contrastCatName === contrastName) {
+							jquery('.oral-contrast').append('<li class="sidebar-caret"><a href="/oral-contrast/#' + contrastName + '">' + val['name'] + '</li>');
+						} else {
+							jquery('.oral-contrast').append('<li><a href="/oral-contrast/#' + contrastName + '">' + val['name'] + '</li>');
+						}
+
+						console.log(contrastCatName);
 					} else if (val['parent'] === 4) {
-						const injectorName = val['name'];
-						const cleanInjectorName = injectorName.replace(/\s+/g, '-').toLowerCase();
-						jquery('.power-injector').append('<li><a href="/category/syringes/' + cleanInjectorName + '">' + val['name'] + '</li>');
+						var injectorName = val['name'];
+						var cleanInjectorName = injectorName.replace(/\s+/g, '-').toLowerCase();
+						injectorName = injectorName.replace(/&amp;/g, '&');
+						var catPageName = jquery('.content .title').text();
+						if (catPageName === injectorName) {
+							jquery('.power-injector').append('<li class="sidebar-caret"><a href="/category/syringes/' + cleanInjectorName + '">' + val['name'] + '</li>');
+						} else {
+							jquery('.power-injector').append('<li><a href="/category/syringes/' + cleanInjectorName + '">' + val['name'] + '</li>');
+						}
 					}
 				});
 			},
-			error: function () {
+			error: function error() {
 				console.log('There is an error with the rest function');
 			}
 		});
@@ -11561,14 +11575,14 @@ var mustache = createCommonjsModule(function (module, exports) {
 // MAIN EXPORT START
 
 function locations() {
-	const template = jquery('#demo').html();
+	var template = jquery('#demo').html();
 	mustache.parse(template);
-	const locations = [];
-	const locationsPerPage = 9;
+	var locations = [];
+	var locationsPerPage = 9;
 
 	function geocodeUrl(zip) {
-		const apiKey = 'AIzaSyBOii_Qh6he0eb9rxEWpKMsROoh2LAuwXk';
-		const apiEndpoint = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + zip + '&key=' + apiKey;
+		var apiKey = 'AIzaSyBOii_Qh6he0eb9rxEWpKMsROoh2LAuwXk';
+		var apiEndpoint = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + zip + '&key=' + apiKey;
 		return apiEndpoint;
 	}
 
@@ -11577,38 +11591,38 @@ function locations() {
 	}
 
 	function haversine(lat1, lng1, lat2, lng2) {
-		const R = 6371; // km earf
-		const x1 = lat2 - lat1;
-		const dLat = toRad(x1);
-		const x2 = lng2 - lng1;
-		const dLng = toRad(x2);
-		const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLng / 2) * Math.sin(dLng / 2);
-		const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-		const d = R * c;
+		var R = 6371; // km earf
+		var x1 = lat2 - lat1;
+		var dLat = toRad(x1);
+		var x2 = lng2 - lng1;
+		var dLng = toRad(x2);
+		var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLng / 2) * Math.sin(dLng / 2);
+		var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+		var d = R * c;
 		return d; // distance in km
 	}
 	// now entering callback hell. promisifying left as an exercise for the developer
 
-	let dataSet;
+	var dataSet = void 0;
 	function getLocations(zip, distributorId) {
 		// first geocode the zip
 		console.log('distid' + distributorId);
 		jquery.ajax({
 			url: geocodeUrl(zip),
-			success: function (data) {
+			success: function success(data) {
 				// console.log(data)
 				// great now we have the zip, let's get the coords
-				const lat = data.results[0].geometry.location.lat;
-				const lng = data.results[0].geometry.location.lng;
+				var lat = data.results[0].geometry.location.lat;
+				var lng = data.results[0].geometry.location.lng;
 
 				// sweet, let's get the locations
 				jquery.ajax({
 					// url: 'http://genus.hlkbeta.com/wp-json/wp/v2/location?filter[posts_per_page]=-1',
 					url: '/wp-content/data/locations.json',
-					success: function (data) {
+					success: function success(data) {
 						// ok awesome. let's sort these locations against the zip with the haversine formula
-						let distance;
-						for (let i = 0; i < data.length; i++) {
+						var distance = void 0;
+						for (var i = 0; i < data.length; i++) {
 							distance = haversine(lat, lng, data[i].latitude, data[i].longitude);
 							data[i].distance = distance;
 
@@ -11626,20 +11640,20 @@ function locations() {
 						locations.splice(0, locationsPerPage); // remove the first nine items
 
 						// inject the data into the parsed template
-						const go = mustache.render(template, dataSet);
+						var go = mustache.render(template, dataSet);
 
 						// inject the rendered template into the dom
 						jquery('#location').html(go);
 
 						// go forth, omar, and build!
 					},
-					error: function () {
+					error: function error() {
 						console.log('There is an error with the rest function');
 					}
 				});
 			},
 
-			error: function (data) {
+			error: function error(data) {
 				console.log(data);
 				jquery('#output').html('Error geocoding ' + zip);
 			}
@@ -11650,12 +11664,12 @@ function locations() {
 	jquery(document).ready(function () {
 		jquery('#findDist').on('click', function (e) {
 			e.preventDefault();
-			const theZip = jquery('#zipcode').val();
+			var theZip = jquery('#zipcode').val();
 			// validate data
 			function zipLength(zip) {
-				const zipString = zip.toString();
+				var zipString = zip.toString();
 				if (zipString.length > 4 && zipString.length < 6) {
-					const dist = jquery('#select-distributor').val();
+					var dist = jquery('#select-distributor').val();
 					if (dist !== null) {
 						getLocations(theZip, parseInt(dist));
 					} else {
@@ -11681,9 +11695,9 @@ function locations() {
 
 		jquery('.loadmore').on('click', function (e) {
 			e.preventDefault();
-			const loadMoreDataSet = { 'locations': locations.slice(0, locationsPerPage) }; // gimme the first 9 items
+			var loadMoreDataSet = { 'locations': locations.slice(0, locationsPerPage) }; // gimme the first 9 items
 			locations.splice(0, locationsPerPage); // remove the first nine items
-			const loadMoreLocations = mustache.render(template, loadMoreDataSet);
+			var loadMoreLocations = mustache.render(template, loadMoreDataSet);
 			// inject the rendered template into the dom
 			jquery('#location').append(loadMoreLocations);
 		});
@@ -11699,11 +11713,11 @@ function locations() {
 	// filter locations
 	function filterLocations() {
 		// get the value of the selected option
-		const selected = jquery('#select-distributor option:selected').val();
+		var selected = jquery('#select-distributor option:selected').val();
 
 		// for each item with a class of location get the data attribute
 		jquery('.location').each(function () {
-			const id = jquery(this).data('distid');
+			var id = jquery(this).data('distid');
 
 			// show everything on null or defualt selection
 			if (selected === 'null') {
@@ -11719,15 +11733,15 @@ function locations() {
 
 function gallery() {
 	// initialize var
-	let isClicked = false;
+	var isClicked = false;
 
 	// event listener on thumbnail images
 	jquery('.thumb').click(function (e) {
 		isClicked = true;
 
 		// get the background image url
-		const bgImage = jquery(this).css('background-image');
-		const viewImage = jquery('.image').css('background-image');
+		var bgImage = jquery(this).css('background-image');
+		var viewImage = jquery('.image').css('background-image');
 
 		// swap the images
 		if (isClicked === true) {
@@ -11749,7 +11763,7 @@ function gallery() {
 
 	// Hide thumbs if they dont have a image
 	jquery('.lity-link').each(function () {
-		const mobileThumbURL = jquery(this).attr('href');
+		var mobileThumbURL = jquery(this).attr('href');
 		if (mobileThumbURL === '') {
 			jquery(this).hide();
 		}

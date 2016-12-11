@@ -171,7 +171,11 @@
 	transform: scale(1.0);
 }
 
-
+.hidden-cat {
+	visibility: hidden;
+	position: absolute;
+	z-index: -10000;
+}
 
 
 @media (--tablet) {
