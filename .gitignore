@@ -2,7 +2,7 @@
 /*
 
 # ignore location.json
-location.json
+wp-content/data/locations.json
 
 # except .gitignore and selected dirs
 !.gitignore
