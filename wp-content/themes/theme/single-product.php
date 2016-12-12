@@ -110,8 +110,8 @@
 
 <div class="cta cta-blue">
 		<div class="inner">
-			<h2><?php the_field('product_cta_title') ?></h2>
-			<?php the_field('product_cta_copy') ?>
+			<h2><?php the_field('cta_title') ?></h2>
+			<?php the_field('cta_copy') ?>
 			<a id="request" href="/request-product-information?pid=<?php echo get_the_ID(); ?>&amp;cat=<?php echo $parentCat = str_replace(' ', '', $parent->slug); ?>" class="btn white">Request Product Information</a>
 		</div>
 </div>
