@@ -60,7 +60,7 @@
 		<div class="inner">
 			<h2><?php the_field('cta_title') ?></h2>
 			<?php the_field('cta_copy') ?>
-			<a href="/" class="btn white"><?php the_field('cta_button_copy') ?></a>
+			<a href="/email-sign-up" class="btn white"><?php the_field('cta_button_copy') ?></a>
 		</div>
 </div>
 
