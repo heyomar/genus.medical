@@ -1,6 +1,9 @@
 # ignore everything by default except wp-content
 /*
 
+# ignore location.json
+location.json
+
 # except .gitignore and selected dirs
 !.gitignore
 !.gitkeep
