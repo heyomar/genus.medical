@@ -10886,8 +10886,6 @@ function rest$1() {
 						} else {
 							jquery('.oral-contrast').append('<li><a href="/oral-contrast/#' + contrastName + '">' + val['name'] + '</li>');
 						}
-
-						console.log(contrastCatName);
 					} else if (val['parent'] === 4) {
 						var injectorName = val['name'];
 						var cleanInjectorName = injectorName.replace(/\s+/g, '-').toLowerCase();
@@ -11771,23 +11769,34 @@ function gallery() {
 }
 
 function string$1() {
-	// Clean css url
-	// function cleanCssURL (link) {
-	// 	var one = link.replace('url("', '')
-	// 	var two = one.replace('")', '')
-	// 	return two
-	// }
+	function getParameterByName(name, url) {
+		if (!url) url = window.location.href;
+		name = name.replace(/[\[\]]/g, '\\$&');
+		var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+		    results = regex.exec(url);
+		if (!results) return null;
+		if (!results[2]) return '';
+		return decodeURIComponent(results[2].replace(/\+/g, ' '));
+	}
 
-	// function removeAllSpaces (str) {
-	// 	str.replace(/\s/g, '')
-	// 	return str
-	// }
+	function removeAllSpaces(str) {
+		str = str.replace(/\s+/g, '-');
+		return str;
+	}
 
 	jquery(document).ready(function () {
 		if (jquery('body').hasClass('request-product-information')) {
-			if (jquery('.category').text() === 'oral contrast') {
-				jquery('#nf-field-9-0').prop('checked', true);
-			} else {}
+			(function () {
+				var queryCat = getParameterByName('cat', window.location.href).toLowerCase();
+				queryCat = removeAllSpaces(queryCat);
+
+				jquery('input[type=checkbox]').each(function () {
+					console.log(jquery(this).val());
+					if (jquery(this).val() === queryCat) {
+						jquery(this).prop('checked', true);
+					}
+				});
+			})();
 		}
 	});
 } // END MAIN FUNCTION

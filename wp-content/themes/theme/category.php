@@ -27,7 +27,7 @@
 		<div class="row middle-sm">
 			<div class="col-xs-12 col-sm-12">
 					<div class="content">
-						<h1 class="title"><?php single_cat_title(); ?></h1>
+						<h1 class="title"><?php $singleCatTitle = single_cat_title(); ?></h1>
 					</div>
 			</div>
 		</div>
@@ -94,7 +94,7 @@
 			?>
 			<h2><?php echo $cta_title; ?></h2>
 			<?php echo $cta_copy; ?>
-			<a href="/request-product-information" class="btn white">Request Product Information</a>
+			<a href="/request-product-information?cat=<?php single_cat_title(); ?>" class="btn white">Request Product Information</a>
 		</div>
 </div>
 

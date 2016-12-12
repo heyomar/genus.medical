@@ -1,25 +1,34 @@
 import $ from 'jquery'
 
 function string () {
-		// Clean css url
-	// function cleanCssURL (link) {
-	// 	var one = link.replace('url("', '')
-	// 	var two = one.replace('")', '')
-	// 	return two
-	// } 
+	function getParameterByName(name, url) {
+		if (!url) url = window.location.href
+		name = name.replace(/[\[\]]/g, '\\$&')
+		var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+			results = regex.exec(url)
+		if (!results) return null
+		if (!results[2]) return ''
+		return decodeURIComponent(results[2].replace(/\+/g, ' '))
+	}
 
-	// function removeAllSpaces (str) {
-	// 	str.replace(/\s/g, '')
-	// 	return str
-	// }
+	function removeAllSpaces (str) {
+		str = str.replace(/\s+/g, '-')
+		return str
+	}
 
-	// $(document).ready(function () {
-	// 	if ($('body').hasClass('request-product-information')) {
-	// 		if ($('.category').text() === 'oral contrast') {
-	// 			$('#nf-field-9-0').prop('checked', true)
-	// 		} else {}
-	// 	}
-	// })
+	$(document).ready(function () {
+		if ($('body').hasClass('request-product-information')) {
+			let queryCat = getParameterByName('cat', window.location.href).toLowerCase()
+			queryCat = removeAllSpaces(queryCat)
+
+			$('input[type=checkbox]').each(function () {
+				console.log($(this).val())
+				if ($(this).val() === queryCat) {
+					$(this).prop('checked', true)
+				}
+			})
+		}
+	})
 }// END MAIN FUNCTION
 
 export default string
