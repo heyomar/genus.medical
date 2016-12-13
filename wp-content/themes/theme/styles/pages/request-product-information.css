@@ -66,14 +66,8 @@
 			vertical-align: top;
 		}
 
-		& input[type=submit] {
-			cursor: pointer;
-			&:hover {
-				background-color: var(--green);
-				color: var(--white);
-			}
-		}
 	}
+
 
 	#ninja_forms_field_22 {
 		height: 120px;

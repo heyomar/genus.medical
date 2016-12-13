@@ -2872,6 +2872,7 @@ textarea,
 		width: auto !important;
 	}
 	#ninja_forms_form_8 {
+
 	}
 	#ninja_forms_form_8 .list-checkbox-wrap.label-left label {
   float: none;
@@ -2882,13 +2883,6 @@ textarea,
 }
 	#ninja_forms_form_8 .ninja-forms-form-wrap input {
   vertical-align: top;
-}
-	#ninja_forms_form_8 input[type=submit] {
-  cursor: pointer;
-}
-	#ninja_forms_form_8 input[type=submit]:hover {
-  background-color: hsla(116, 45%, 50%, 1);
-  color: hsla(0, 0%, 100%, 1);
 }
 	#ninja_forms_field_22 {
 		height: 120px;
