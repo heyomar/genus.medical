@@ -10,7 +10,6 @@
 				<div class="content">
 
 					<h2 class="title"><?php the_title(); ?></h2>
-					<p>We love hearing what matters most to our customers. Please fill in the form below and someone from our team will respond to you shortly.</p>
 
 					<div class="form">
 						<?php echo the_content(); ?>

@@ -2885,16 +2885,19 @@ textarea,
   vertical-align: top;
 }
 	#ninja_forms_field_22 {
-		height: 120px;
-	}
+	height: 120px;
+}
 	.checkbox-wrap label {
-		font-weight: normal;
-	}
+	font-weight: normal;
+}
 	#ninja_forms_field_23_label {
 	font-weight: normal;
 }
 	#ninja_forms_field_6_label {
 	font-weight: normal;
+}
+	.fix-case {
+	text-transform: uppercase;
 }
 	.email-sign-up {
 }
