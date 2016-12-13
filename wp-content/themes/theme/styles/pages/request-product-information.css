@@ -21,12 +21,15 @@
     color: var(--white);
     font-size: 48px;
   }
+
+
 }
 
 /*––––
 	Modifies RPI Ninja Form
 	––––––––––––––––––––––––––––*/
-	.nf-form-fields-required {
+
+	.ninja-forms-required-items {
 		display: none;
 	}
 
@@ -48,3 +51,42 @@
 	.label-hidden .nf-field-element {
 		width: auto !important;
 	}
+
+	#ninja_forms_form_8 {
+		& .list-checkbox-wrap.label-left label {
+				float: none;
+				display: block;
+		}
+
+		& .list-checkbox-wrap.label-left ul li {
+			float: none;
+		}
+
+		& .ninja-forms-form-wrap input {
+			vertical-align: top;
+		}
+
+		& input[type=submit] {
+			cursor: pointer;
+			&:hover {
+				background-color: var(--green);
+				color: var(--white);
+			}
+		}
+	}
+
+	#ninja_forms_field_22 {
+		height: 120px;
+	}
+
+	.checkbox-wrap label {
+		font-weight: normal;
+	}
+
+#ninja_forms_field_23_label {
+	font-weight: normal;
+}
+
+#ninja_forms_field_6_label {
+	font-weight: normal;
+}

@@ -47,6 +47,14 @@ textarea {
 }
 
 
+input[type=submit] {
+	cursor: pointer;
+	&:hover {
+		background-color: var(--green);
+		color: var(--white);
+	}
+}
+
 select {
 	width: 100%;
 	border: 1px solid var(--green);
