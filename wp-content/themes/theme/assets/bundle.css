@@ -2827,8 +2827,6 @@ textarea,
   color: hsla(0, 0%, 20%, 1);
 }
 	.request-product-information {
-
-
 }
 	.request-product-information .bluehero {
   background-image: url('../assets/images/rpi__hero-bg.jpg');
@@ -2849,6 +2847,9 @@ textarea,
 	.request-product-information .name {
   color: hsla(0, 0%, 100%, 1);
   font-size: 48px;
+}
+	.request-product-information .fix-case {
+  text-transform: uppercase;
 }
 	/*––––
 	Modifies RPI Ninja Form
@@ -2895,9 +2896,6 @@ textarea,
 }
 	#ninja_forms_field_6_label {
 	font-weight: normal;
-}
-	.fix-case {
-	text-transform: uppercase;
 }
 	.email-sign-up {
 }

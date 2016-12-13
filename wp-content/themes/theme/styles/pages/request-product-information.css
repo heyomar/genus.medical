@@ -22,7 +22,9 @@
     font-size: 48px;
   }
 
-
+	& .fix-case {
+		text-transform: uppercase;
+	}
 }
 
 /*––––
@@ -83,8 +85,4 @@
 
 #ninja_forms_field_6_label {
 	font-weight: normal;
-}
-
-.fix-case {
-	text-transform: uppercase;
 }
