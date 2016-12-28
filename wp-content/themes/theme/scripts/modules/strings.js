@@ -1,6 +1,7 @@
 import $ from 'jquery'
 
 function string () {
+	/* eslint-disable */
 	function getParameterByName(name, url) {
 		if (!url) url = window.location.href
 		name = name.replace(/[\[\]]/g, '\\$&')
@@ -10,7 +11,7 @@ function string () {
 		if (!results[2]) return ''
 		return decodeURIComponent(results[2].replace(/\+/g, ' '))
 	}
-
+	/* eslint-enable */
 	function convertSpecialCharacters (str) {
 		str = str.replace('-', ' ')
 		return str
