@@ -10882,9 +10882,9 @@ function rest$1() {
 						var contrastCatName = jquery('.hidden-cat').text();
 						contrastCatName = contrastCatName.replace(/\s+/g, '').toLowerCase();
 						if (contrastCatName === contrastName) {
-							jquery('.oral-contrast').append('<li class="sidebar-caret"><a href="/oral-contrast/#' + contrastName + '">' + val['name'] + '</li>');
+							jquery('.oral-contrast').append('<li class="sidebar-caret"><a href="/barium-sulfate/#' + contrastName + '">' + val['name'] + '</li>');
 						} else {
-							jquery('.oral-contrast').append('<li><a href="/oral-contrast/#' + contrastName + '">' + val['name'] + '</li>');
+							jquery('.oral-contrast').append('<li><a href="/barium-sulfate/#' + contrastName + '">' + val['name'] + '</li>');
 						}
 					} else if (val['parent'] === 4) {
 						var injectorName = val['name'];

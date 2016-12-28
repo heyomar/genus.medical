@@ -13,9 +13,9 @@ function rest () {
 						let contrastCatName = $('.hidden-cat').text()
 						contrastCatName = contrastCatName.replace(/\s+/g, '').toLowerCase()
 						if (contrastCatName === contrastName) {
-							$('.oral-contrast').append('<li class="sidebar-caret"><a href="/oral-contrast/#' + contrastName + '">' + val['name'] + '</li>')
+							$('.oral-contrast').append('<li class="sidebar-caret"><a href="/barium-sulfate/#' + contrastName + '">' + val['name'] + '</li>')
 						} else {
-							$('.oral-contrast').append('<li><a href="/oral-contrast/#' + contrastName + '">' + val['name'] + '</li>')
+							$('.oral-contrast').append('<li><a href="/barium-sulfate/#' + contrastName + '">' + val['name'] + '</li>')
 						}
 					} else if (val['parent'] === 4) {
 						let injectorName = val['name']
