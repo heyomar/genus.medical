@@ -18,14 +18,14 @@
 			<div class="col-xs-12 col-sm-6">
 					<div class="box">
 						<div class="inner callout-oralcontrast">
-							<a href="/oral-contrast"><span class="label">Oral Contrast</span></a>
+							<a href="/oral-contrast"><span class="label">Barium Sulfate &amp; Related Products</span></a>
 						</div>
 					</div>
 			</div>
 			<div class="col-xs-12 col-sm-6">
 					<div class="box">
 						<div class="inner callout-powerinjector">
-							<a href="/syringes"><span class="label">Power Injector Syringes</span></a>
+							<a href="/syringes"><span class="label">Power Injector Syringes &amp; Supplies</span></a>
 						</div>
 					</div>
 			</div>
