@@ -7,6 +7,7 @@
 		<span class="category productCategory">
       <?php $category = get_the_category();
             $parent = get_category($category[0]->category_parent);
+
             echo $parentCat = str_replace('-', ' ', $parent->slug); ?>
     </span>
 		<span class="hidethis hidden-cat">
@@ -100,7 +101,7 @@
 							</div>
 				</div>
 			</div>
-
+			<!-- <?php var_dump($parent); ?> -->
 			<?php echo get_template_part( 'modules/product-sidebar'); ?>
 		</div>
 	</div>
@@ -112,7 +113,7 @@
 		<div class="inner">
 			<h2><?php the_field('cta_title') ?></h2>
 			<?php the_field('cta_copy') ?>
-			<a id="request" href="/request-product-information?pid=<?php echo get_the_ID(); ?>&amp;cat=<?php echo $parentCat = str_replace(' ', '', $parent->slug); ?>" class="btn white">Request Product Information</a>
+			<a id="request" href="/request-product-information?pid=<?php echo get_the_ID(); ?>&amp;cat=<?php echo $parentCat = str_replace(' ', '-', $parent->name); ?>" class="btn white">Request Product Information</a>
 		</div>
 </div>
 

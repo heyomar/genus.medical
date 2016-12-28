@@ -11779,20 +11779,21 @@ function string$1() {
 		return decodeURIComponent(results[2].replace(/\+/g, ' '));
 	}
 
-	function removeAllSpaces(str) {
-		str = str.replace(/\s+/g, '-');
+	function convertSpecialCharacters(str) {
+		str = str.replace('-', ' ');
 		return str;
 	}
 
 	jquery(document).ready(function () {
 		if (jquery('body').hasClass('request-product-information')) {
 			(function () {
-				var queryCat = getParameterByName('cat', window.location.href).toLowerCase();
-				queryCat = removeAllSpaces(queryCat);
+				var queryCat = getParameterByName('cat', window.location.href);
+				queryCat = convertSpecialCharacters(queryCat);
+				console.log(queryCat);
 
 				jquery('input[type=checkbox]').each(function () {
-					console.log(jquery(this).val());
-					if (jquery(this).val() === queryCat) {
+					var checkbox = jquery(this).val();
+					if (checkbox === queryCat) {
 						jquery(this).prop('checked', true);
 					}
 				});

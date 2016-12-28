@@ -21,10 +21,6 @@
     color: var(--white);
     font-size: 48px;
   }
-
-	& .fix-case {
-		text-transform: uppercase;
-	}
 }
 
 /*––––

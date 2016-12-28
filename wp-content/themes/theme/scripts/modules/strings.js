@@ -11,19 +11,20 @@ function string () {
 		return decodeURIComponent(results[2].replace(/\+/g, ' '))
 	}
 
-	function removeAllSpaces (str) {
-		str = str.replace(/\s+/g, '-')
+	function convertSpecialCharacters (str) {
+		str = str.replace('-', ' ')
 		return str
 	}
 
 	$(document).ready(function () {
 		if ($('body').hasClass('request-product-information')) {
-			let queryCat = getParameterByName('cat', window.location.href).toLowerCase()
-			queryCat = removeAllSpaces(queryCat)
+			let queryCat = getParameterByName('cat', window.location.href)
+			queryCat = convertSpecialCharacters(queryCat)
+			console.log(queryCat)
 
 			$('input[type=checkbox]').each(function () {
-				console.log($(this).val())
-				if ($(this).val() === queryCat) {
+				const checkbox = $(this).val()
+				if (checkbox === queryCat) {
 					$(this).prop('checked', true)
 				}
 			})

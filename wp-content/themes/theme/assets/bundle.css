@@ -2848,9 +2848,6 @@ textarea,
   color: hsla(0, 0%, 100%, 1);
   font-size: 48px;
 }
-	.request-product-information .fix-case {
-  text-transform: uppercase;
-}
 	/*––––
 	Modifies RPI Ninja Form
 	––––––––––––––––––––––––––––*/
