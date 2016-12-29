@@ -139,6 +139,7 @@ function locations () {
 		$('#findDist').click() // yeah, this is dumb
 	})
 
+	/* eslint-disable */
 		// filter locations
 	function filterLocations () {
 		// get the value of the selected option
@@ -158,6 +159,7 @@ function locations () {
 			}
 		})
 	}
+	/* eslint-enable */
 }// END EXPORT FUNCTION
 
 export default locations
