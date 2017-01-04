@@ -86,15 +86,14 @@ endif;
 															echo $image['sizes'][ 'large' ];
 															endif;
 															?>');" class="image">
-																<a href="/products/<?php
+																<a class="product-link" href="/products/<?php
 																$title = strtolower(get_the_title());
-																$title = str_replace(array(' ', '&#153;'), array('', ''), $title );
 																echo $title;
 																?>">
 																	<span class="label">VIEW PRODUCT</span></a>
 															</div>
 															<div class="description">
-																<h4 class="name"><a href="/products/<?php
+																<h4 class="name"><a class="product-link" href="/products/<?php
 																echo $title;
 																?>"><?php the_title(); ?></a></h4>
 																<?php the_field('product_copy') ?>

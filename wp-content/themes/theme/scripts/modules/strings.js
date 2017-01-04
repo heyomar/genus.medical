@@ -30,6 +30,20 @@ function string () {
 				}
 			})
 		}
+
+		if ($('body').hasClass('page-template-template-product-landing')) {
+			$('.product-link').each(function () {
+				let productLink = $(this).attr('href')
+				productLink = productLink.replace('™', ' ')
+				productLink = productLink.replace('&trade;', '')
+				productLink = productLink.replace('&#153;', '')
+				productLink = productLink.replace('  ', '')
+				productLink = productLink.replace('  ', '')
+				productLink = productLink.replace(' ', '')
+				$(this).attr('href', productLink)
+				console.log(productLink)
+			})
+		}
 	})
 }// END MAIN FUNCTION
 

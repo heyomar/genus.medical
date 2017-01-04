@@ -11802,6 +11802,20 @@ function string$1() {
 				});
 			})();
 		}
+
+		if (jquery('body').hasClass('page-template-template-product-landing')) {
+			jquery('.product-link').each(function () {
+				var productLink = jquery(this).attr('href');
+				productLink = productLink.replace('™', ' ');
+				productLink = productLink.replace('&trade;', '');
+				productLink = productLink.replace('&#153;', '');
+				productLink = productLink.replace('  ', '');
+				productLink = productLink.replace('  ', '');
+				productLink = productLink.replace(' ', '');
+				jquery(this).attr('href', productLink);
+				console.log(productLink);
+			});
+		}
 	});
 } // END MAIN FUNCTION
 
