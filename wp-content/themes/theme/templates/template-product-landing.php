@@ -3,7 +3,6 @@
  * Template Name: Product Landing
  * Description: Page template for product landing
  */
-
 ?>
 
 
@@ -89,13 +88,15 @@ endif;
 															?>');" class="image">
 																<a href="/products/<?php
 																$title = strtolower(get_the_title());
-																echo $string = str_replace(' ', '', $title ); ?>">
+																$title = str_replace(array(' ', '&#153;'), array('', ''), $title );
+																echo $title;
+																?>">
 																	<span class="label">VIEW PRODUCT</span></a>
 															</div>
 															<div class="description">
 																<h4 class="name"><a href="/products/<?php
-																$title = strtolower(get_the_title());
-																echo $string = str_replace(' ', '', $title ); ?>"><?php the_title(); ?></a></h4>
+																echo $title;
+																?>"><?php the_title(); ?></a></h4>
 																<?php the_field('product_copy') ?>
 															</div>
 														</div>
