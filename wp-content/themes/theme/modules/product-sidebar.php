@@ -2,14 +2,14 @@
 	<div class="sidebar">
 		<h4 class="title small">Products</h4>
 		<div class="list">
-			<strong>Power Injector Syringes &amp; Supplies</strong>
+			<strong>Barium Sulfate</strong>
 			<ul class="oral-contrast">
 				<!-- Data gets pulled here via ajax call -->
 			</ul>
 		</div>
 
 		<div class="list">
-			<strong>Power Injectors</strong>
+			<strong>Power Injector Syringes &amp; Supplies</strong>
 			<ul class="power-injector">
 				<!-- Data gets pulled here via ajax call -->
 			</ul>
