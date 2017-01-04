@@ -45,7 +45,8 @@
 						$args = array (
 							'post_type' => 'product',
 							'category_name' => $category,
-							'posts_per_page' => -1
+							'posts_per_page' => -1,
+							'orderby' =>'menu_order'
 						);
 
 						// The Query
