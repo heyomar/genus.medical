@@ -6,7 +6,7 @@
 					</div>
 
 				<div class="legal">
-						<div class="copy">2016 &copy; Genus Medical Technologies</div>
+						<div class="copy">2017 &copy; Genus Medical Technologies</div>
 						<div class="links">
 								<a href="/contact">Contact Us</a><br>
 								<a href="/terms-of-use">Terms of Use</a>
