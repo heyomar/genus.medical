@@ -40,11 +40,7 @@ footer {
 }
 
 .menu {
-	width: 300px;
-  height: 100px;
-
-  overflow-y: scroll; /* has to be scroll, not auto */
-  -webkit-overflow-scrolling: touch;
+	overflow: scroll;
 }
 
 @media (--tablet) {

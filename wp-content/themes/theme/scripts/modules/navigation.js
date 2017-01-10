@@ -16,7 +16,7 @@ function navigation () {
 				function (e) {
 					e.preventDefault()
 				})
-			// $('body').css('overflow', 'hidden')
+			$('body').css('overflow', 'hidden')
 			$('.arrow').css('transform', 'rotate(180deg)')
 		}
 	})

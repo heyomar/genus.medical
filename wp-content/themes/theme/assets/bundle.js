@@ -10920,7 +10920,7 @@ function navigation() {
 			jquery(document).bind('touchmove', function (e) {
 				e.preventDefault();
 			});
-			// $('body').css('overflow', 'hidden')
+			jquery('body').css('overflow', 'hidden');
 			jquery('.arrow').css('transform', 'rotate(180deg)');
 		}
 	});
