@@ -2,7 +2,7 @@
 include( plugin_dir_path( __FILE__ ) . 'lib/Mandrill.php');
 /*
  * Plugin Name: Ninja Forms - Mandrill Processing
- * Plugin URI: http://seedappliedsolutions.dev/
+ * Plugin URI: http://genusmedical.com/
  * Description: This adds an action to process the Ninja Forms submissions using Mandrill.
  * Version: 3.0.0
  * Author: Zack Bishop
