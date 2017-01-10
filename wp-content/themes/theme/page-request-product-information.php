@@ -21,7 +21,9 @@
       if($productTitle !== 'Request Product Information')
        echo str_replace(' ', '&nbsp;',$productTitle);
       ?>
+
       </div>
+			<div class="syringe-name"><?php echo str_replace('-', ' ', $productCategory); ?></div>
     </div>
   </div>
 </div>

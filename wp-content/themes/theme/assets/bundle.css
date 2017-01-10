@@ -2850,6 +2850,11 @@ textarea,
   color: hsla(0, 0%, 100%, 1);
   font-size: 48px;
 }
+	.syringe-name {
+	display: none;
+	color: hsla(0, 0%, 100%, 1);
+	font-size: 48px;
+}
 	/*––––
 	Modifies RPI Ninja Form
 	––––––––––––––––––––––––––––*/

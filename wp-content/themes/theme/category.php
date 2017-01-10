@@ -89,7 +89,7 @@
 			?>
 			<h2><?php echo $cta_title; ?></h2>
 			<?php echo $cta_copy; ?>
-			<a href="/request-product-information?cat=<?php single_cat_title(); ?>" class="btn white">Request Product Information</a>
+			<a href="/request-product-information?cat=<?php single_cat_title(); ?>&amp;syn=yes" class="btn white">Request Product Information</a>
 		</div>
 </div>
 <!--[––––

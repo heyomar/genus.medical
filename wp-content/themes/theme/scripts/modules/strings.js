@@ -17,6 +17,14 @@ function string () {
 		return str
 	}
 
+	if ($('body').hasClass('request-product-information')) {
+		const isSyringe = getParameterByName('syn', window.location.href)
+		if (isSyringe === 'yes') {
+			$('.syringe-name').show()
+			$('.category').hide()
+		}
+	}
+
 	$(document).ready(function () {
 		if ($('body').hasClass('request-product-information')) {
 			let queryCat = getParameterByName('cat', window.location.href)

@@ -23,6 +23,11 @@
   }
 }
 
+.syringe-name {
+	display: none;
+	color: var(--white);
+	font-size: 48px;
+}
 /*––––
 	Modifies RPI Ninja Form
 	––––––––––––––––––––––––––––*/

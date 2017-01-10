@@ -11786,6 +11786,14 @@ function string$1() {
 		return str;
 	}
 
+	if (jquery('body').hasClass('request-product-information')) {
+		var isSyringe = getParameterByName('syn', window.location.href);
+		if (isSyringe === 'yes') {
+			jquery('.syringe-name').show();
+			jquery('.category').hide();
+		}
+	}
+
 	jquery(document).ready(function () {
 		if (jquery('body').hasClass('request-product-information')) {
 			(function () {
