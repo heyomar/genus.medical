@@ -3135,6 +3135,11 @@ textarea,
 	.find input {
   width: 100%;
 }
+	input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 	/*––––
 	Nearby - for the distributors
 	select dropdown

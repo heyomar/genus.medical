@@ -31,7 +31,7 @@
 		</div>
 
 <div class="mangement">
-	<h4 class="title small">Mangement</h4>
+	<h4 class="title small">Management</h4>
 	<div class="row mxw-1100-center">
 		<?php if( have_rows('members_repeater') ): ?>
 			<?php while ( have_rows('members_repeater') ) : the_row(); ?>
