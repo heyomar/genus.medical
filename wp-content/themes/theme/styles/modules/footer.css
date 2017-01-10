@@ -39,6 +39,10 @@ footer {
 	}
 }
 
+.menu {
+	overflow: scroll;
+}
+
 @media (--tablet) {
 	footer {
 		text-align: left;
