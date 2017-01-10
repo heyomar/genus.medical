@@ -2388,7 +2388,7 @@ textarea,
 }
 	.dropdown ul li {
   text-align: center;
-  height: 60px;
+  height: 20px;
   line-height: 60px;
   position: relative;
 }
@@ -2439,6 +2439,8 @@ textarea,
   bottom: -20px;
   left: 49%;
 }
+	.menu-header-navigation-container {}
+	.menu {}
 	/*––––
 	media queries
 	––––––––––––––––––––––––––––*/
@@ -2510,9 +2512,6 @@ textarea,
   height: 20px;
   width: auto;
   color: #fff;
-}
-	.menu {
-	overflow: scroll;
 }
 	@media screen and (min-width: 768px) {
 	footer {

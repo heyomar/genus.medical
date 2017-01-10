@@ -10912,7 +10912,7 @@ function navigation() {
 		if (jquery('.open')[0]) {
 			jquery('.dropdown').removeClass('open');
 			jquery('.dropdown').slideUp();
-			jquery('body').css('overflow', 'scroll');
+			// $('body').css('overflow', 'scroll')
 			jquery('.arrow').css('transform', 'rotate(0deg)');
 		} else {
 			jquery('.dropdown').slideDown().show();
@@ -10920,7 +10920,7 @@ function navigation() {
 			jquery(document).bind('touchmove', function (e) {
 				e.preventDefault();
 			});
-			jquery('body').css('overflow', 'hidden');
+			// $('body').css('overflow', 'hidden')
 			jquery('.arrow').css('transform', 'rotate(180deg)');
 		}
 	});
@@ -10929,7 +10929,7 @@ function navigation() {
 	jquery(window).resize(function () {
 		if (window.innerWidth >= 1220) {
 			jquery('.dropdown').hide();
-			jquery('body').css('overflow', 'scroll');
+			// $('body').css('overflow', 'scroll')
 		}
 	});
 
@@ -11604,7 +11604,7 @@ function locations() {
 	var dataSet = void 0;
 	function getLocations(zip, distributorId) {
 		// first geocode the zip
-		console.log('distid' + distributorId);
+		//	console.log('distid' + distributorId)
 		jquery.ajax({
 			url: geocodeUrl(zip),
 			success: function success(data) {
@@ -11615,7 +11615,6 @@ function locations() {
 
 				// sweet, let's get the locations
 				jquery.ajax({
-					// url: 'http://genus.hlkbeta.com/wp-json/wp/v2/location?filter[posts_per_page]=-1',
 					url: '/wp-content/data/locations.json',
 					success: function success(data) {
 						// ok awesome. let's sort these locations against the zip with the haversine formula
@@ -11625,7 +11624,7 @@ function locations() {
 							data[i].distance = distance;
 
 							if (isNaN(distributorId) || data[i].distributor.term_id === distributorId) {
-								console.log('der');
+								//	console.log('der')
 								locations.push(data[i]);
 							}
 						}
@@ -11633,7 +11632,7 @@ function locations() {
 						locations.sort(function (a, b) {
 							return a.distance - b.distance;
 						});
-						console.log(locations);
+						//	console.log(locations)
 						dataSet = { 'locations': locations.slice(0, locationsPerPage) }; // gimme the first 9 items
 						locations.splice(0, locationsPerPage); // remove the first nine items
 
@@ -11652,7 +11651,7 @@ function locations() {
 			},
 
 			error: function error(data) {
-				console.log(data);
+				//	console.log(data)
 				jquery('#output').html('Error geocoding ' + zip);
 			}
 		});
@@ -11683,7 +11682,7 @@ function locations() {
 						scrollTop: jquery('.nearby').offset().top
 					}, 1500);
 				} else {
-					console.log('not enough');
+					//	console.log('not enough')
 					jquery('.error').fadeIn();
 				}
 			}
@@ -11792,8 +11791,6 @@ function string$1() {
 			(function () {
 				var queryCat = getParameterByName('cat', window.location.href);
 				queryCat = convertSpecialCharacters(queryCat);
-				console.log(queryCat);
-
 				jquery('input[type=checkbox]').each(function () {
 					var checkbox = jquery(this).val();
 					if (checkbox === queryCat) {
@@ -11813,7 +11810,6 @@ function string$1() {
 				productLink = productLink.replace('  ', '');
 				productLink = productLink.replace(' ', '');
 				jquery(this).attr('href', productLink);
-				console.log(productLink);
 			});
 		}
 	});

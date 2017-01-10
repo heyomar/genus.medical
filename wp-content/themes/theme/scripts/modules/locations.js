@@ -37,7 +37,7 @@ function locations () {
 	let dataSet
 	function getLocations (zip, distributorId) {
 		// first geocode the zip
-		//console.log('distid' + distributorId)
+		//	console.log('distid' + distributorId)
 		$.ajax({
 			url: geocodeUrl(zip),
 			success: function (data) {
@@ -57,13 +57,13 @@ function locations () {
 							data[i].distance = distance
 
 							if (isNaN(distributorId) || data[i].distributor.term_id === distributorId) {
-								//console.log('der')
+								//	console.log('der')
 								locations.push(data[i])
 							}
 						}
 
 						locations.sort(function (a, b) { return a.distance - b.distance })
-						//console.log(locations)
+						//	console.log(locations)
 						dataSet = {'locations': locations.slice(0, locationsPerPage)} // gimme the first 9 items
 						locations.splice(0, locationsPerPage) // remove the first nine items
 
@@ -82,7 +82,7 @@ function locations () {
 			},
 
 			error: function (data) {
-				//console.log(data)
+				//	console.log(data)
 				$('#output').html('Error geocoding ' + zip)
 			}
 		})
@@ -113,7 +113,7 @@ function locations () {
 						scrollTop: $('.nearby').offset().top
 					}, 1500)
 				} else {
-					//console.log('not enough')
+					//	console.log('not enough')
 					$('.error').fadeIn()
 				}
 			}

@@ -21,8 +21,6 @@ function string () {
 		if ($('body').hasClass('request-product-information')) {
 			let queryCat = getParameterByName('cat', window.location.href)
 			queryCat = convertSpecialCharacters(queryCat)
-			//console.log(queryCat)
-
 			$('input[type=checkbox]').each(function () {
 				const checkbox = $(this).val()
 				if (checkbox === queryCat) {
@@ -41,7 +39,6 @@ function string () {
 				productLink = productLink.replace('  ', '')
 				productLink = productLink.replace(' ', '')
 				$(this).attr('href', productLink)
-				//console.log(productLink)
 			})
 		}
 	})

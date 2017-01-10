@@ -6,7 +6,7 @@ function navigation () {
 		if ($('.open')[0]) {
 			$('.dropdown').removeClass('open')
 			$('.dropdown').slideUp()
-			$('body').css('overflow', 'scroll')
+			// $('body').css('overflow', 'scroll')
 			$('.arrow').css('transform', 'rotate(0deg)')
 		} else {
 			$('.dropdown').slideDown().show()
@@ -16,7 +16,7 @@ function navigation () {
 				function (e) {
 					e.preventDefault()
 				})
-			$('body').css('overflow', 'hidden')
+			// $('body').css('overflow', 'hidden')
 			$('.arrow').css('transform', 'rotate(180deg)')
 		}
 	})
@@ -25,7 +25,7 @@ function navigation () {
 	$(window).resize(function () {
 		if (window.innerWidth >= 1220) {
 			$('.dropdown').hide()
-			$('body').css('overflow', 'scroll')
+			// $('body').css('overflow', 'scroll')
 		}
 	})
 
