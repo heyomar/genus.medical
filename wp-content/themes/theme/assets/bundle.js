@@ -10912,15 +10912,16 @@ function navigation() {
 		if (jquery('.open')[0]) {
 			jquery('.dropdown').removeClass('open');
 			jquery('.dropdown').slideUp();
-			// $('body').css('overflow', 'scroll')
+
+			jquery('body, html').css({ 'overflow': 'scroll', 'height': '100%' });
 			jquery('.arrow').css('transform', 'rotate(0deg)');
 		} else {
 			jquery('.dropdown').slideDown().show();
 			jquery('.dropdown').addClass('open');
-			jquery(document).bind('touchmove', function (e) {
-				e.preventDefault();
-			});
-			// $('body').css('overflow', 'hidden')
+			// $(document).bind('touchmove', function () {
+			// })
+
+			jquery('body, html').css({ 'overflow': 'hidden', 'height': '100%' });
 			jquery('.arrow').css('transform', 'rotate(180deg)');
 		}
 	});

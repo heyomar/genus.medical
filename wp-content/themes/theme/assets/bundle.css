@@ -2380,7 +2380,10 @@ textarea,
 	.dropdown {
 	height: 100vh;
 	padding-bottom: 30px;
-	display: none
+	display: none;
+	overflow-y: auto;
+	overflow-x: scroll;
+	-webkit-overflow-scrolling: touch
 }
 	.dropdown ul {
   padding: 0;
@@ -2388,7 +2391,6 @@ textarea,
 }
 	.dropdown ul li {
   text-align: center;
-  height: 20px;
   line-height: 60px;
   position: relative;
 }

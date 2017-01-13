@@ -12,8 +12,8 @@ function navigation () {
 		} else {
 			$('.dropdown').slideDown().show()
 			$('.dropdown').addClass('open')
-			$(document).bind('touchmove', function (e) {
-			})
+			// $(document).bind('touchmove', function () {
+			// })
 
 			$('body, html').css({'overflow': 'hidden', 'height': '100%'})
 			$('.arrow').css('transform', 'rotate(180deg)')
