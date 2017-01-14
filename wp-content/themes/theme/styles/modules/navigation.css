@@ -2,12 +2,24 @@
 	 style main navigation strip items
 	 and some general styles
 	––––––––––––––––––––––––––––*/
+
+	body, html {
+		-webkit-overflow-scrolling: touch;
+		overflow-x: hidden;
+		height: 100%;
+	}
 nav {
 	border-top: 2px solid var(--green);
 	position: relative;
 	z-index: 1000;
+	overflow-y: auto;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
+
+
 	& .inner {
 			background-color: #f8f8f8;
+			height: 100%;
 	}
 }
 
@@ -59,21 +71,22 @@ nav {
 	style the menu items from wp
 	––––––––––––––––––––––––––––*/
 .dropdown {
-	height: 100vh;
 	padding-bottom: 30px;
 	display: none;
 	overflow-y: auto;
-	overflow-x: scroll;
+	overflow-x: hidden;
 	-webkit-overflow-scrolling: touch;
+	height: 100%;
 
 	& ul {
 		padding: 0;
 		margin-bottom: 0;
 
+
 		& li {
 			text-align: center;
-			line-height: 60px;
 			position: relative;
+			padding: 15px 0;
 
 			&:hover {
 				color: var(--green);

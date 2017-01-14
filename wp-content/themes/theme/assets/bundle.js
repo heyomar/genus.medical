@@ -10912,16 +10912,16 @@ function navigation() {
 		if (jquery('.open')[0]) {
 			jquery('.dropdown').removeClass('open');
 			jquery('.dropdown').slideUp();
+			jquery('body, html').css({ 'overflow-y': 'scroll' });
 
-			jquery('body, html').css({ 'overflow': 'scroll', 'height': '100%' });
 			jquery('.arrow').css('transform', 'rotate(0deg)');
 		} else {
+
 			jquery('.dropdown').slideDown().show();
 			jquery('.dropdown').addClass('open');
-			// $(document).bind('touchmove', function () {
-			// })
 
-			jquery('body, html').css({ 'overflow': 'hidden', 'height': '100%' });
+			jquery('body, html').css({ 'overflow-y': 'hidden' });
+
 			jquery('.arrow').css('transform', 'rotate(180deg)');
 		}
 	});
@@ -10930,7 +10930,7 @@ function navigation() {
 	jquery(window).resize(function () {
 		if (window.innerWidth >= 1220) {
 			jquery('.dropdown').hide();
-			// $('body').css('overflow', 'scroll')
+			jquery('body').css('overflow', 'scroll');
 		}
 	});
 
@@ -11790,8 +11790,8 @@ function string$1() {
 	if (jquery('body').hasClass('request-product-information')) {
 		var isSyringe = getParameterByName('syn', window.location.href);
 		if (isSyringe === 'yes') {
-			jquery('.syringe-name').show();
 			jquery('.category').hide();
+			jquery('.syringe-name').show();
 		}
 	}
 

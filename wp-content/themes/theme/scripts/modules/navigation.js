@@ -6,16 +6,16 @@ function navigation () {
 		if ($('.open')[0]) {
 			$('.dropdown').removeClass('open')
 			$('.dropdown').slideUp()
+			$('body, html').css({ 'overflow-y': 'scroll' })
 
-			$('body, html').css({'overflow': 'scroll', 'height': '100%'})
 			$('.arrow').css('transform', 'rotate(0deg)')
 		} else {
+
 			$('.dropdown').slideDown().show()
 			$('.dropdown').addClass('open')
-			// $(document).bind('touchmove', function () {
-			// })
 
-			$('body, html').css({'overflow': 'hidden', 'height': '100%'})
+			$('body, html').css({'overflow-y': 'hidden'})
+
 			$('.arrow').css('transform', 'rotate(180deg)')
 		}
 	})
