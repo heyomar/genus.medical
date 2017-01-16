@@ -11790,8 +11790,8 @@ function string$1() {
 	if (jquery('body').hasClass('request-product-information')) {
 		var isSyringe = getParameterByName('syn', window.location.href);
 		if (isSyringe === 'yes') {
-			jquery('.category').hide();
 			jquery('.syringe-name').show();
+			jquery('.category').hide();
 		}
 	}
 

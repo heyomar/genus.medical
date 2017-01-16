@@ -69,7 +69,7 @@ endif;
 
 				<?php if ( $child_q->have_posts() ) { ?>
 
-					<div class="<?php echo str_replace(' ', '-', strtolower($term['name'])); ?>">
+					<div class="<?php echo str_replace(' ', '-', strtolower($term['name'])); ?> land">
 						<div class="inner mxw-1100-center">
 							<h4 id="<?php
 							$categoryName = str_replace(' ', '', $term['name']);
