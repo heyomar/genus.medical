@@ -16,9 +16,10 @@ nav {
 	overflow-x: hidden;
 	-webkit-overflow-scrolling: touch;
 
+
 	& .inner {
 			background-color: #f8f8f8;
-
+			height: 100%;
 	}
 }
 
@@ -75,7 +76,7 @@ nav {
 	overflow-y: auto;
 	overflow-x: hidden;
 	-webkit-overflow-scrolling: touch;
-	height: 100vh;
+	height: 100%;
 
 	& ul {
 		padding: 0;
@@ -85,7 +86,7 @@ nav {
 		& li {
 			text-align: center;
 			position: relative;
-			padding: 12px 0;
+			padding: 15px 0;
 
 			&:hover {
 				color: var(--green);
@@ -141,8 +142,8 @@ nav {
 		color: var(--green);
 		display: inline-block;
 		position: absolute;
-		bottom: -12px;
-		left: 49.5%;
+		bottom: -20px;
+		left: 49%;
 	}
 
 }
@@ -184,9 +185,5 @@ nav {
 				}
 			}
 		}
-	}
-
-	.ds-caret::after {
-			bottom: -20px;
 	}
 }
